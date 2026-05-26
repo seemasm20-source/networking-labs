@@ -46,8 +46,20 @@
 
 
 
+
+
+
+
+
+
+
 Step 2 — Connect Cables
 Cable type: Copper Straight-Through for all connections
+
+
+
+
+
 
 
 | Device   | Interface       | Switch   | Connected Device   | Connected Interface |
@@ -63,6 +75,11 @@ Cable type: Copper Straight-Through for all connections
 
 
 
+
+
+
+
+
 ✅ All cable dots turn green = connected correctly
 🔴 Red dot = wrong cable or wrong port — delete and redo
 
@@ -70,8 +87,17 @@ Cable type: Copper Straight-Through for all connections
 
 
 
+
+
+
+
+
+
 Step 3 — Assign IPs to All PCs
 Click each PC → Desktop tab → IP Configuration → Static
+
+
+
 
 
 
@@ -90,6 +116,8 @@ Click each PC → Desktop tab → IP Configuration → Static
 
 
 
+
+
 Note: Default gateway is the router's IP on that PC's side.
 LAN 1 PCs (PC1–PC3) → gateway 10.0.0.4
 LAN 2 PCs (PC4–PC6) → gateway 192.168.1.4
@@ -98,7 +126,16 @@ LAN 2 PCs (PC4–PC6) → gateway 192.168.1.4
 
 
 
+
+
+
+
+
 PC1 IP configuration — LAN 1 (HR):
+
+
+
+
 
 
 
