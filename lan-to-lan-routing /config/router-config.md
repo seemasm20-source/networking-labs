@@ -24,6 +24,9 @@ How to Open Router CLI
 
 
 
+
+
+
 Note- Every command only works at its correct level. If a command has no effect check your prompt first.
 
 
@@ -37,19 +40,31 @@ Note- Every command only works at its correct level. If a command has no effect 
 
 
 Router> enable
+
 Router# configure terminal
 
+
 ! --- LAN 1 interface (HR Department) ---
+
 Router(config)# interface GigabitEthernet0/0
+
 Router(config-if)# ip address 10.0.0.4 255.255.255.0
+
 Router(config-if)# no shutdown
+
 Router(config-if)# exit
 
+
 ! --- LAN 2 interface (Finance Department) ---
+
 Router(config)# interface GigabitEthernet0/1
+
 Router(config-if)# ip address 192.168.1.4 255.255.255.0
+
 Router(config-if)# no shutdown
+
 Router(config-if)# exit
+
 
 ! --- Save configuration ---
 Router# write memory
@@ -58,9 +73,16 @@ Router# write memory
 
 
 
-Note: Note: The default gateway on every PC is the router's IP address on that PC's side.
+
+Note:  The default gateway on every PC is the router's IP address on that PC's side.
+
+
+
+
 
 LAN 1 PCs use 10.0.0.4 — LAN 2 PCs use 192.168.1.4
+
+
 
 
 
@@ -104,7 +126,10 @@ is working correctly:
 ! Check both interfaces are active
 Router# show ip interface brief
 
+
 Expected output:
+
+
 Interface           IP-Address    OK? Status  Protocol
 GigabitEthernet0/0  10.0.0.4      YES up      up       ✅
 GigabitEthernet0/1  192.168.1.4   YES up      up       ✅
@@ -141,6 +166,115 @@ GigabitEthernet0/1  192.168.1.4   YES up      up       ✅
 
 Ping Test — Confirm Cross-LAN Communication
 From PC1 (10.0.0.1) → Desktop → Command Prompt:
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (257)" src="https://github.com/user-attachments/assets/dba27950-bec4-4a49-8926-0cca5fcb699c" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (258)" src="https://github.com/user-attachments/assets/1e6423c5-1b04-4b84-a4d7-d33c8ab03e54" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (284)" src="https://github.com/user-attachments/assets/26cd15b3-72d0-4050-9d28-329dcf9e042b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (259)" src="https://github.com/user-attachments/assets/ee4b3825-3902-4cc3-b8c7-4e5fb818bc07" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (260)" src="https://github.com/user-attachments/assets/6d7933b4-a667-42e4-9fde-8549134c6086" />
+
 
 
 
