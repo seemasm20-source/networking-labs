@@ -8,9 +8,7 @@ Issue — Router Interface Administratively Down
 📋 Problem Summary
 Router interface GigabitEthernet0/0 was administratively down blocking 
 
-all cross-LAN communication between 
-
-HR (LAN 1) and Finance (LAN 2)
+all cross-LAN communication between HR (LAN 1) and Finance (LAN 2)
 
 
 🔍 Cause
