@@ -50,6 +50,7 @@ Router Configuration Commands:
 
 
 
+
 Router> enable
 
 Router# configure terminal
@@ -95,6 +96,8 @@ Router# write memory
 
 
 Note:  The default gateway on every PC is the router's IP address on that PC's side. LAN 1 PCs use 10.0.0.4 — LAN 2 PCs use 192.168.1.4
+
+
 
 
 
@@ -193,7 +196,14 @@ Note:  The default gateway on every PC is the router's IP address on that PC's s
 
 
 
+
+
+
+
 What Each Command Does in CLI:
+
+
+
 
 
 
@@ -217,6 +227,8 @@ What Each Command Does in CLI:
 
 
 
+
+
 Verification Commands
 After configuration run show ip interface brief command to confirm everything is working correctly:
 
@@ -224,11 +236,15 @@ After configuration run show ip interface brief command to confirm everything is
 
 
 
-! Check both interfaces are active
+
+
+
+Check both interfaces are active
 Router# show ip interface brief
 
 
 Expected output:
+
 
 
 | Interface          | IP-Address  | OK | Status | Protocol |
@@ -252,7 +268,36 @@ Expected output:
 
 
 
+
+
+
+
+
+
+
+
 <img width="1920" height="1080" alt="Screenshot (266)" src="https://github.com/user-attachments/assets/fe55cb39-a690-4ab5-abd3-757c52c09234" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -289,6 +334,18 @@ Ping Test — Confirm Cross-LAN Communication From PC1 (10.0.0.1) → Desktop �
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 | IP Address  | Device | Same LAN? | Expected Reply |
 | ----------- | ------ | :-------: | -------------- |
 | 10.0.0.2    | PC2    | Yes       | Reply ✅        |
@@ -313,7 +370,30 @@ Ping Test — Confirm Cross-LAN Communication From PC1 (10.0.0.1) → Desktop �
 
 
 
-Screenshot of successful cross-LAN ping:
+
+
+
+
+
+
+
+
+
+Screenshot of successful Cross-LAN ping:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
