@@ -1,14 +1,14 @@
-Troubleshooting — Issue 2
+Troubleshooting - Issue 2
 
 
 
-Issue - PCs Could Not Communicate Between LANs
+Issue - PC's Could Not Communicate Between LANs
 
 
 
 
 
-📋 Problem Summary
+📋 Problem Summary:
 
 
 
@@ -336,7 +336,7 @@ gateway is never consulted. Cross-LAN traffic must exit through the router  gate
 
 
 
-🔧 Fix
+🔧 Fix :
 
 
 Added the correct default gateway on all PCs:
