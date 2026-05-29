@@ -113,7 +113,7 @@ in the troubleshooting folder.
 
 | # | Issue | Cause | Fix | File |
 |---|-------|-------|-----|------|
-| 1 | PCs could not communicate across LANs | Wrong default gateway on PCs | Set correct gateway on all PCs |https://github.com/seemasm20-source/networking-labs/blob/main/troubleshooting/wrong-gateway-issue.md |
+| 1 | PCs could not communicate across LANs | Wrong default gateway on PCs | Set correct gateway on all PCs |[view](lan-to-lan-routing/troubleshooting/wrong-gateway-issue.md) |
 | 2 | Router interface administratively down | no shutdown typed at wrong CLI level | Entered interface mode first then no shutdown | [view](troubleshooting/wrong-gateway-issue.md) |
 | 3 | Shutdown had no effect on same-LAN ping | Same-LAN traffic bypasses router | Tested cross-LAN ping instead | [view](./troubleshooting/lab-observations.md) |
 
