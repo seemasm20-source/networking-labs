@@ -118,6 +118,8 @@ in the troubleshooting folder.
 | 2 | Router interface administratively down | no shutdown typed at wrong CLI level | Entered interface mode first then no shutdown [View](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
 | 3 | Shutdown had no effect on same-LAN ping | Same-LAN traffic bypasses router | Tested cross-LAN ping instead | [View](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
 
+
+**View Solution:** [Interface Down Issue Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
 ---
 
 ## 📂 Project Files
