@@ -178,3 +178,7 @@ Three real troubleshooting issues were identified,
 diagnosed and resolved — demonstrating practical
 networking and fault isolation skills required in
 entry-level IT Support positions.
+
+
+[topology](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/topology%20/topology.md)
+
