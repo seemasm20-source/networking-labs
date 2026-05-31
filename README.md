@@ -126,7 +126,8 @@ in the troubleshooting folder.
 |--------|----------|
 | [topology](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/topology%20/topology.md)
 | Network diagram and IP address table |
-| [config/](./config/router-config.md) | Full router CLI commands with explanation |
+| [config](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/%20config/router-config.md)
+ | Full router CLI commands with explanation |
 | [troubleshooting/](./troubleshooting/) | Issues found and fixed during the lab |
 
 ---
