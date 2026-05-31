@@ -119,7 +119,7 @@ in the troubleshooting folder.
 | 3 | Shutdown had no effect on same-LAN ping | Same-LAN traffic bypasses router | Tested cross-LAN ping instead | [View](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
 
 
-**View Solution:** [Interface Down Issue Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
+
 ---
 
 ## 📂 Project Files
