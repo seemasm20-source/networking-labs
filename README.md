@@ -122,14 +122,11 @@ in the troubleshooting folder.
 
 ## 📂 Project Files
 
-| Folder | Contents |
-|--------|----------|
-| [topology](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/topology%20/topology.md)
-| Network diagram and IP address table |
-| [config](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/%20config/router-config.md)
- | Full router CLI commands with explanation |
-| [troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/lan-to-lan-routing%20/troubleshooting)
- | Issues found and fixed during the lab |
+| Folder          | Contents                                  |
+| --------------- | ----------------------------------------- |
+| Topology        | Network diagram and IP address table      |
+| Config          | Full router CLI commands with explanation |
+| Troubleshooting | Issues found and fixed during the lab     |
 
 ---
 
