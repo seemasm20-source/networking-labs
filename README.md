@@ -116,7 +116,7 @@ in the troubleshooting folder.
 |---|-------|-------|-----|------|
 | 1 | PCs could not communicate across LANs | Wrong default gateway on PCs | Set correct gateway on all PCs **View Solution:** [Wrong Default Gateway Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/wrong-default-gateway-troubleshooting.md)
 | 2 | Router interface administratively down | no shutdown typed at wrong CLI level | Entered interface mode first then no shutdown [View](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
-| 3 | Shutdown had no effect on same-LAN ping | Same-LAN traffic bypasses router | Tested cross-LAN ping instead | [view](./troubleshooting/lab-observations.md) |
+| 3 | Shutdown had no effect on same-LAN ping | Same-LAN traffic bypasses router | Tested cross-LAN ping instead | [View](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
 
 ---
 
