@@ -107,7 +107,7 @@ network segmentation.
 ---
 
 ## 🔴 Issues Encountered
-                                                                                                         ./troubleshooting/interface-down-issue.md
+                                                                                                         
 
 Real problems faced during this lab — full details
 in the troubleshooting folder.
