@@ -1,6 +1,4 @@
-Troubleshooting - Issue 2  Here is the link:view
-
-https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/wrong-gateway-issue.md
+Troubleshooting - Issue 2  
 
 
 Issue - PC's Could Not Communicate Between LANs
