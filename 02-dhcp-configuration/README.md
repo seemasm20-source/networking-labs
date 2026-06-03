@@ -25,6 +25,8 @@ Instead of manually assigning IPs, the router automatically assigns IP addresses
 
 
 💡 What is DHCP? 
+
+
 DHCP stands for Dynamic Host Configuration Protocol.
 
 It is a network management protocol used to automatically assign IP addresses and other crucial 
