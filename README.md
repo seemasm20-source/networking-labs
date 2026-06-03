@@ -1,7 +1,7 @@
 
 # 🌐 LAN-to-LAN Routing Using Cisco Router
 
-https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/wrong-gateway-issue.md
+
 **Portfolio:** IT Help Desk Tier 1 — Networking Labs
 
 **Tool:** Cisco Packet Tracer
