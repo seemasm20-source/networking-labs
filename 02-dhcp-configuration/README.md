@@ -16,32 +16,48 @@ Using Cisco Router
 
 
 📌 Objective
-This project simulates two office departments — HR (LAN 1) and Finance (LAN 2) — where a Cisco 2911 router acts as a DHCP server. Instead of manually assigning IPs, the router automatically assigns IP addresses, subnet masks, default gateways and DNS to all devices.
+This project simulates two office departments — HR (LAN 1) and Finance (LAN 2) — where a Cisco 2911 router acts as a DHCP server.
+
+Instead of manually assigning IPs, the router automatically assigns IP addresses, subnet masks, default gateways and DNS to all devices.
 
 
 
 
 
 💡 What is DHCP? 
-DHCP stands for Dynamic Host Configuration Protocol. It is a network management protocol used to automatically assign IP addresses and other crucial communication settings (like subnet masks, default gateways, and DNS servers) to devices on a network, allowing them to communicate efficiently
+DHCP stands for Dynamic Host Configuration Protocol.
+
+It is a network management protocol used to automatically assign IP addresses and other crucial 
+
+communication settings (like subnet masks, default gateways, and DNS servers) to devices on a network, allowing them to communicate efficiently
 
 
 Without DHCP                   With DHCP
+
 IT person manually types IP  → Router assigns IP automatically
+
 Time consuming                  → Instant
+
 Easy to make mistakes           → Consistent and accurate
 
 How It Works:
+
 When a device connects to a network, the protocol follows a four-step sequence known by the acronym DORA:
 
  ⇒Discover: The device broadcasts a message to find a DHCP server.
+ 
  ⇒Offer: The DHCP server receives the request and offers an available IP address to the device.
+ 
  ⇒Request: The device broadcasts a request to accept the offered IP address.
+ 
  ⇒Acknowledge: The server sends an acknowledgment confirming the assignment and granting a "lease" to use the address for a specific period
 
 Without DHCP                   With DHCP
+
 IT person manually types IP  → Router assigns IP automatically
+
 Time consuming                  → Instant
+
 Easy to make mistakes           → Consistent and accurate
 
 
@@ -59,6 +75,7 @@ Easy to make mistakes           → Consistent and accurate
 
 
                 ROUTER (Cisco 2911)
+                
               (DHCP server for both LANs)
                /                        \
         Gi0/0                          Gi0/1
