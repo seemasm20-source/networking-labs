@@ -1,10 +1,17 @@
 networking-labs / dhcp-configuration / README.md
+
 🌐 DHCP Server Configuration
+
 Using Cisco Router
+
 📁 IT Help Desk Tier 1
+
 🛠️ Cisco Packet Tracer
+
 👤 Seema
+
 📅 May 2026
+
 ✅ Project 2
 
 
