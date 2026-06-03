@@ -1,6 +1,6 @@
 
 # 🌐 LAN-to-LAN Routing Using Cisco Router
-https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down-issue.md
+
 
 **Portfolio:** IT Help Desk Tier 1 — Networking Labs
 
