@@ -115,12 +115,11 @@ in the troubleshooting folder.
 
 | # | Issue | Cause | Fix | File |
 |---|-------|-------|-----|------|
-| 1 | PCs could not communicate across LANs | Wrong default gateway on PCs | Set correct gateway on all PCs **View Solution:** [Wrong Default Gateway Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/wrong-default-gateway-troubleshooting.md)  
-view
-
-
-| 2 | Router interface administratively down | The shutdown command was typed on GigabitEthernet0/0 which manually disabled the interface.| Entered interface mode first then no shutdown [View](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
-| 3 | Shutdown had no effect on same-LAN ping | Same-LAN traffic bypasses router | Tested cross-LAN ping instead | [View](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing/troubleshooting/interface-down-issue.md)
+| Issue                                   | Cause                                                                                        | Fix                                           | File                                                                                                                        |
+| --------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| PCs Could Not Communicate Across LAN's  | Wrong Default Gateway On PCs                                                                 | Set Correct Gateway On All PCs                | https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/wrong-gateway-issue.md  |
+| Router Interface Administratively Down  | The shutdown command was typed on GigabitEthernet0/0  which manually disabled the interface. | Entered Interface Mode First Then No Shutdown | https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down-issue.md |
+| Shutdown Had No Effect on same-LAN Ping | Same-LAN Traffic Bypasses Router                                                             | Tested Cross-LAN Ping Instead                 | https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down-issue.md |
 
 
 
