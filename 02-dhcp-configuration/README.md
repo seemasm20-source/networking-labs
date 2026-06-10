@@ -214,9 +214,70 @@ in the troubleshooting folder.
 
 
 
+🎯  Real-World Help Desk Relevance
+
+
+| Users complaint                    | Root Cause            | Fix                          |
+| ---------------------------------- | --------------------- | ---------------------------- |
+| Limited Connectivity / 169.254.x.x | DHCP Disabled         | Service Dhcp + Recreate Pool  |                      
+| Random Disconnects                 | Duplicate IP Conflict | Change Static to DHCP        |
+| New PC Has No Network Access       | Pool Exhausted        | Show IP Dhcp Binding         |
+                                                                                         
 
 
 
+
+
+
+📚 Skills Demonstrated
+
+
+1.Cisco 2911 router configured as DHCP server via CLI
+
+2.Dual DHCP pool configuration — one per LAN
+
+3.Excluded address ranges to protect network devices
+
+4.DHCP verification using show ip dhcp binding
+
+5.APIPA diagnosis and resolution (169.254.x.x)
+
+6.IP address conflict root cause analysis
+
+7.Technical documentation for GitHub portfolio
+
+
+
+
+
+🎓 Learning Outcome
+
+This project provided hands-on experience configuring a Cisco router as a DHCP server across two LANs. It
+
+demonstrated how DHCP automates IP management and strengthened understanding of common DHCP faults
+
+directly relevant to IT Help Desk Tier 1 roles.
+
+
+
+ ✅ Conclusion
+
+
+A Cisco 2911 router was successfully configured as a DHCP server to provide automatic IP address assignment for devices across two separate LANs.
+
+All client devices obtained valid network configurations, including IP addresses, subnet masks, default gateways and DNS server information.
+
+The project also demonstrated practical troubleshooting by identifying, diagnosing and resolving three common DHCP-related issues:
+
+* APIPA Addressing (169.254.x.x)
+
+* DHCP Pool Exhaustion
+
+* IP Address Conflict
+
+
+
+This lab strengthened my understanding of DHCP operations, network troubleshooting, Cisco IOS configuration, and systematic problem resolution in a simulated enterprise network environment.
 
 
                    
