@@ -75,6 +75,18 @@ In a router CLI (such as Cisco IOS), "Administratively Down" means an interface 
 
 
 
+
+
+ping 192.168.1.1  → Request timed out ❌ (file attached)
+
+ping 192.168.1.2  → Request timed out ❌
+
+ping 192.168.1.3  → Request timed out ❌
+
+
+
+
+
 <img width="1920" height="1080" alt="Screenshot (230)" src="https://github.com/user-attachments/assets/08012cf4-e205-49d5-a512-81c4c7c86894" />
 
 
@@ -224,7 +236,7 @@ Fix: Changed shutdown to "no shutdown" in Router CLI of both the ports GigabitEt
 
 
 
-Verification 1 : use "do show ip interface brief in Router CLI" to check the ports are Administratively up
+Verification 1 : use "do show ip interface brief in Router CLI" to check the ports are Administratively Up
 
 
 
@@ -285,6 +297,15 @@ Verification 1 : use "do show ip interface brief in Router CLI" to check the por
 
 
 Verification 2 : Ping the PC's of cross LAN(2) to check whether they are communicating each other.
+
+
+ping 192.168.1.1 → Reply ✅(file attached)
+
+ping 192.168.1.2 → Reply ✅(file attached)
+
+ping 192.168.1.3 → Reply ✅
+
+
 
 
 
@@ -393,3 +414,59 @@ Verification 2 : Ping the PC's of cross LAN(2) to check whether they are communi
 
 
 <img width="1920" height="1080" alt="Screenshot (236)" src="https://github.com/user-attachments/assets/eac41364-b7f8-4391-b9b1-66913a1e7dc2" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User complaint: I can reach PCs in my own office but nothing in the other department works.
+
+Root cause: Router interfaces GigabitEthernet0/0 and Gi0/1 were administratively down no traffic could pass between LANs.
+
+Resolution: Ran no shutdown on both interfaces. Verified with show ip interface brief both ports up/up. Cross-LAN pings confirmed full connectivity restored.
