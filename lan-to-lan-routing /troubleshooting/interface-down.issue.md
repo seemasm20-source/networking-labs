@@ -3,9 +3,7 @@ Troubleshooting Issue-1
 
 
 
-Problem Summary
-
-
+📋 Problem Summary:-
 
 Issue : Devices in different LANs were unable to communicate.
 
