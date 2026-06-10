@@ -13,58 +13,74 @@ Author: Seema
 Date: May 2026
 
 
-📌 Objective
-
-
-This project simulates two office departments HR (LAN 1) and Finance (LAN 2) where a Cisco 2911 router acts as a DHCP server.
-
-Instead of manually assigning IPs, the router automatically assigns IP addresses, subnet masks, default gateways and DNS to all devices.
 
 
 
 
+ 📌 Objective
 
-💡 What is DHCP? 
+This project simulates a small enterprise network consisting of two departments:
 
+* HR (LAN 1)
+* Finance (LAN 2)
 
-DHCP stands for Dynamic Host Configuration Protocol.
+A Cisco 2911 router is configured as a DHCP server to automatically provide IP addresses and network configuration details to client devices across both LANs.
 
-It is a network management protocol used to automatically assign IP addresses and other crucial 
+The objective of this project is to demonstrate:
 
-communication settings (like subnet masks, default gateways, and DNS servers) to devices on a network, allowing them to communicate efficiently
+* DHCP configuration on a Cisco router
+* Automatic IP address assignment
+* Dynamic distribution of subnet masks, default gateways, and DNS settings
+* Basic network administration and troubleshooting
 
+---
 
-Without DHCP                   With DHCP
+## 💡 What is DHCP?
 
+DHCP (Dynamic Host Configuration Protocol) is a network protocol that automatically assigns IP addresses and other network settings to devices on a network.
 
-IT person manually types IP  → Router assigns IP automatically
+Without DHCP, administrators must manually configure every device with:
 
+* IP Address
+* Subnet Mask
+* Default Gateway
+* DNS Server
 
-Time consuming                  → Instant
+DHCP automates this process, reducing configuration errors and simplifying network management.
 
+| Without DHCP                        | With DHCP                             |
+| ----------------------------------- | ------------------------------------- |
+| Manual IP configuration             | Automatic IP assignment               |
+| Time-consuming setup                | Fast deployment                       |
+| Higher risk of configuration errors | Consistent and centralized management |
 
-Easy to make mistakes           → Consistent and accurate
+---
 
+## 🔄 DHCP Process (DORA)
 
+DHCP uses a four-step process known as **DORA**:
 
+### 1. Discover
 
-How It Works:
+The client broadcasts a request to locate a DHCP server.
 
+### 2. Offer
 
-When a device connects to a network, the protocol follows a four-step sequence known by the acronym DORA:
+The DHCP server responds with an available IP address.
 
+### 3. Request
 
- ⇒Discover: The device broadcasts a message to find a DHCP server.
+The client requests to use the offered IP address.
+
+### 4. Acknowledge
+
+The DHCP server confirms the lease and provides network configuration details.
+
  
- 
- ⇒Offer: The DHCP server receives the request and offers an available IP address to the device.
- 
- 
- ⇒Request: The device broadcasts a request to accept the offered IP address.
- 
- 
- ⇒Acknowledge: The server sends an acknowledgment confirming the assignment and granting a "lease" to use the address for a specific period
- 
+
+
+
+
 
 
 
@@ -75,6 +91,9 @@ When a device connects to a network, the protocol follows a four-step sequence k
 
 
 🖥️ Network Topology
+
+
+
 
 
 
