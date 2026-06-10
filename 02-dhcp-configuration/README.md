@@ -78,7 +78,10 @@ When a device connects to a network, the protocol follows a four-step sequence k
 
 
 
-                   ROUTER (Cisco 2911)
+
+
+
+                    ROUTER (Cisco 2911)
                   (DHCP server for both LANs)
                    /                        \
           Gi0/0                              Gi0/1
@@ -86,18 +89,37 @@ When a device connects to a network, the protocol follows a four-step sequence k
            |                                  |
     SWITCH 1 (2960)                    SWITCH 2 (2960)
    /      |       \                  /      |       \
- PC1     PC2    PC3(💻)           PC4     PC5    PC6(💻)
-(auto)  (auto)  (auto)           (auto)  (auto)  (auto)
+ PC1     PC2      PC3               PC4     PC5    PC6
 
-◄──────────── LAN 1 (HR) ────────────►
+
+
+
+
+
+ ◄──────────── LAN 1 (HR) ────────────►
+
   Network : 192.168.10.0/24
+  
   Gateway : 192.168.10.1
+  
   Pool    : 192.168.10.10 – 192.168.10.50
+  
 
 ◄──────────── LAN 2 (Finance) ───────►
+
   Network : 192.168.20.0/24
+  
   Gateway : 192.168.20.1
+  
   Pool    : 192.168.20.10 – 192.168.20.50
+
+
+ 
+
+
+
+
+                   
 
 
 
