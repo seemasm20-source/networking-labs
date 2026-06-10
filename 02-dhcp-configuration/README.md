@@ -93,7 +93,7 @@ When a device connects to a network, the protocol follows a four-step sequence k
 
 
 
-
+.
 
 
  ◄──────────── LAN 1 (HR) ────────────►
