@@ -11,7 +11,7 @@ Issue : Router Interface Was Administratively Down
 
 
 
-Cause : The router interfaces were disabled by default.
+Cause : The router interfaces were disabled manually
 
 
 
@@ -20,6 +20,18 @@ Cause : The router interfaces were disabled by default.
   
 
   Router(config-if)# shutdown
+
+
+
+
+What is shutdown/ Administratively down means in Router CLI?
+
+
+
+
+
+In a router CLI (such as Cisco IOS), "Administratively Down" means an interface has been manually disabled by a network administrator using the shutdown command, or it has never been enabled. It will not pass traffic until re-enabled.
+
 
   
 
