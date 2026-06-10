@@ -173,7 +173,40 @@ Device IP Addressing Information
 
 
 
+🔴 Issues Encountered
 
+Real problems faced during this lab full details
+
+in the troubleshooting folder.
+
+
+
+
+| Issue                           | Cause                                                     | File                                    |
+| ------------------------------- | --------------------------------------------------------- | --------------------------------------- |
+| PCs showing 169.254.x.x — APIPA | DHCP service disabled                                     | apipa-issues.md                |
+| DHCP Pool Exhaustion            | DHCP scope exhausted, no available IP addresses remaining | dhcp-pool-exhaustion.md |
+| Duplicate IP address conflict   | Static IP clashes with DHCP                               | ip-address-conflict.md  |
+
+
+
+
+
+
+
+📂 Project Files
+
+
+
+
+
+| Section              | Description                                               |
+| -------------------- | :-------------------------------------------------------: |
+| Topology             | Network diagram, IP table and build steps                 |
+| DHCP Config          | Full router CLI commands with explanation                 |
+| APIPA Issue          | 169.254.x.x — DHCP service disabled                       |
+| DHCP Pool Exhaustion | DHCP scope exhausted, no available IP addresses remaining |
+| IP Conflicts         | Static IP clashing with DHCP lease                        |
 
 
 
