@@ -297,9 +297,9 @@ Verification 1 : use "do show ip interface brief in Router CLI" to check the por
 Verification 2 : Ping the PC's of cross LAN(2) to check whether they are communicating each other.
 
 
-ping 192.168.1.1 → Reply ✅(file attached)
+ping 192.168.1.1 → Reply ✅
 
-ping 192.168.1.2 → Reply ✅(file attached)
+ping 192.168.1.2 → Reply ✅
 
 ping 192.168.1.3 → Reply ✅
 
@@ -413,6 +413,109 @@ ping 192.168.1.3 → Reply ✅
 
 <img width="1920" height="1080" alt="Screenshot (236)" src="https://github.com/user-attachments/assets/eac41364-b7f8-4391-b9b1-66913a1e7dc2" />
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (274)" src="https://github.com/user-attachments/assets/7d752467-57d8-44dd-a235-b518b5d67cab" />
 
 
 
