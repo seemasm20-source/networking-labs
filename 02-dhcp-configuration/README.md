@@ -182,11 +182,11 @@ in the troubleshooting folder.
 
 
 
-| Issue                           | Cause                                                     | File                                    |
-| ------------------------------- | --------------------------------------------------------- | --------------------------------------- |
-| PCs showing 169.254.x.x — APIPA | DHCP service disabled                                     | apipa-issues.md                |
-| DHCP Pool Exhaustion            | DHCP scope exhausted, no available IP addresses remaining | dhcp-pool-exhaustion.md |
-| Duplicate IP address conflict   | Static IP clashes with DHCP                               | ip-address-conflict.md  |
+| Issue                           | Cause                       | Fix                          | File          |
+| ------------------------------- | --------------------------- | ---------------------------- | ----          |
+| PCs Showing 169.254.x.x — APIPA | DHCP Service Disabled       | Service Dhcp + Recreate Pool |               |
+| DHCP Pool Exhaustion            | DHCP Scope Exhausted        | Show IP Dhcp Binding         |               |
+| Duplicate IP Address Conflict   | Static IP Clashes With DHCP | Change Static to DHCP        |               |
 
 
 
