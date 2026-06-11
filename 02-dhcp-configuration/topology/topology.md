@@ -348,6 +348,122 @@ Cable type: Copper Straight-Through for all connections
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Step:3  Set all Devices to DHCP mode
+
+
+
+
+
+
+Click each PC/Laptop → Desktop tab → IP Configuration
+
+
+Select: DHCP radio button
+
+IP will show 0.0.0.0 - correct for now
+
+
+Note: Router assigns IPs after DHCP pools are configured
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (297)" src="https://github.com/user-attachments/assets/5ff1a87c-f458-46ed-a594-85b4c3b4d995" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 📋 IP Address Plan
 
 
