@@ -243,7 +243,9 @@ Symptom
 
 
 
-🔧 Fix — Restore DHCP Service:
+🔧 Fix: 
+
+Restore DHCP Service
 
 
 Router# enable
