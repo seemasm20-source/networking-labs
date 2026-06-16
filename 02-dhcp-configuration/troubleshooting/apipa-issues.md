@@ -200,7 +200,7 @@ IPv4 Address  : 169.254.45.78  ← APIPA!
 
 Subnet Mask   : 255.255.255.0
 
-Default Gateway: 0.0.0.0
+Default Gateway: ------
 
 
 Symptom
@@ -246,7 +246,7 @@ Symptom
 🔧 Fix — Restore DHCP Service:
 
 
-
+Router# enable
 Router# configure terminal
 
 ! === Fix APIPA Issue ===
@@ -273,7 +273,34 @@ Router# write memory
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <img width="1920" height="1080" alt="Screenshot (305)" src="https://github.com/user-attachments/assets/64185be0-9b54-4d62-b3e6-c8dcf1d162a6" />
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -334,9 +361,11 @@ Expected after fix:
 
 IPv4 Address   : 192.168.10.10  
 
+Subnet Mask   : 255.255.255.0
+
 Default Gateway: 192.168.10.1
 
-Subnet Mask   : 255.255.255.0
+
 
 
 
