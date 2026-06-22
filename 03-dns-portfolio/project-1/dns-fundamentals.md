@@ -69,19 +69,24 @@ Step 6 — Website loads
 
 
 
-C:\> ipconfig /all
+1. C:\> ipconfig /all
+ 
 Shows DNS server currently on your PC
 
-C:\> nslookup google.com
+2. C:\> nslookup google.com
+ 
 Queries DNS — returns IP for that name
 
-C:\> ping google.com     ← uses DNS to resolve first
+3. C:\> ping google.com     ← uses DNS to resolve first
+ 
 C:\> ping 8.8.8.8        ← bypasses DNS completely
 
 Key rule:
+
 ping by IP works + ping by name fails = DNS problem
 
-C:\> ipconfig /displaydns   ← view cache
+4. C:\> ipconfig /displaydns   ← view cache
+ 
 C:\> ipconfig /flushdns     ← clear cache
 
 
