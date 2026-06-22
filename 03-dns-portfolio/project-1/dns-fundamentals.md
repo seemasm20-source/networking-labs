@@ -45,6 +45,12 @@ Step 6 — Website loads
 
 
 
+
+
+
+
+
+
 📚 Key DNS Terms
 
 
@@ -60,6 +66,11 @@ Step 6 — Website loads
 | TTL            | How long a DNS answer stays cached  |
 | Forward Lookup | Name → IP address                   |
 | Reverse Lookup | IP address → Name                   |
+
+
+
+
+
 
 
 
@@ -88,6 +99,11 @@ ping by IP works + ping by name fails = DNS problem
 4. C:\> ipconfig /displaydns   ← view cache
  
 C:\> ipconfig /flushdns     ← clear cache
+
+
+
+
+
 
 
 
