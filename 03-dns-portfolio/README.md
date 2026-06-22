@@ -16,7 +16,7 @@
 
    📌 What is This Portfolio?
    
-Hands-on DNS troubleshooting scenarios built and tested on a Windows machine. Every scenario is a real Tier 1 support incident — with user complaint, root cause, fix, verification 
+Hands-on DNS troubleshooting scenarios built and tested on a Windows machine. Every scenario is a real Tier 1 support incident with user complaint, root cause, fix, verification 
 
 and real-world ticket.
 
@@ -35,6 +35,11 @@ and real-world ticket.
 
 
 📁 Portfolio Structure:
+
+
+
+
+
 
 
 
@@ -61,7 +66,13 @@ and real-world ticket.
 
 
 
+
+
 🎯 Real-World Tier 1 Tickets Covered
+
+
+
+
 
 
 
@@ -86,6 +97,10 @@ and real-world ticket.
 
 
 📋 Key Commands Quick Reference
+
+
+
+
 
 
 
