@@ -1,7 +1,10 @@
+
+
 🔴 Project 2 — DNS Troubleshooting Lab
 
-5 Scenarios
-Real Tier 1 Incidents
+    5 Scenarios
+   Real Tier 1 Incidents
+
 
 
 
@@ -22,11 +25,20 @@ Real Tier 1 Incidents
 
 
 
+
+
+
+
+
 How to make DNS Server Unavailable?
 
 Objective: Simulate a DNS failure on a Windows 11 machine and troubleshoot the issue using basic networking tools. The computer was unable to resolve domain names because an 
 
 invalid DNS server address was configured. Users experienced issues accessing websites using domain names such as www.google.com
+
+
+
+
 
 
 
@@ -47,7 +59,15 @@ Command-Line Tool: Command Prompt
 
 
 
+
+
+
+
 Steps to Simulate the Issue:
+
+
+
+
 
 
 Step 1: Configure an Invalid DNS Server
@@ -65,8 +85,7 @@ Network and Internet → Network and Sharing Center → Change Adapter Settings
 5.Double-click Internet Protocol Version 4 (TCP/IPv4).
 
 6. Select: Use the following DNS server addresses
-
-                
+       
 
 7. Enter an invalid DNS server address
 
@@ -80,9 +99,13 @@ Network and Internet → Network and Sharing Center → Change Adapter Settings
 
 
 
+
+
+
+
 Step 2: Disable IPv6
 
-1. Open Network Adapter Properties.
+1. Open Network Adapter Properties
 
 2. Uncheck: Internet Protocol Version 6 (TCP/IPv6)
 
