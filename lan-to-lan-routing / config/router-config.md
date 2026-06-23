@@ -1,6 +1,6 @@
- Router Configuration
+ ## Router Configuration
 
-Overview:
+## Overview:
 
 The Cisco 2911 router is configured with two interfaces
 one facing HR (LAN 1) and one facing Finance (LAN 2).
@@ -44,7 +44,7 @@ Note- Every command only works at its correct level. If a command has no effect 
 
 
 
-Router Configuration Commands:
+## Router Configuration Commands:
 
 
 
@@ -200,7 +200,7 @@ Note:  The default gateway on every PC is the router's IP address on that PC's s
 
 
 
-What Each Command Does in CLI:
+## What Each Command Does in CLI:
 
 
 
@@ -229,7 +229,7 @@ What Each Command Does in CLI:
 
 
 
-Verification Commands
+## Verification Commands
 After configuration run show ip interface brief command to confirm everything is working correctly:
 
 
