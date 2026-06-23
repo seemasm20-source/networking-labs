@@ -1,14 +1,14 @@
 
-Troubleshooting Issue-1
+## Troubleshooting Issue-1
 
 
 
-📋 Problem Summary:-
+## 📋 Problem Summary:-
 
-Issue : Devices in different LANs were unable to communicate.
+## Issue : Devices in different LANs were unable to communicate.
 
 
-Cause : Router interface GigabitEthernet0/0 was Administratively shut down.
+## Cause : Router interface GigabitEthernet0/0 was Administratively shut down.
 
 
 
@@ -21,7 +21,7 @@ Cause : Router interface GigabitEthernet0/0 was Administratively shut down.
 
 
 
-What is shutdown/ Administratively down means in Router CLI?
+## What is shutdown/ Administratively down means in Router CLI?
 
 
 
@@ -118,7 +118,7 @@ ping 192.168.1.3  → Request timed out ❌
 
 
 
-Fix: Changed shutdown to "no shutdown" in Router CLI of both the ports GigabitEthernet0/0 and GigabitEthernet0/1
+## Fix: Changed shutdown to "no shutdown" in Router CLI of both the ports GigabitEthernet0/0 and GigabitEthernet0/1
 
 
 
@@ -234,7 +234,7 @@ Fix: Changed shutdown to "no shutdown" in Router CLI of both the ports GigabitEt
 
 
 
-Verification 1 : use "do show ip interface brief in Router CLI" to check the ports are Administratively Up
+## Verification 1 : use "do show ip interface brief in Router CLI" to check the ports are Administratively Up
 
 
 
@@ -294,7 +294,7 @@ Verification 1 : use "do show ip interface brief in Router CLI" to check the por
 
 
 
-Verification 2 : Ping the PC's of cross LAN(2) to check whether they are communicating each other.
+## Verification 2 : Ping the PC's of cross LAN(2) to check whether they are communicating each other.
 
 
 ping 192.168.1.1 → Reply ✅
