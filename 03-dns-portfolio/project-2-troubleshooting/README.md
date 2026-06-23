@@ -30,11 +30,89 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 How to make DNS Server Unavailable?
 
-Objective: Simulate a DNS failure on a Windows 11 machine and troubleshoot the issue using basic networking tools. The computer was unable to resolve domain names because an 
+Objective: Simulate a DNS failure on a Windows 11 machine and troubleshoot the issue using basic networking tools. 
 
-invalid DNS server address was configured. Users experienced issues accessing websites using domain names such as www.google.com
+The computer was unable to resolve domain names because an invalid DNS server address was configured. 
+
+Users experienced issues accessing websites using domain names such as www.google.com.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,28 +150,26 @@ Steps to Simulate the Issue:
 
 Step 1: Configure an Invalid DNS Server
 
-1. Open Control Panel.
+1. Press Windows + I → Network and Internet
 
-2. Navigate to:
+2. Navigate to your active connection (Wi-fi or Ethernet)
 
-Network and Internet → Network and Sharing Center → Change Adapter Settings
+3. Click on Wi-fi
 
-3.Right-click the active network adapter.
+4. Click on Hardware Properties.
 
-4. Select Properties.
-   
-5.Double-click Internet Protocol Version 4 (TCP/IPv4).
+5. Click on DNS server assignment → Edit → Choose manual → Enable IPV4
 
-6. Select: Use the following DNS server addresses
+6. Enter Invalid DNS Server Address:
+
+   Preferred DNS Server: 0.0.0.0
+
+   Alternate DNS Server: 0.0.0.0
+
+9. Click Save & close all windows.
+
+
        
-
-7. Enter an invalid DNS server address
-
-   Preferred DNS Server: 10.10.10.10
-
-   Alternate DNS Server: 10.10.10.10
-
-8. Click OK and Save & close all windows.
 
 
 
@@ -105,8 +181,11 @@ Network and Internet → Network and Sharing Center → Change Adapter Settings
 
 Step 2: Disable IPv6
 
-1. Open Network Adapter Properties
+1. Press Win + R →  type ncpa.cpl
 
-2. Uncheck: Internet Protocol Version 6 (TCP/IPv6)
+2. Right click your Active Network Adapter
 
-3. Click OK.
+3. Properties  → Uncheck Internet Protocol Version 6 ( TCP/IPV6 )
+
+4. Click OK
+
