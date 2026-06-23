@@ -1,4 +1,4 @@
-🖥️ Network Topology
+## 🖥️ Network Topology
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-🔧 Devices Used
+## 🔧 Devices Used
 
 | Device Model      | Quantity | Purpose                       |
 | ----------------- | -------: | ----------------------------- |
@@ -54,7 +54,7 @@
 
 
 
-Step 2 — Connect Cables
+## Step 2 — Connect Cables
 Cable type: Copper Straight-Through for all connections
 
 
@@ -95,7 +95,7 @@ Cable type: Copper Straight-Through for all connections
 
 
 
-Step 3 — Assign IPs to All PCs
+## Step 3 — Assign IPs to All PCs
 Click each PC → Desktop tab → IP Configuration → Static
 
 
