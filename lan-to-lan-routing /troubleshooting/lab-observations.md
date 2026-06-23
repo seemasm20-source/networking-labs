@@ -1,6 +1,6 @@
 
 
-Lab Observations:
+## Lab Observations:
 
 
 These are personal observations and discoveries made while building this lab.
@@ -21,7 +21,7 @@ Each one taught a real networking concept relevantto IT Help Desk Tier 1 support
 
 
 
- Observation: 1
+## Observation: 1
 
 
  Default Gateway is Only Needed for Cross-LAN Traffic.
@@ -63,7 +63,7 @@ fail without a gateway already set.
 
 
 
-Observation: 2 
+## Observation: 2 
 
 
 Shutdown Command Had No Effect on Same-LAN Ping
@@ -105,7 +105,7 @@ Note: Switches handle same-LAN traffic independently. The router is only involve
 
 
 
-Observation : 3
+## Observation : 3
 
 
 
