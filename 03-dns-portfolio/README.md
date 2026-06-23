@@ -1,8 +1,8 @@
-    🌐 DNS Portfolio — IT Help Desk Tier 1
+          🌐 DNS Portfolio — IT Help Desk Tier 1
               
-        Author: Seema              Windows 10/11
+           Author: Seema              Windows 10/11
                  
-        IT Help Desk Tier 1        June 2026
+           IT Help Desk Tier 1        June 2026
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-   📌 What is This Portfolio?
+  ## 📌 What is This Portfolio?
    
 Hands-on DNS troubleshooting scenarios built and tested on a Windows machine. Every scenario is a real Tier 1 support incident with user complaint, root cause, fix, verification 
 
@@ -34,7 +34,7 @@ and real-world ticket.
 
 
 
-📁 Portfolio Structure:
+## 📁 Portfolio Structure:
 
 
 
@@ -68,7 +68,7 @@ and real-world ticket.
 
 
 
-🎯 Real-World Tier 1 Tickets Covered
+## 🎯 Real-World Tier 1 Tickets Covered
 
 
 
@@ -96,7 +96,7 @@ and real-world ticket.
 
 
 
-📋 Key Commands Quick Reference
+## 📋 Key Commands Quick Reference
 
 
 
