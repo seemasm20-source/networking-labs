@@ -1,9 +1,9 @@
 
 
-🔴 Project 2 — DNS Troubleshooting Lab
+## 🔴 Project 2 — DNS Troubleshooting Lab
 
-    5 Scenarios
-   Real Tier 1 Incidents
+    ## 5 Scenarios
+   ## Real Tier 1 Incidents
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-How to make DNS Server Unavailable?
+## How to make DNS Server Unavailable?
 
 Objective: Simulate a DNS failure on a Windows 11 machine and troubleshoot the issue using basic networking tools. 
 
@@ -121,7 +121,7 @@ Users experienced issues accessing websites using domain names such as www.googl
 
 
 
-Environment used:
+## Environment used:
 
 Operating System: Windows 11
 
@@ -141,14 +141,14 @@ Command-Line Tool: Command Prompt
 
 
 
-Steps to Simulate the Issue:
+## Steps to Simulate the Issue:
 
 
 
 
 
 
-Step 1: Configure an Invalid DNS Server
+## Step 1: Configure an Invalid DNS Server
 
 1. Press Windows + I → Network and Internet
 
@@ -179,7 +179,7 @@ Step 1: Configure an Invalid DNS Server
 
 
 
-Step 2: Disable IPv6
+## Step 2: Disable IPv6
 
 1. Press Win + R →  type ncpa.cpl
 
