@@ -1,13 +1,13 @@
-Troubleshooting - Issue 2  
+## Troubleshooting - Issue 2  
 
 
-Issue - PC's Could Not Communicate Between LANs
+## Issue - PC's Could Not Communicate Between LANs
 
 
 
 
 
-📋 Problem Summary:-
+## 📋 Problem Summary:-
 
 
 
@@ -23,7 +23,7 @@ between HR (LAN 1) and Finance (LAN 2) while same-LAN communication remained una
 
 
 
-🔍 Cause:-
+## 🔍 Cause:-
 
 
 
@@ -47,7 +47,7 @@ Default GW   : (empty)        ❌ missing
 
 
 
-What is a Default Gateway?
+## What is a Default Gateway?
 
 The default gateway is the router's IP address on that PC's side of the network. It is the PC's exit door to reach other networks.
 
@@ -174,7 +174,7 @@ Without it the PC is stuck inside its own LAN.
 
 
 
-Key learning:
+## Key learning:
 
 
 Gateway is only needed when traffic leaves the local network. Same-LAN traffic goes through switch directly
@@ -334,7 +334,7 @@ gateway is never consulted. Cross-LAN traffic must exit through the router  gate
 
 
 
-🔧 Fix :-
+## 🔧 Fix :-
 
 
 Added the correct default gateway on all PCs:
@@ -548,7 +548,7 @@ respective gateway addresses from the table above.
 
 
 
-✅ Verification:-
+## ✅ Verification:-
 Cross-LAN pings confirmed communication fully restored
 after adding correct gateway on all PCs:
 
