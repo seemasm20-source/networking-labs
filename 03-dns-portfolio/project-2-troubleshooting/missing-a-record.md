@@ -177,7 +177,7 @@ In a production environment, additional verification would include testing conne
 ## 🔧 Fix
     Escalate to Tier 2 to add A Record in DNS Manager.
 
-    Provide:
+    Provide:-
 
   Hostname  : server01
    
