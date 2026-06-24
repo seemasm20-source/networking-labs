@@ -1,5 +1,5 @@
 
-## 🔴 Scenario 1 — Missing A Record
+## 🔴 Scenario 1 - Missing A Record
 
 
 
@@ -238,7 +238,176 @@ ping server01
 * `ping server01` succeeds.
 * Users can access the server using its hostname.
 
-### Expected Outcome
+
+
+
+
+
+
+
+Expected Outcome
 
 The hostname can be resolved successfully through DNS, confirming that the missing A Record issue has been resolved.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Issue Summary
+
+
+
+
+
+
+
+
+
+
+
+
+
+| Issue                                  | Symptom                               | Diagnose                               | Fix                                          | Verified                      |
+| -------------------------------------- | ------------------------------------- | -------------------------------------- | -------------------------------------------- | :---------------------------: |
+| Server reachable by IP but not by name | ping by name fails & ping by IP works | nslookup returns Non-existent domain | Add A Record in DNS / hosts file temporarily | nslookup returns correct IP ✅ |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User complaint
+"I cannot connect to our file server by name. The IP address works fine."
+
+Root cause
+A Record missing in DNS, hostname has no IP address entry in DNS database.
+
+Resolution
+Confirmed with nslookup Non-existent domain error. Added temporary hosts file entry. Escalated to Tier 2 to create permanent A Record. Verified with nslookup after fix.
