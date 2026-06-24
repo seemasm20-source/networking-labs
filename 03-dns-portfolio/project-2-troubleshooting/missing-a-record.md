@@ -17,14 +17,14 @@ User can reach a server by IP address but cannot reach it by name. All other web
 
 Users were unable to access the server using the hostname **server01**. DNS could not resolve the hostname because the required **A Record** was missing or unavailable.
 
-As a result, name-based access failed even though network connectivity to a reachable IP address on the network was functional.
+As a result, name based access failed even though network connectivity to a reachable IP address on the network was functional.
 
 ### Symptoms
 
 ```plaintext
-ping server01      ← Failed (hostname could not be resolved)
+ping server01     → Failed (hostname could not be resolved)
 
-ping 192.168.0.1   ← Successful (IP connectivity confirmed)
+ping 192.168.0.1  → Successful (IP connectivity confirmed)
 ```
 
 
