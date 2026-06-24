@@ -259,6 +259,8 @@ Since all available addresses are already leased, PC7 will not receive an IP add
 
 ## Step:4 
 
+
+
 type show ip dhcp binding
 
 This displays all IP addresses that the DHCP server has leased to clients.
@@ -387,13 +389,18 @@ PC7 cannot obtain an IP address because the DHCP pool is exhausted. PC gets APIP
 
 
 
-Fix the Problem
+## Fix the Problem
 
 Increase the available range:
 
 Router(config)# no ip dhcp excluded-address 192.168.20.13 192.168.20.254
 
 Router(config)# ip dhcp excluded-address 192.168.20.21 192.168.20.254
+
+
+
+
+Router Configuration:
 
 Router>enable
 
@@ -413,14 +420,12 @@ Router(dhcp-config)#dns-server 8.8.8.8
 
 Router(dhcp-config)#exit
 
-Router(config)#exit
 
 
 
 
 Now DHCP can assign:
 
-192.168.20.10 - 192.168.20.20
 
 192.168.20.10 - 192.168.20.20
 
@@ -586,7 +591,7 @@ Default Gateway : 192.168.20.1    ✅ gateway present
 
 ## Step : 8
 
-Verification-1
+## Verification-1
 
 
 
@@ -713,8 +718,10 @@ Fix- Expanded pool by reducing excluded-address range
 
 Verified -ipconfig /renew → IP assigned ✅ ping successful ✅
 
-
-
+| Issue                            | Cause                      | Symptom                        | Fix                                              | Verified                        |
+| -------------------------------- | -------------------------- | ------------------------------ | ------------------------------------------------ | :-----------------------------: |
+| 1.    New PC cannot get IP        | DHCP Pool Exhausted        | Only new device fails          | Expanded Pool by reducing Excluded-Address Range | ipconfig /renew → IP   Assigned ✅ |
+| 2.   Shows 0.0.0.0 or 169.254.x.x | No IPs available to assign | All existing devices work fine | -                                                |  Ping Successful ✅              |           |
 
 
 
