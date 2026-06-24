@@ -1,4 +1,4 @@
- Troubleshooting Issue 1 — APIPA (169.254.x.x) Error
+## Troubleshooting Issue 1 — APIPA (169.254.x.x) Error
 
 
 
@@ -6,7 +6,7 @@
 
 
 
- 📋 Problem Summary
+ ## 📋 Problem Summary
  
 PCs in HR Department (LAN 1) showing APIPA address 169.254.x.x with no internet access. DHCP service on the router was disabled, no IPs assigned automatically.
 
@@ -17,7 +17,7 @@ PCs in HR Department (LAN 1) showing APIPA address 169.254.x.x with no internet 
 
 
 
-What is APIPA?
+## What is APIPA?
 
 When a PC cannot reach a DHCP server it self-assigns a temporary 169.254.x.x address. This IP cannot communicate with any other device on the network.
 
@@ -26,7 +26,7 @@ When a PC cannot reach a DHCP server it self-assigns a temporary 169.254.x.x add
 
 
 
-🔧 How to Create the Problem:
+## 🔧 How to Create the Problem:
 
 ```
 Router> enable
@@ -105,7 +105,7 @@ Router# write memory
 
 
 
- Impact:
+ ## Impact:
 
 DHCP disabled → No IP address lease received → Windows assigns an APIPA address (`169.254.x.x`) → Network connectivity is limited or unavailable.
 
@@ -183,7 +183,7 @@ DHCP disabled → No IP address lease received → Windows assigns an APIPA addr
 
 
 
-🔎 Verify the APIPA Issue:
+## 🔎 Verify the APIPA Issue:
 
 
 On affected PC → Desktop → Command Prompt:
@@ -243,7 +243,7 @@ Symptom
 
 
 
-🔧 Fix: 
+## 🔧 Fix: 
 
 Restore DHCP Service
 
@@ -486,7 +486,7 @@ Default Gateway: 192.168.10.1
 
 
 
-📋 Quick Summary Table:
+## 📋 Quick Summary Table:
 
 
 
