@@ -1,23 +1,23 @@
-networking-labs / dhcp-configuration / README.md
+## networking-labs / dhcp-configuration / README.md
 
-🌐 DHCP Server Configuration using Cisco Router
-
-
-
-Portfolio: Networking Labs-DHCP Configuration
-
-Tool: Cisco Packet Tracer
-
-Author: Seema
-
-Date: May 2026
+## 🌐 DHCP Server Configuration using Cisco Router
 
 
+
+## Portfolio: Networking Labs-DHCP Configuration
+
+## Tool: Cisco Packet Tracer
+
+## Author: Seema
+
+## Date: May 2026
 
 
 
 
- 📌 Objective
+
+
+ ## 📌 Objective
 
 This project simulates a small enterprise network consisting of two departments:
 
@@ -90,7 +90,7 @@ The DHCP server confirms the lease and provides network configuration details.
 
 
 
-🖥️ Network Topology
+## 🖥️ Network Topology
 
 
 
@@ -135,7 +135,7 @@ The DHCP server confirms the lease and provides network configuration details.
 
 
 
-📋 IP Address Plan
+ 📋 IP Address Plan
 
    Router Interfaces manually configured
 
@@ -147,7 +147,7 @@ The DHCP server confirms the lease and provides network configuration details.
 
 
 
-Device IP Addressing Information
+ Device IP Addressing Information
 
 
 
@@ -162,7 +162,7 @@ Device IP Addressing Information
 
                                                            
                                                               
-🔧 Devices Used
+ 🔧 Devices Used
 
 
 | Device | Model          | Quantity | Purpose                                                |
@@ -177,7 +177,7 @@ Device IP Addressing Information
 
 
 
- 🛠️ Technologies Used
+  🛠️ Technologies Used
 
 
 
@@ -192,7 +192,7 @@ Device IP Addressing Information
 
 
 
-🔴 Issues Encountered
+ 🔴 Issues Encountered
 
 Real problems faced during this lab full details
 
@@ -213,7 +213,7 @@ in the troubleshooting folder.
 
 
 
-📂 Project Files
+ 📂 Project Files
 
 
 
@@ -233,7 +233,7 @@ in the troubleshooting folder.
 
 
 
-🎯  Real-World Help Desk Relevance
+ 🎯  Real-World Help Desk Relevance
 
 
 | Users complaint                    | Root Cause            | Fix                          |
@@ -248,7 +248,7 @@ in the troubleshooting folder.
 
 
 
-📚 Skills Demonstrated
+ 📚 Skills Demonstrated
 
 
 1.Cisco 2911 router configured as DHCP server via CLI
@@ -269,7 +269,7 @@ in the troubleshooting folder.
 
 
 
-🎓 Learning Outcome
+   🎓 Learning Outcome
 
 This project provided hands-on experience configuring a Cisco router as a DHCP server across two LANs. It
 
