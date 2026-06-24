@@ -13,25 +13,29 @@ User can reach a server by IP address but cannot reach it by name. All other web
 
 
 
-
-
-
-
-
-
-
-
-
 ## 🔍 Issue
 
-An A Record for the server hostname does not exist in DNS. DNS has no answer when asked "what is the IP for server01?"
+Users were unable to access the server using the hostname **server01**. DNS could not resolve the hostname because the required **A Record** was missing or unavailable.
+
+As a result, name-based access failed even though network connectivity to a reachable IP address on the network was functional.
+
+### Symptoms
+
+```plaintext
+ping server01      ← Failed (hostname could not be resolved)
+
+ping 192.168.0.1   ← Successful (IP connectivity confirmed)
+```
 
 
 
 
-ping server01       ← fails — no DNS record
 
-ping 192.168.0.1  ← works — IP direct
+
+
+
+
+
 
 
 
@@ -43,28 +47,27 @@ ping 192.168.0.1  ← works — IP direct
 
 C:\> ping server01
 
-Ping request could not find host server01.
+Ping request could not find host server01
+
+Please check the name and try again.
 
 C:\> nslookup server01
 
-*** dns.google can't find server01: Non-existent domain
+*** No A or AAAA records available for server01
 
-C:\> ping 192.168.10.50
+Findings:
 
+The hostname server01 could not be resolved.
 
-Reply from 192.168.10.50: bytes=32 time<1ms TTL=128
+DNS did not return an A Record or AAAA Record.
 
+The issue appears to be related to DNS name resolution.
 
+Lab Limitation:
 
+This home lab does not contain a production DNS environment or an actual server named server01. The scenario demonstrates the troubleshooting methodology used to identify a potential missing DNS A Record.
 
-
-
-
-
-
-
-
-Key Diagnostic: Ping by IP works ✅ but ping by name fails ❌ — DNS record is missing, not a connectivity issue.
+In a production environment, additional verification would include testing connectivity directly to the server's IP address to confirm that network connectivity is working while DNS name resolution is failing.
 
 
 
@@ -85,6 +88,7 @@ Key Diagnostic: Ping by IP works ✅ but ping by name fails ❌ — DNS record i
 
 
 
+<img width="1920" height="1080" alt="Screenshot (342)" src="https://github.com/user-attachments/assets/37e5aae0-6e69-4994-9fec-ad594d819aa6" />
 
 
 
@@ -101,7 +105,18 @@ Key Diagnostic: Ping by IP works ✅ but ping by name fails ❌ — DNS record i
 
 
 
-<img width="1920" height="1080" alt="Screenshot (338)" src="https://github.com/user-attachments/assets/8d03868c-4ce7-4c78-a58f-68f3ec482118" />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,7 +181,7 @@ Key Diagnostic: Ping by IP works ✅ but ping by name fails ❌ — DNS record i
 
   Hostname  : server01
    
-  IP Address: 192.168.0.1
+  IP Address: 192.168.10.50
   
   DNS Zone  : company.local
   
@@ -197,18 +212,28 @@ Key Diagnostic: Ping by IP works ✅ but ping by name fails ❌ — DNS record i
 
 ## ✅ Verification and Validation
 
-After the DNS Administrator created the A Record for server01, DNS resolution was tested using nslookup and ping.
 
-Commands Used:
 
+After the DNS Administrator creates the required A Record for **server01** the following validation steps should be performed.
+
+### Commands Used
+
+```cmd
 nslookup server01
+```
 
+```cmd
 ping server01
+```
 
-Results:
+### Expected Results
 
-- Hostname successfully resolved to 192.168.0.1
-- Ping by hostname succeeded.
-- Users were able to access the server normally.
+* DNS successfully resolves the hostname **server01** to its assigned IP address.
+* `nslookup` returns the correct A Record.
+* `ping server01` succeeds.
+* Users can access the server using its hostname.
 
-Issue resolved successfully.
+### Expected Outcome
+
+The hostname can be resolved successfully through DNS, confirming that the missing A Record issue has been resolved.
+
