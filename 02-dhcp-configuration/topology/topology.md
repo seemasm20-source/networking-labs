@@ -2,7 +2,7 @@
 
 
 
-🖥️ Network Topology
+## 🖥️ Network Topology
 
 
 
@@ -111,7 +111,7 @@
 
 
 
-🔧 Devices Used
+## 🔧 Devices Used
 
 
 
@@ -159,7 +159,7 @@
 
 
 
-⚙️ Step-by-Step Build Guide
+## ⚙️ Step-by-Step Build Guide
 
 
 
@@ -168,7 +168,7 @@
 
 
 
- Step:1  Add Devices to Canvas
+ ## Step:1  Add Devices to Canvas
 
 
 
@@ -218,7 +218,7 @@
 
 
 
-Step :2   Connect Cables
+## Step :2   Connect Cables
 
 
 
@@ -366,7 +366,7 @@ Cable type: Copper Straight-Through for all connections
 
 
 
-Step:3  Set all Devices to DHCP mode
+## Step:3  Set all Devices to DHCP mode
 
 
 
@@ -464,7 +464,7 @@ Note: Router assigns IPs after DHCP pools are configured
 
 
 
-📋 IP Address Plan
+## 📋 IP Address Plan
 
 
 
