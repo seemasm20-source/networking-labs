@@ -63,7 +63,12 @@ DNS did not return an A Record or AAAA Record.
 
 The issue appears to be related to DNS name resolution.
 
-Lab Limitation:
+
+
+
+
+
+## Lab Limitation:
 
 This home lab does not contain a production DNS environment or an actual server named server01. The scenario demonstrates the troubleshooting methodology used to identify a potential missing DNS A Record.
 
