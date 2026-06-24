@@ -1,9 +1,9 @@
 
-Troubleshooting Issue- 2 
+## Troubleshooting Issue- 2 
 
 
 
-📋 Problem Summary
+## 📋 Problem Summary
 
 A new PC connects to the network but cannot receive an IP address. The DHCP pool has run out of available addresses all IPs are already assigned to existing devices. The new PC 
 
@@ -59,10 +59,10 @@ When a new device (PC7) requests an IP address, the DHCP server cannot provide o
 
 
 
-🔧 How to Create the Problem in Packet Tracer:
+## 🔧 How to Create the Problem in Packet Tracer:
 
 
- Step 1 :
+ ## Step 1 :
  
 Set up normal DHCP first
 
@@ -176,7 +176,7 @@ PC6 gets 192.168.20.12
 
 
 
-Step: 2
+## Step: 2
 
 Shrink the pool to simulate exhaustion
 
@@ -228,7 +228,7 @@ Router# write memory
 
 
 
-Step 3:
+## Step 3:
 
 
 
@@ -257,7 +257,7 @@ Since all available addresses are already leased, PC7 will not receive an IP add
 
 
 
-Step:4 
+## Step:4 
 
 type show ip dhcp binding
 
@@ -324,7 +324,7 @@ Note: This confirms that all available DHCP addresses are already leased.
 
 
 
-Step:5 
+## Step:5 
 
 
 Add new PC → PC7 in LAN B
@@ -382,7 +382,7 @@ PC7 cannot obtain an IP address because the DHCP pool is exhausted. PC gets APIP
 
 
 
-Step:6 
+## Step:6 
 
 
 
@@ -473,7 +473,7 @@ PC7 should receive: 192.168.20.13
 
 
 
-Step : 7
+## Step : 7
 
 
 Renew IP ON the new PC7
@@ -584,7 +584,7 @@ Default Gateway : 192.168.20.1    ✅ gateway present
 
 
 
-Step : 8
+## Step : 8
 
 Verification-1
 
@@ -632,7 +632,7 @@ Now shows multiple entries — new PC has an IP ✅
 
 
 
-Verification-2
+## Verification-2
 
 
 
@@ -701,7 +701,7 @@ Expected: Reply from 192.168.20.1   ✅
 
 
 
-📋 Issue Summary
+## 📋 Issue Summary
 
 Issue  -  New PC cannot get IP — shows 0.0.0.0 or 169.254.x.x
 
