@@ -1,5 +1,5 @@
 
-Troubleshooting Issue-3
+## Troubleshooting Issue-3
 
 
 IP Address Conflict (Static vs DHCP)
@@ -9,7 +9,7 @@ IP Address Conflict (Static vs DHCP)
 
 
 
-📋 Problem Summary
+## 📋 Problem Summary
 
 PC2 manually assigned static IP 192.168.10.10 , same IP DHCP had already assigned to PC1. IP conflict caused intermittent failures for both devices.
 
@@ -17,7 +17,7 @@ PC2 manually assigned static IP 192.168.10.10 , same IP DHCP had already assigne
 
 
 
-🔧 Router Configuration
+## 🔧 Router Configuration
 
 
 
@@ -59,7 +59,7 @@ write memory
 
 
 
-Step 1: Verify DHCP is Working
+## Step 1: Verify DHCP is Working
 
 On PC1, navigate to:
 
@@ -284,7 +284,7 @@ Both devices are using the same IP address, creating an **IP address conflict** 
 
 
 
-🔎 Troubleshooting Process:
+## 🔎 Troubleshooting Process:
 
 
 
@@ -322,7 +322,7 @@ PC2 IPv4 Address : 192.168.10.10
 
 
 
-Impact:
+## Impact:
 
 1.Intermittent connectivity
 
@@ -345,7 +345,7 @@ Impact:
 
 
 
-Resolution
+## Resolution
 
 To resolve the IP address conflict, change PC2 from a static IP configuration to DHCP.
 
@@ -651,7 +651,7 @@ PC2 IPv4 Address : 192.168.10.11
 
 
 
-📋 Issue Summary:
+## 📋 Issue Summary:
 
 
 
