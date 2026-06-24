@@ -5,9 +5,9 @@
 
 ## 📋 Problem Summary
 
-A new PC connects to the network but cannot receive an IP address. The DHCP pool has run out of available addresses all IPs are already assigned to existing devices. The new PC 
+A new PC connects to the network but cannot receive an IP address. The DHCP pool has run out of available addresses all IPs are already assigned to existing devices. 
 
-shows 0.0.0.0 or self-assigns a 169.254.x.x APIPA address.
+The new PC shows 0.0.0.0 or self-assigns a 169.254.x.x APIPA address.
 
 
 
@@ -599,7 +599,7 @@ Default Gateway : 192.168.20.1    ✅ gateway present
 
 Router# show ip dhcp binding
 
-Now shows multiple entries — new PC has an IP ✅
+Now shows multiple entries-new PC has an IP ✅
 
 
 
@@ -708,20 +708,19 @@ Expected: Reply from 192.168.20.1   ✅
 
 ## 📋 Issue Summary
 
-Issue  -  New PC cannot get IP — shows 0.0.0.0 or 169.254.x.x
 
-Cause  - DHCP pool exhausted — no IPs available to assign
-
-Symptom - Only new device fails — all existing devices work fine
-
-Fix- Expanded pool by reducing excluded-address range
-
-Verified -ipconfig /renew → IP assigned ✅ ping successful ✅
 
 | Issue                            | Cause                      | Symptom                        | Fix                                              | Verified                        |
 | -------------------------------- | -------------------------- | ------------------------------ | ------------------------------------------------ | :-----------------------------: |
 | 1.    New PC cannot get IP        | DHCP Pool Exhausted        | Only new device fails          | Expanded Pool by reducing Excluded-Address Range | ipconfig /renew → IP   Assigned ✅ |
 | 2.   Shows 0.0.0.0 or 169.254.x.x | No IPs available to assign | All existing devices work fine | -                                                |  Ping Successful ✅              |           |
+
+
+
+
+
+
+
 
 
 
