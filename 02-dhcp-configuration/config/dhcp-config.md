@@ -1,4 +1,4 @@
-⚙️ DHCP Configuration
+## ⚙️ DHCP Configuration
 
 
 
@@ -36,7 +36,7 @@ Cisco CLI Levels — Quick Reference:
 
 
 
-Complete Router Configuration:
+## Complete Router Configuration:
 
 
 
@@ -183,7 +183,7 @@ Router# write memory
 
 
 
-What Each command does?
+## What Each command does?
 
 
 
@@ -245,11 +245,11 @@ Click Static → then click DHCP again
 
 
 
-✅ Verification Commands
+## ✅ Verification Commands
 
 
 
-Verification:1
+## Verification:1
 
 
 
@@ -342,7 +342,7 @@ Router# show ip dhcp binding
 
 
 
-Verification:2
+## Verification:2
 
 Check interfacs are active:
 
