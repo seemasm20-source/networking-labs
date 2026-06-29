@@ -16,6 +16,41 @@
      Real DNS      : 192.168.0.1  
 
 
+
+
+<img width="1920" height="1080" alt="Screenshot (348)" src="https://github.com/user-attachments/assets/73eccb4a-c027-4a28-81dd-aef99e8149f8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 🔎 Verify the Issue
 
 
@@ -293,6 +328,28 @@ Address: 142.251.14.102 ✅ works with correct DNS
 
 
 
+## Step 1: Configure an Invalid DNS Server
+
+1. Press Windows + I → Network and Internet
+
+2. Navigate to your active connection (Wi-fi or Ethernet)
+
+3. Click on Wi-fi
+
+4. Click on Hardware Properties.
+
+5. Click on DNS server assignment → Edit → Choose manual → Enable IPV4 → Toggle it ON
+
+6. Enter Invalid DNS Server Address:
+
+   Preferred DNS Server: 0.0.0.0
+
+   Alternate DNS Server: 0.0.0.0
+
+9. Click Save & close all windows.
+
+
+       
 
 
 
@@ -301,3 +358,484 @@ Address: 142.251.14.102 ✅ works with correct DNS
 
 
 
+
+## Step 2: Disable IPv6
+
+1. Press Win + R →  type ncpa.cpl
+
+2. Right click your Active Network Adapter
+
+3. Properties  → Uncheck Internet Protocol Version 6 ( TCP/IPV6 )
+
+4. Click OK
+
+
+Note: I wanted to simulate a total DNS resolution failure on my machine. Initially, 
+
+I changed the IPv4 DNS server settings to a dummy address(0.0.0.0) under Windows Network Settings,
+
+but I noticed my browsers could still resolve websites. I realized Windows was automatically falling back 
+
+to IPv6 DNS routing via my router.To fix this loophole, I went into the Network Adapter properties and 
+
+disabled the IPv6 protocol entirely. This forced the OS to rely strictly on my modified IPv4 configuration, 
+
+successfully driving all browser DNS requests into a dead end and confirming my test environment was isolated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+✅ Verification and Validation :
+
+
+
+
+1. C:\> ipconfig /all
+
+   
+
+
+
+
+
+
+
+
+Confirmed that the client is configured with a valid DNS server.
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (351)" src="https://github.com/user-attachments/assets/db2af8d5-867b-4b82-b196-c29790f42400" />
+
+
+
+
+
+
+
+2. C:\> nslookup google.com
+    Name: google.com
+   
+    
+
+
+
+Confirmed successful DNS name resolution. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="497" alt="Screenshot (353)" src="https://github.com/user-attachments/assets/01fad31b-fdf2-458a-86ee-a36eb45261b5" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. C:\> ping google.com
+ 
+
+
+
+
+
+
+Confirmed that the hostname was successfully resolved by DNS and the client could communicate with the destination over the network.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="694" alt="Screenshot (352)" src="https://github.com/user-attachments/assets/a7784c2f-53c0-4d85-aa59-8faf1a99b4e1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+| **Problem**                                  | **Root Cause**                                | **User Symptoms**                                                                                   | **Diagnosis**                                                                                                                                                      | **Resolution**                                                                     | **Verification**                                                                                                                      |
+| -------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Unable to access websites using domain names | Incorrect DNS server configured on the client | Websites fail to load by name (e.g., `google.com`), while connectivity to IP addresses is available | Verified DNS configuration using `ipconfig /all`; confirmed DNS resolution failure using `nslookup google.com`; confirmed network connectivity with `ping 8.8.8.8` | Updated the client with a valid DNS server address in the network&Internet  settings | `nslookup google.com` successfully resolved the hostname, `ping google.com` succeeded, and websites loaded normally in the browser.  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User complaint
+
+I cannot open any websites. My colleagues next to me are all working fine.
+
+Root cause
+
+
+Wrong DNS server IP every query sent to non-existent server and timed out.
+
+Resolution
+
+Confirmed via ipconfig /all-DNS was 0.0.0.0 Ping 8.8.8.8 worked confirming internet fine. Changed DNS and All websites now load.
