@@ -413,7 +413,7 @@ successfully driving all browser DNS requests into a dead end and confirming my 
 
 
 
-Confirmed that the client is configured with a valid DNS server.
+ Confirmed that the client is configured with a valid DNS server.
 
 
 
@@ -439,7 +439,7 @@ Confirmed that the client is configured with a valid DNS server.
 
 
 
-Confirmed successful DNS name resolution. 
+  Confirmed successful DNS name resolution. 
 
 
 
@@ -492,7 +492,7 @@ Confirmed successful DNS name resolution.
 
 
 
-Confirmed that the hostname was successfully resolved by DNS and the client could communicate with the destination over the network.
+  Confirmed that the hostname was successfully resolved by DNS and the client could communicate with the destination over the network.
 
 
 
