@@ -4,27 +4,300 @@
 
 
 ## 📋 Problem Summary
-User cannot open any website or reach any server by name. Only one user is affected colleagues on same network work fine.
+
+      User cannot open any website or reach any server by name. Only one user is affected colleagues on same network work fine.
 
 ## 🔍 Issue
 
-PC configured with incorrect DNS server IP — pointing to a fake or unreachable server. Every DNS query times out.
+     PC configured with incorrect DNS server IP — pointing to a fake or unreachable server. Every DNS query times out.
 
-Configured DNS: 0.0.0.0  ← does not exist
-Real DNS      : 192.168.0.1  
+     Configured DNS: 0.0.0.0  ← does not exist
+
+     Real DNS      : 192.168.0.1  
 
 
 ## 🔎 Verify the Issue
 
 
 C:\> ipconfig /all
-DNS Servers: 192.168.10.99   ← wrong IP
+
+DNS Servers: 0.0.0.0   ← wrong IP
 
 C:\> nslookup google.com
-*** Request to 192.168.10.99 timed-out
+
+*** Request to 0.0.0.0 timed-out
 
 C:\> ping 8.8.8.8
-Reply from 8.8.8.8  ← internet works — DNS is problem
+
+Reply from 8.8.8.8  ← internet works ❌ DNS is the problem
 
 C:\> nslookup google.com 8.8.8.8
-Address: 142.250.180.46  ✅ works with correct DNS
+
+Address: 142.251.14.102 ✅ works with correct DNS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (346)" src="https://github.com/user-attachments/assets/c723cc09-ac8d-439e-a202-b61f2b21026b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (347)" src="https://github.com/user-attachments/assets/4a7fa5f8-e00b-4f37-8be3-296a479db57b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (345)" src="https://github.com/user-attachments/assets/72a1d17b-8a24-4062-9224-7fbc4009de54" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##  🔧 Fix :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
