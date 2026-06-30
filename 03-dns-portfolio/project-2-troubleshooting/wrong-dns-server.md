@@ -1,5 +1,5 @@
 
-## 🔴 Scenario 2 — Wrong DNS Server
+## 🔴 Scenario 2 - Wrong DNS Server
 
 
 
