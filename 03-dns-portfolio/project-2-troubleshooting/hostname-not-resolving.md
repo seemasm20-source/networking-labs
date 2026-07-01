@@ -1,2 +1,2 @@
 
-🔴 Scenario 4 — Hostname Not Resolving
+## 🔴 Scenario 4 — Hostname Not Resolving
