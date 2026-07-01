@@ -75,6 +75,11 @@
 
 
 
+
+
+
+
+
 > **Lab Note**
 > This scenario describes the standard troubleshooting process used in enterprise environments. Reproducing a stale negative DNS cache requires an internal DNS infrastructure where DNS records are created after clients have already cached an earlier NXDOMAIN response. The commands shown above demonstrate the troubleshooting methodology rather than a fully reproducible home-lab scenario.
 
