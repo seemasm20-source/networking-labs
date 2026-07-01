@@ -229,7 +229,7 @@ DNS infrastructure, which was not available in this home lab.
 | **Symptoms**     | External websites (e.g., `google.com`) resolve successfully, but internal hostnames (e.g., `intranet.company.local`) fail to resolve.              |
 | **Diagnosis**    | `nslookup intranet.company.local` returned **Non-existent domain**, confirming that the public DNS server could not resolve the internal hostname. |
 | **Resolution**   | Updated the client's DNS configuration to use the organization's **internal DNS server** (e.g., `192.168.10.5`).                                   |
-| **Verification** | `nslookup intranet.company.local` successfully resolved the hostname after the DNS configuration was updated (production environment). ✅           |
+| **Verification** | `nslookup intranet.company.local` successfully resolved the hostname after the DNS configuration was updated in (production environment). ✅           |
 
 
 
