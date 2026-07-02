@@ -142,7 +142,11 @@ Started        : [Time of first report]
 
 
 
+ ##  Lab Limitation:
 
+An enterprise DNS server outage could not be reproduced in the home lab. 
+
+Client-side troubleshooting commands and expected production behavior are documented based on standard enterprise support procedures.
 
 
 
