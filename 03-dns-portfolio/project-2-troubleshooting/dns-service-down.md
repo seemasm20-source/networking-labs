@@ -157,8 +157,6 @@ Started        : [Time of first report]
 3. ping google.com
 ✔ Hostname resolves and network communication succeeds
 
-4. (Production) nslookup server1.company.local
-✔ Internal hostname resolves successfully
 
 
 
