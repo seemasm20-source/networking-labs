@@ -227,7 +227,7 @@ Client-side troubleshooting commands and expected production behavior are docume
 | **Symptoms**     | All users are affected. Hostname resolution fails, while connectivity using IP addresses (e.g., `ping 8.8.8.8`) remains successful.                                                                                                                                       |
 | **Diagnosis**    | Verified that the configured DNS server was unreachable (`ping <configured DNS server IP>` timed out). `nslookup google.com` failed using the configured DNS server, while `nslookup google.com 8.8.8.8` succeeded, isolating the issue to the organization's DNS server. |
 | **Resolution**   |  **Permanent Fix:** Escalate to the Tier 2 / Infrastructure Team to restore the organization's internal DNS service.              |
-| **Verification** | After the DNS service was restored, the configured DNS server became reachable, `nslookup google.com` successfully resolved the hostname and users could again access resources by name. ✅                                                                               |
+| **Verification** | After the DNS service was restored, the configured DNS server became reachable, `nslookup google.com` successfully resolved the hostname and users could again access resources by name.                                                                                |
 
 
 
