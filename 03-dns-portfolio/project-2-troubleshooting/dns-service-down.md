@@ -26,20 +26,57 @@
 ## 🔎 Verify the Issue
 
 
+ 1. Verify DNS resolution using the configured DNS server
 
-C:\> nslookup google.com
-DNS request timed out.
-*** Can't find server name for 192.168.10.5: Timed out
-*** Default servers are not available
+  C:\> nslookup google.com
 
-C:\> ping 8.8.8.8
-Reply from 8.8.8.8  ← internet up — DNS down
+  DNS request timed out.
+ 
+  *** Can't find server name for <configured DNS server IP>: Timed out
 
-C:\> ping 192.168.10.5
-Request timed out.  ← DNS server unreachable
+  ✔ Verified: The configured DNS server is not responding to DNS queries.
 
-C:\> nslookup google.com 8.8.8.8
-Address: 142.250.180.46  ✅ public DNS works
+
+
+2. Verify network connectivity
+
+    C:\> ping 8.8.8.8
+
+    Reply from 8.8.8.8
+
+  ✔ Verified: Network/Internet connectivity is working.
+
+
+
+
+3. Verify the configured DNS server is reachable
+
+     C:\> ping <configured DNS server IP>
+
+     Request timed out
+
+     (Lab Note: This step requires access to an organization's internal DNS server and could not be validated in the home lab)
+
+
+    ✔ Verified: The configured DNS server is unreachable.
+
+4. Isolate the issue using a public DNS server
+
+   C:\> nslookup google.com 8.8.8.8
+
+    Server:  dns.google
+   
+    Address: 8.8.8.8
+
+   Non-authoritative answer:
+   
+   Name:    google.com
+   
+   Addresses: <Public IPv4/IPv6 addresses>
+
+✔ Verified: Public DNS successfully resolved google.com, confirming that Internet connectivity is working and the issue is isolated to the organization's configured DNS server.
+
+
 
 
 
@@ -108,7 +145,7 @@ Started        : [Time of first report]
 
   ##  ✅ Verification and Validation
 
-     After Tier 2 restores DNS:
+   After Tier 2 restores DNS:
      
 
 1. ping <configured DNS server IP>
@@ -120,7 +157,7 @@ Started        : [Time of first report]
 3. ping google.com
 ✔ Hostname resolves and network communication succeeds
 
-4. (Production) nslookup intranet.company.local
+4. (Production) nslookup server1.company.local
 ✔ Internal hostname resolves successfully
 
 
@@ -188,11 +225,11 @@ Client-side troubleshooting commands and expected production behavior are docume
 | **Category**     | **Details**                                                                                                                                                                                                                                                               |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Problem**      | Users across the organization are unable to resolve any hostnames. Both internal resources and external websites fail to load by name.                                                                                                                                    |
-| **Root Cause**   | The organization's **configured DNS server is unavailable** or the **DNS service has stopped**, preventing DNS name resolution.                                                                                                                                           |
+| **Root Cause**   | The organization's **configured DNS server is unavailable** or the **DNS service has stopped** preventing DNS name resolution.                                                                                                                                           |
 | **Symptoms**     | All users are affected. Hostname resolution fails, while connectivity using IP addresses (e.g., `ping 8.8.8.8`) remains successful.                                                                                                                                       |
 | **Diagnosis**    | Verified that the configured DNS server was unreachable (`ping <configured DNS server IP>` timed out). `nslookup google.com` failed using the configured DNS server, while `nslookup google.com 8.8.8.8` succeeded, isolating the issue to the organization's DNS server. |
 | **Resolution**   |  **Permanent Fix:** Escalate to the Tier 2 / Infrastructure Team to restore the organization's internal DNS service.              |
-| **Verification** | After the DNS service was restored, the configured DNS server became reachable, `nslookup google.com` successfully resolved the hostname, and users could again access resources by name. ✅                                                                               |
+| **Verification** | After the DNS service was restored, the configured DNS server became reachable, `nslookup google.com` successfully resolved the hostname and users could again access resources by name. ✅                                                                               |
 
 
 
@@ -227,10 +264,8 @@ Nobody in our office can open any website. Started about 10 minutes ago.
 
 Root cause
 
-DNS server (Configured Server IP) became unreachable. All DNS queries timed out and entire office affected.
+The configured DNS server became unreachable, causing all DNS queries to time out and preventing users across the office from resolving hostnames.
 
 Resolution
 
-Confirmed DNS server unreachable via ping. Applied temp public DNS (8.8.8.8). Escalated to Tier 2 with full diagnostic details. DNS restored — reverted to internal DNS. Verified 
-
-across multiple machines.
+Confirmed the configured DNS server was unreachable. Applied a temporary public DNS server (8.8.8.8) as a workaround (where permitted). Escalated the incident to Tier 2 with complete diagnostic details. After the internal DNS service was restored, reverted clients to the organization's DNS server and verified successful DNS resolution across multiple client machines. 
