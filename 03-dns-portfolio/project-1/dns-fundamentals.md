@@ -1,12 +1,12 @@
 
 
-📖 Project 1 — DNS Fundamentals
+## 📖 Project 1- DNS Fundamentals
 
 
 
 
 
-💡 What is DNS?
+## 💡 What is DNS?
 
     DNS stands for Domain Name System. Every website has an IP address like 142.250.180.46. 
 
@@ -24,7 +24,7 @@ Browser goes: to 142.250.180.46 → page loads
 
 
 
-🔄 How DNS Works - Step by Step
+## 🔄 How DNS Works - Step by Step
 
 
 
@@ -51,7 +51,7 @@ Step 6 — Website loads
 
 
 
-📚 Key DNS Terms
+## 📚 Key DNS Terms
 
 
 
@@ -76,7 +76,7 @@ Step 6 — Website loads
 
 
 
-🔑 Core DNS Commands
+## 🔑 Core DNS Commands
 
 
 
@@ -109,7 +109,7 @@ C:\> ipconfig /flushdns     ← clear cache
 
 
 
-🎯 Why DNS Matters for Tier 1
+## 🎯 Why DNS Matters for Tier 1
 
 
 
