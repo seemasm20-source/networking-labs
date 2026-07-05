@@ -2,7 +2,7 @@
 
 ## 🔴 Project 2 - DNS Troubleshooting Lab
 
-    ## 5 Scenarios
+      5 Scenarios
    ## Real Tier 1 Incidents
 
 
