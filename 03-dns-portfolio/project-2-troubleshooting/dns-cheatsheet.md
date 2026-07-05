@@ -1,7 +1,11 @@
 
-📋 DNS Commands Cheatsheet
+## 📋 DNS Commands Cheatsheet
 
-All Commands- Quick Reference
+   
+
+   
+   
+   All Commands- Quick Reference
 
 
 
@@ -19,18 +23,30 @@ All Commands- Quick Reference
 
 
 
-🚦Troubleshooting Decision Flow
 
 
 
+
+
+
+
+
+
+
+
+## 🚦Troubleshooting Decision Flow
+
+
+
+```
 User cannot open websites
 │
 ├── ping 8.8.8.8 fails?
-│   └── Internet problem — not DNS
+│   └── Internet connectivity problem — not DNS
 │
 ├── ping 8.8.8.8 works + nslookup fails?
 │   └── DNS server problem
-│       → ipconfig /all → check DNS IP
+│       → ipconfig /all → check DNS server IP
 │       → nslookup hostname 8.8.8.8
 │
 ├── External works + internal fails?
@@ -46,6 +62,9 @@ User cannot open websites
 └── Some PCs work — others don't?
     └── Cache difference
         → ipconfig /flushdns on affected PCs
+```
+
+---
 
 
 
@@ -53,7 +72,16 @@ User cannot open websites
 
 
 
-Diagnostic Checklist
+
+
+
+
+
+
+
+
+
+## Diagnostic Checklist
 
 
 
