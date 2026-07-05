@@ -50,8 +50,6 @@ and real-world ticket.
 | --------- | ------------------------- | --------------------------------------------- |
 | Project 1 | DNS Fundamentals          | What DNS is, how it works, key terms          |
 | Project 2 | DNS Troubleshooting Lab   | 5 real-world DNS fault scenarios              |
-| Project 3 | DNS Cache Troubleshooting | displaydns, flushdns, stale cache             |
-| Project 4 | NSLOOKUP Lab              | Forward, reverse, specific server, cheatsheet |
 
 
 
@@ -87,8 +85,7 @@ and real-world ticket.
 | Some Sites Work, Some Don't    | Wrong DNS Server         | Project 2 |
 | Ping By IP Works, Name Fails   | Missing A Record         | Project 2 |
 | Intranet Not Loading           | Internal vs External DNS | Project 2 |
-| Website Shows Old Content      | Stale DNS Cache          | Project 3 |
-| Nslookup Times Out             | DNS Unreachable          | Project 4 |
+| Website Shows Old Content      | Stale DNS Cache          | Project 2 | |
 | New Server Unreachable By Name | Hostname Not Resolving   | Project 2 |
 
 
@@ -115,7 +112,7 @@ and real-world ticket.
 | Ping 8.8.8.8              | Tests Connectivity Without DNS       |
 | Ipconfig /displaydns      | Shows Current DNS Cache              |
 | Ipconfig /flushdns        | Clears All DNS Cache Entries         |
-| Ipconfig /registerdns     | Re-registers PC With DNS Server      |
+|    
 
 
 
