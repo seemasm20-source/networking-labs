@@ -38,15 +38,15 @@
     ## 🔎 Verify the Issue
 
 
-    Step: 1   Inspect local DNS cache
+    ## Step: 1   Inspect local DNS cache
 
              C:\> ipconfig /displaydns
 
-   Step: 2     Query the DNS server
+   ## Step: 2     Query the DNS server
 
              C:\> nslookup server01
 
-  Step: 3     Verify on another Pc (no cache)
+  ## Step: 3     Verify on another Pc (no cache)
 
               C:\> nslookup newserver01
 
@@ -58,16 +58,16 @@
   ##  🔧 Fix          
 
 
-     C:\> ipconfig /flushdns
+     ## C:\> ipconfig /flushdns
      
     Successfully flushed the DNS Resolver Cache.  
 
 
   ## ✅ Verification and Validation
 
-  Step:1    C:\> nslookup newserver01
+  ## Step:1    C:\> nslookup newserver01
 
-  Step:2    C:\> ping newserver01
+  ## Step:2    C:\> ping newserver01
 
 
 
