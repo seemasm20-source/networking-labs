@@ -107,13 +107,13 @@ and real-world ticket.
 
 | Command                   | What It Does                         |
 | ------------------------- | ------------------------------------ |
-| Ipconfig /all             | Shows Current DNS Server On PC       |
-| Nslookup Hostname         | Tests DNS Name Resolution            |
-| Nslookup Hostname 8.8.8.8 | Queries Specific DNS Server          |
-| Ping Hostname             | Tests Name Resolution + Connectivity |
-| Ping 8.8.8.8              | Tests Connectivity Without DNS       |
-| Ipconfig /displaydns      | Shows Current DNS Cache              |
-| Ipconfig /flushdns        | Clears All DNS Cache Entries         |
+| ipconfig /all             | Shows Current DNS Server On PC       |
+| nslookup Hostname         | Tests DNS Name Resolution            |
+| nslookup Hostname 8.8.8.8 | Queries Specific DNS Server          |
+| ping Hostname             | Tests Name Resolution + Connectivity |
+| ping 8.8.8.8              | Tests Connectivity Without DNS       |
+| ipconfig /displaydns      | Shows Current DNS Cache              |
+| ipconfig /flushdns        | Clears All DNS Cache Entries         |
 |    
 
 
