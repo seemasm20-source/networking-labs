@@ -54,19 +54,19 @@
 ## 🔎 Verify the Issue
 
 
-C:\> ipconfig /all
+## C:\> ipconfig /all
 
 DNS Servers: 0.0.0.0   ← wrong IP
 
-C:\> nslookup google.com
+## C:\> nslookup google.com
 
 *** Request to 0.0.0.0 timed-out
 
-C:\> ping 8.8.8.8
+## C:\> ping 8.8.8.8
 
 Reply from 8.8.8.8  ← internet works ❌ DNS is the problem
 
-C:\> nslookup google.com 8.8.8.8
+## C:\> nslookup google.com 8.8.8.8
 
 Address: 142.251.14.102 ✅ works with correct DNS
 
@@ -402,7 +402,7 @@ successfully driving all browser DNS requests into a dead end and confirming my 
 
 
 
-1. C:\> ipconfig /all
+## 1. C:\> ipconfig /all
 
    
 
@@ -431,8 +431,7 @@ successfully driving all browser DNS requests into a dead end and confirming my 
 
 
 
-
-2. C:\> nslookup google.com
+## 2. C:\> nslookup google.com
     Name: google.com
    
     
@@ -483,8 +482,7 @@ successfully driving all browser DNS requests into a dead end and confirming my 
 
 
 
-
-3. C:\> ping google.com
+## 3. C:\> ping google.com
  
 
 
