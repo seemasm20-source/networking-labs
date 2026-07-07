@@ -46,10 +46,12 @@ and real-world ticket.
 
 
 
-| Project   | Topic                     | Key Skills                                    |
-| --------- | ------------------------- | --------------------------------------------- |
-| Project 1 | DNS Fundamentals          | What DNS is, how it works, key terms          |
-| Project 2 | DNS Troubleshooting Lab   | 5 real-world DNS fault scenarios              |
+| Project   | Topic                     | Key Skills                                       |
+| --------- | ------------------------- | ------------------------------------------------ |
+| Project 1 | DNS Fundamentals          | What DNS is, how it works, key terms             |
+| Project 2 | DNS Troubleshooting Lab   | 5 real-world DNS fault scenarios, dns cheatsheet |
+| Project 3 | DNS Cache Troubleshooting | displaydns, flushdns                             |
+| Project 4 | NSLOOKUP Lab              | Forward, reverse lookup                          |
 
 
 
