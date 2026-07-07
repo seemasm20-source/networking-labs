@@ -45,13 +45,13 @@ ping 192.168.0.1  → Successful (IP connectivity confirmed)
 
 ## 🔎 Verify the Issue
 
-C:\> ping server01
+## C:\> ping server01
 
 Ping request could not find host server01
 
 Please check the name and try again.
 
-C:\> nslookup server01
+## C:\> nslookup server01
 
 *** No A or AAAA records available for server01
 
