@@ -87,7 +87,7 @@ and real-world ticket.
 | Some Sites Work, Some Don't    | Wrong DNS Server         | Project 2 |
 | Ping By IP Works, Name Fails   | Missing A Record         | Project 2 |
 | Intranet Not Loading           | Internal vs External DNS | Project 2 |
-| Website Shows Old Content      | Stale DNS Cache          | Project 2 | |
+| Website Shows Old Content      | Stale DNS Cache          | Project 2 | 
 | New Server Unreachable By Name | Hostname Not Resolving   | Project 2 |
 
 
