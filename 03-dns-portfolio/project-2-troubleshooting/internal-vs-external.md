@@ -34,14 +34,14 @@ Multiple users affected on the same floor.
 ## 🔎 Verify the Issue
 
 
-C:\> nslookup google.com
+## C:\> nslookup google.com
 
 Addresses: <Public IP returned by DNS>   ✅ External DNS working
 
 
 
 
-C:\> nslookup intranet.company.local
+## C:\> nslookup intranet.company.local
 
 *** 8.8.8.8 can't find intranet.company.local: Non-existent domain
 
@@ -154,19 +154,17 @@ C:\> nslookup intranet.company.local
 
 ## ✅ Verification and Validation
 
-Step:1 Open Command Prompt and clear the DNS cache:
+## Step:1 Open Command Prompt and clear the DNS cache:
 
 ipconfig /flushdns
 
-Step:2 Verify the new DNS configuration:
+## Step:2 Verify the new DNS configuration:
 
 ipconfig /all
 
-Step:3 Verify internal DNS resolution:
+## Step:3 Verify internal DNS resolution:
 
  nslookup intranet.company.local
-
-
 
 ## Step:4 Verify external DNS resolution 
 
