@@ -26,9 +26,9 @@
 ## 🔎 Verify the Issue
 
 
- 1. Verify DNS resolution using the configured DNS server
+ ## 1. Verify DNS resolution using the configured DNS server
 
-  C:\> nslookup google.com
+  ## C:\> nslookup google.com
 
   DNS request timed out.
  
@@ -38,9 +38,9 @@
 
 
 
-2. Verify network connectivity
+## 2. Verify network connectivity
 
-    C:\> ping 8.8.8.8
+    ## C:\> ping 8.8.8.8
 
     Reply from 8.8.8.8
 
@@ -49,9 +49,9 @@
 
 
 
-3. Verify the configured DNS server is reachable
+## 3. Verify the configured DNS server is reachable
 
-     C:\> ping <configured DNS server IP>
+     ## C:\> ping <configured DNS server IP>
 
      Request timed out
 
@@ -60,9 +60,9 @@
 
     ✔ Verified: The configured DNS server is unreachable.
 
-4. Isolate the issue using a public DNS server
+## 4. Isolate the issue using a public DNS server
 
-   C:\> nslookup google.com 8.8.8.8
+   ## C:\> nslookup google.com 8.8.8.8
 
     Server:  dns.google
    
