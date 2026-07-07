@@ -108,9 +108,9 @@ and real-world ticket.
 | Command                   | What It Does                         |
 | ------------------------- | ------------------------------------ |
 | ipconfig /all             | Shows Current DNS Server On PC       |
-| nslookup Hostname         | Tests DNS Name Resolution            |
-| nslookup Hostname 8.8.8.8 | Queries Specific DNS Server          |
-| ping Hostname             | Tests Name Resolution + Connectivity |
+| nslookup hostname         | Tests DNS Name Resolution            |
+| nslookup hostname 8.8.8.8 | Queries Specific DNS Server          |
+| ping hostname             | Tests Name Resolution + Connectivity |
 | ping 8.8.8.8              | Tests Connectivity Without DNS       |
 | ipconfig /displaydns      | Shows Current DNS Cache              |
 | ipconfig /flushdns        | Clears All DNS Cache Entries         |
