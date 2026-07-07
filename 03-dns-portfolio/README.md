@@ -81,14 +81,15 @@ and real-world ticket.
 
 
 
-| User Complaint                 | Root Cause               | Project   |
-| ------------------------------ | ------------------------ | --------- |
-| Cannot Open Any Website        | DNS Service Down         | Project 2 |
-| Some Sites Work, Some Don't    | Wrong DNS Server         | Project 2 |
-| Ping By IP Works, Name Fails   | Missing A Record         | Project 2 |
-| Intranet Not Loading           | Internal vs External DNS | Project 2 |
-| Website Shows Old Content      | Stale DNS Cache          | Project 2 | 
-| New Server Unreachable By Name | Hostname Not Resolving   | Project 2 |
+| User Complaint                                                 | Root Cause                                             | Project   |
+| -------------------------------------------------------------- | ------------------------------------------------------ | --------- |
+| Cannot Open Any Website                                        | DNS Service Down                                       | Project 2 |
+| Some Sites Work, Some Don't                                    | Wrong DNS Server                                       | Project 2 |
+| Ping By IP Works, Name Fails                                   | Missing A Record                                       | Project 2 |
+| Intranet Not Loading                                           | Internal vs External DNS                               | Project 2 |
+| User sees an old version of the company website                | Stale outdated DNS cache                               | Project 3 |
+| User cannot access fileserver.company.local using its hostname | Missing or incorrect A record (forward lookup failure) | Project 4 |
+| New Server Unreachable By Name                                 | Hostname Not Resolving                                 | Project 2 |
 
 
 
