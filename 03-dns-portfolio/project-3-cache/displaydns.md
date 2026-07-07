@@ -1,5 +1,5 @@
 
-## 🔍 Cache — ipconfig /displaydns
+## 🔍 Cache - ipconfig /displaydns
 
 
 ## 📋 What is ipconfig /displaydns?
@@ -20,31 +20,37 @@ C:\> ipconfig /displaydns
 
 
 
-📖 Reading the Output
+## 📖 Reading the Output
 
     google.com
     ----------------------------------------
-    Record Name . . . . : google.com
+    Record Name . . . . :   google.com
     
-    Record Type . . . . : 1          
+    Record Type . . . . :  1          
     
-    Time To Live  . . . : 127
+    Time To Live  . . . . :  127
 
-    Data Length . . . :  16
+    Data Length . . . . :   16
 
-    Section . . . :     Answer
+    Section  . . . . :      Answer
     
-    A (Host) Record . . : 142.251.14.113
+    A (Host) Record . . . . :  142.251.14.113
 
 
-    | Field                  | Meaning                                                               |
-| ---------------------- | --------------------------------------------------------------------- |
-| **Record Name**        | The domain name stored in the DNS cache (`www.google.com`).           |
-| **Record Type**        | `1` = **A Record**, which maps a hostname to an IPv4 address.         |
-| **Time To Live (TTL)** | The number of **seconds remaining** before this cached entry expires. |
-| **Data Length**        | The size of the DNS record data in **bytes**.                         |
-| **Section**            | Indicates which part of the DNS response the record came from.        |
-| **A (Host) Record**    | The IPv4 address returned by the DNS server.                          |
+
+
+
+
+
+| **Field**              | **Description**                                                                                                                          |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Record Name**        | The domain name stored in the local DNS cache (for example, `www.google.com`).                                                           |
+| **Record Type**        | Identifies the DNS record type. For example, **1 = A (Host) Record**, which maps a hostname to an IPv4 address.                          |
+| **Time To Live (TTL)** | The remaining time, in seconds, that Windows keeps the DNS record in its local cache before it expires and a new DNS lookup is required. |
+| **Data Length**        | The size of the DNS record data in bytes. For an **A record**, the value is **4 bytes** because an IPv4 address is 32 bits long.         |
+| **Section**            | Indicates which section of the DNS response the record belongs to. **Answer** means the record directly answers the DNS query.           |
+| **A (Host) Record**    | Displays the IPv4 address associated with the hostname.                                                                                  |
+
 
 
 
@@ -69,6 +75,23 @@ C:\> ipconfig /displaydns
 
 
 <img width="1920" height="1080" alt="Screenshot (360)" src="https://github.com/user-attachments/assets/2db688d5-d748-4379-9ba5-99b1eaf48f66" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -140,14 +163,21 @@ C:\> ipconfig /displaydns
 
 
 
- 🎯When it mostly used:
+
+
+
+
+
+
+
+## 🎯Practical use cases of ipconfig/ displaydns:
 
 
 
 
  | Situation                       | Displaydns Reveals             |
 | ------------------------------- | ------------------------------ |
-| User sees wrong website version | Old IP cached — needs flushdns |
+| User sees wrong website version | Old IP cached-needs flushdns |
 | New server unreachable by name  | Negative cache entry stored    |
 | Works for some staff not others | Cache difference between PCs   |
 
