@@ -36,10 +36,13 @@ In this example, the DNS server performs a forward lookup by resolving the hostn
 C:\> nslookup google.com
 
 Server:  dns.google         ← DNS server that answered
+
 Address: 8.8.8.8
 
 Non-authoritative answer:   ← answered from cache
+
 Name:    google.com
+
 Address: 142.251.14.138     ← IP returned
 
 
