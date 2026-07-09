@@ -4,9 +4,7 @@
 
 What is ipconfig/ flushdns?
 
-ipconfig /flushdns clears all entries from the local DNS Resolver Cache on a Windows computer. After the cache is cleared, Windows performs a fresh DNS lookup the next time a 
-
-hostname is accessed.
+ipconfig /flushdns clears all entries from the local DNS Resolver Cache on a Windows computer. After the cache is cleared, Windows performs a fresh DNS lookup the next time hostname is accessed.
 
 
 ## 💡 When to Run flushdns
