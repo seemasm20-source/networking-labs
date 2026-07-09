@@ -87,10 +87,10 @@ and real-world ticket.
 
 | **Scenario**                                            | **Root Cause**                                           | **Project**              |
 | ------------------------------------------------------- | -------------------------------------------------------- | ------------------------ |
-| Cannot Open Any Website                                 | DNS Service Down                                         | project 2                |
-| New Server Unreachable By Name                          | Hostname Not Resolving                                   | project 2                |
-| Intranet Website Not Loading                            | Incorrect Internal or External DNS Configuration         | project 2                |
-| Ping By IP Works, Name Fails                            | Missing or Incorrect "A" Record                            | project 2              |
+| Cannot open any Website                                 | DNS Service Down                                         | project 2                |
+| New Server Unreachable by Name                          | Hostname Not Resolving                                   | project 2                |
+| Intranet Website not Loading                            | Incorrect Internal or External DNS Configuration         | project 2                |
+| Ping By IP Works, Name Fails                            | Missing or Incorrect "A" Record                          | project 2              |
 | Some Websites Work, Some Don't                          | Incorrect DNS Server Configuration                       | project 2                |
 | User Sees an Old Version of a Website                   | Stale DNS Cache                                          | project 3                |
 | DNS Changes Are Not Reflected After Server Migration    | Outdated DNS Cache Requiring Flush                       | project 3                |
