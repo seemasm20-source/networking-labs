@@ -19,9 +19,11 @@ that maps the IP address back to the associated hostname.
 C:\> nslookup 8.8.8.8
 
 Server:  dns.google
+
 Address: 8.8.8.8
 
 Name:    dns.google   ← hostname for that IP
+
 Address: 8.8.8.8
 
 
