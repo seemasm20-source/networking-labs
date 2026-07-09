@@ -81,15 +81,21 @@ and real-world ticket.
 
 
 
-| User Complaint                                                 | Root Cause                                             | Project   |
-| -------------------------------------------------------------- | ------------------------------------------------------ | --------- |
-| Cannot Open Any Website                                        | DNS Service Down                                       | Project 2 |
-| Some Sites Work, Some Don't                                    | Wrong DNS Server                                       | Project 2 |
-| Ping By IP Works, Name Fails                                   | Missing A Record                                       | Project 2 |
-| Intranet Not Loading                                           | Internal vs External DNS                               | Project 2 |
-| User sees an old version of the company website                | Stale outdated DNS cache                               | Project 3 |
-| User cannot access fileserver.company.local using its hostname | Missing or incorrect A record (forward lookup failure) | Project 4 |
-| New Server Unreachable By Name                                 | Hostname Not Resolving                                 | Project 2 |
+
+
+
+
+| **Scenario**                                            | **Root Cause**                                           | **Project**              |
+| ------------------------------------------------------- | -------------------------------------------------------- | ------------------------ |
+| Cannot Open Any Website                                 | DNS Service Down                                         | project 2                |
+| New Server Unreachable By Name                          | Hostname Not Resolving                                   | project 2                |
+| Intranet Website Not Loading                            | Incorrect Internal or External DNS Configuration         | project 2                |
+| Ping By IP Works, Name Fails                            | Missing or Incorrect "A" Record                            | project 2              |
+| Some Websites Work, Some Don't                          | Incorrect DNS Server Configuration                       | project 2                |
+| User Sees an Old Version of a Website                   | Stale DNS Cache                                          | project 3                |
+| DNS Changes Are Not Reflected After Server Migration    | Outdated DNS Cache Requiring Flush                       | project 3                |
+| Cannot Access `fileserver.company.local` Using Hostname | Missing or Incorrect A Record (Forward Lookup Failure)   | project 4                |
+| Unable to Identify the Hostname of an IP Address        | Missing or Incorrect PTR Record (Reverse Lookup Failure) | project 4                |
 
 
 
@@ -97,7 +103,6 @@ and real-world ticket.
 
 
 ## 📋 Key Commands Quick Reference
-
 
 
 
@@ -115,7 +120,7 @@ and real-world ticket.
 | ping 8.8.8.8              | Tests Connectivity Without DNS       |
 | ipconfig /displaydns      | Shows Current DNS Cache              |
 | ipconfig /flushdns        | Clears All DNS Cache Entries         |
-|    
+
 
 
 
