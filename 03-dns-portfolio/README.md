@@ -68,7 +68,7 @@ and real-world ticket.
 
 
 
-## 🎯 Real-World Tier 1 Tickets Covered
+## 🎯 DNS TROUBLESHOOTING MATRIX 
 
 
 
