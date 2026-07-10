@@ -2,9 +2,13 @@
 ## 🌐 TCP/IP Network Troubleshooting Portfolio
 
 
-## Author: Seema                                  Windows 10/11
+**Portfolio:** IT Help Desk Tier 1 — Networking Labs
 
-## IT Help Desk Tier 1 & 2                        2026
+**Tool:** Windows 10/11
+
+**Author:** Seema
+
+**Date:**  2026
 
 
 
