@@ -14,8 +14,8 @@
 
 ## 📌 Objective
 
-This project simulates two office departments —
-**HR (LAN 1)** and **Finance (LAN 2)** — operating
+This project simulates two office departments -
+**HR (LAN 1)** and **Finance (LAN 2)** - operating
 on separate networks within the same organisation.
 
 A Cisco 2911 router connects both departments and
