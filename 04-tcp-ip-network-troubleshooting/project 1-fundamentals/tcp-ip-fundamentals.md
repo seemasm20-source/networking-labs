@@ -6,14 +6,13 @@
 ## 💡 What is TCP/IP?
 
 
- ## TCP- Transmission Control Protocol (TCP) is a connection-oriented protocol that ensures data is delivered reliably,
+ ## TCP- Transmission Control Protocol (TCP) is a connection-oriented protocol that ensures data is delivered reliably, in the correct order and without loss.
  
-          in the correct order and without loss.
-
+  
 
  ## IP- Internet Protocol (IP) is a network layer protocol responsible for addressing and routing data packets between devices on a network. 
-
-        It assigns a unique IP address to each device, allowing data to be sent from a source device to the correct destination device.
+   
+ ## It assigns a unique IP address to each device, allowing data to be sent from a source device to the correct destination device.
 
 
 
