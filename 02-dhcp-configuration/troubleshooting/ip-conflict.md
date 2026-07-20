@@ -362,13 +362,13 @@ PC2 IPv4 Address : 192.168.10.10
 
 To resolve the IP address conflict, change PC2 from a static IP configuration to DHCP.
 
-Step 1: Configure PC2 to Use DHCP
+## Step 1: Configure PC2 to Use DHCP
 
 Navigate to:
 
 PC2 → Desktop → IP Configuration → DHCP
 
-Step 2: Verify the New IP Address
+## Step 2: Verify the New IP Address
 
 The router's DHCP server assigns the next available IP address from the DHCP pool.
 
