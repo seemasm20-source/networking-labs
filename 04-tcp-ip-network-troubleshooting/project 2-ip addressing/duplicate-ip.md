@@ -76,3 +76,6 @@ This scenario was fully documented in the DHCP Configuration Portfolio including
 ✅ Real-world help desk ticket
               
 → View full lab here:
+
+
+[IP Address Conflict (Static vs DHCP) Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/ip-conflict.md)
