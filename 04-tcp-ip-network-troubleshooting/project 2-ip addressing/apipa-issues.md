@@ -74,9 +74,13 @@ If still APIPA:
 DHCP Configuration Portfolio including:
 
 ✅ Complete Packet Tracer lab setup
+
 ✅ Router DHCP configuration commands
+
 ✅ Fault simulation steps
+
 ✅ Step-by-step fix with CLI commands
+
 ✅ Verification screenshots
 ✅ Real-world help desk ticket
 → View full lab here:
