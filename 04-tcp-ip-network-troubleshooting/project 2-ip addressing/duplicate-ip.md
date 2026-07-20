@@ -9,9 +9,7 @@
 
 Two devices on the same network share the same IP address. Both experience intermittent connectivity
 
-drops, random failures and unreliable pings. The network cannot determine which device to send
-
-replies to.
+drops, random failures and unreliable pings. The network cannot determine which device to send replies to.
 
 
 
@@ -24,14 +22,19 @@ replies to.
 Duplicate IP symptoms:
 
 → Random connectivity drops
+
 → Ping replies inconsistent
+
 → One or both devices affected
+
 → Issue clears temporarily then returns
 
 Common causes:
+
 → Static IP assigned within DHCP pool range
 
 → One device manually given same static IP
+
 → DHCP excluded-address range too small
 
 
@@ -40,9 +43,24 @@ Common causes:
 
 ## 🔎 Quick Verify
 
-Step :1 Go to each Pcs command prompt and give ipconfig/all and see the IP details.
+### Step 1: Check the IP Configuration
 
-Step:2 C:\> arp -a You can also check two different MACs for same IP address and by this you can confirm duplicate IP 
+Open the Command Prompt on each PC and run:
+
+`ipconfig /all`
+
+Check the IPv4 address, subnet mask, default gateway, and DHCP status to identify whether the devices are using the same IP address.
+
+### Step 2: Check the ARP Table
+
+Run:
+
+`arp -a`
+
+This command displays the IP-to-MAC address mappings stored in the ARP cache. If a suspected IP address is associated with 
+
+different MAC addresses at different times,it may indicate a duplicate IP address conflict.
+
 
 
 ## 🔧 Quick Fix
