@@ -16,7 +16,7 @@
    ## 🔍 Quick Overview
 
 
-   169.254.x.x = APIPA address
+             169.254.x.x = APIPA address
    
             → = DHCP failed to respond
             
@@ -26,13 +26,18 @@
 
 
 
-    APIPA (Automatic Private IP Addressing) activates automatically on Windows when a PC set to DHCP cannot reach a DHCP server. The PC assigns itself
+    APIPA (Automatic Private IP Addressing) activates automatically on Windows when a PC set to DHCP cannot reach a DHCP server. 
+    
+    The PC assigns itself an address from the 169.254.0.0/16 range. This address cannot communicate with any real network device
+    
+    it is a self-assigned fallback only.
 
-    an address from the 169.254.0.0/16 range. This address cannot communicate with any real network device it is a self-assigned fallback only.
 
 
-
-       ## 🔧 Quick Verify
+      
+       
+      
+   ## 🔍 Quick verify
 
        C:\> ipconfig
 
