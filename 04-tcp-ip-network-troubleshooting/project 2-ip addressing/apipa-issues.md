@@ -82,8 +82,10 @@ DHCP Configuration Portfolio including:
 ✅ Step-by-step fix with CLI commands
 
 ✅ Verification screenshots
+
 ✅ Real-world help desk ticket
+
 → View full lab here:
 
-[DHCP Portfolio — APIPA Issue](https://github.com/seemasm20-source/networking-labs/tree/main/dhcp-configuration)
 
+[APIPA (169.254.x.x) Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)
