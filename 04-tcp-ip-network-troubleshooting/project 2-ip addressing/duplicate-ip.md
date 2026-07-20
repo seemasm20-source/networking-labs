@@ -72,9 +72,6 @@ Change one device to a unique IP:
 
 → OR assign different static IP not in use
 
-Prevent recurrence:
-
-→ Exclude static IPs from DHCP pool: Router(config)# ip dhcp excluded-address 192.168.10.10
 
 
 
