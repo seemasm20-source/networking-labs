@@ -43,7 +43,7 @@
       Default Gateway:                 ← empty
 
 
-     C:\> ping 192.168.10.1
+     C:\> ping 192.168.10.1 
      
      Request timed out ❌
 
