@@ -8,7 +8,7 @@
 
       server is unavailable so the PC has self-assigned an APIPA address.
 
-
+[APIPA (169.254.x.x) Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)
 
 
       .
