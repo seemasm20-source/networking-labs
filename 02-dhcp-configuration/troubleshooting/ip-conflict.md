@@ -70,17 +70,24 @@ The PC should automatically receive an IP address from the DHCP server.
 To verify the assigned network settings, open Command Prompt and run:
 
 ipconfig /all
+
 Expected Output
+
 IP Address      : 192.168.10.10
+
 Subnet Mask     : 255.255.255.0
+
 Default Gateway : 192.168.10.1
 
 
 Verification Confirm that:
 
-The IP address belongs to the 192.168.10.0/24 network.
-The subnet mask is 255.255.255.0.
-The default gateway is 192.168.10.1.
+The IP address belongs to the 192.168.10.0/24 network
+
+The subnet mask is 255.255.255.0
+
+The default gateway is 192.168.10.1
+
 The IP address was assigned automatically by DHCP.
 
 This confirms that DHCP is functioning correctly before creating the troubleshooting scenario.
@@ -177,8 +184,11 @@ Configure the following settings:
 
 ```text
 IP Address      : 192.168.10.10
+
 Subnet Mask     : 255.255.255.0
+
 Default Gateway : 192.168.10.1
+
 DNS Server      : 8.8.8.8
 ```
 
@@ -188,6 +198,7 @@ At this point:
 
 ```text
 PC1 = 192.168.10.10 (Assigned by DHCP)
+
 PC2 = 192.168.10.10 (Configured Manually)
 ```
 
@@ -303,6 +314,7 @@ Users report intermittent network connectivity. The connection drops randomly, a
 On both PCs, open **Command Prompt** and run:
 
 ```bash
+
 ipconfig /all
 ```
 
@@ -310,6 +322,7 @@ ipconfig /all
 
 ```text
 PC1 IPv4 Address : 192.168.10.10
+
 PC2 IPv4 Address : 192.168.10.10
 ```
 
@@ -360,6 +373,7 @@ Step 2: Verify the New IP Address
 The router's DHCP server assigns the next available IP address from the DHCP pool.
 
 PC1 IP Address : 192.168.10.10
+
 PC2 IP Address : 192.168.10.11
 
 ✅ Both devices now have unique IP addresses.
@@ -529,8 +543,11 @@ ping 192.168.10.1
 
 ```text
 Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
+
 Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
+
 Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
+
 Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
 ```
 
@@ -550,6 +567,7 @@ ipconfig /all
 
 ```text
 PC1 IPv4 Address : 192.168.10.10
+
 PC2 IPv4 Address : 192.168.10.11
 ```
 
@@ -560,9 +578,13 @@ PC2 IPv4 Address : 192.168.10.11
 ### Outcome
 
 * IP address conflict resolved
+  
 * DHCP functioning correctly
+ 
 * Network connectivity restored
+  
 * Devices can communicate without interruption
+  
 * Ping tests successful
 
 
