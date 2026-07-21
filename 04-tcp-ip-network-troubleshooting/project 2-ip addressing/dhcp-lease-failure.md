@@ -125,7 +125,7 @@ Switch G0/1 → Router G0/0
 ## Step 3: Configure the router interface
 
 
-Open Router0 → CLI:
+Open Router0 → CLI:-
 
 
 enable
@@ -205,7 +205,7 @@ On PC0 and PC1:
 
 Desktop → IP Configuration → DHCP
 
-They should receive addresses similar to:
+They should receive addresses similar to:-
 
 
 PC0 → 192.168.10.11
@@ -253,10 +253,8 @@ PC1 → 192.168.10.12
 
 
 
-## Step 6: Create the DHCP failure
+## Step 6: Create the DHCP failure in Router
 
-
-Go back to Router0
 
 enable
 
@@ -267,9 +265,9 @@ no ip dhcp pool LAN_POOL
 
 
 
-Note: Now the DHCP pool no longer exists. To properly demonstrate the failure, add a new PC (PC2) to the switch and set it to DHCP. 
+ Note: Now the DHCP pool no longer exists. To properly demonstrate the failure, add a new PC (PC2) to the switch and set it to DHCP. 
 
-PC2 will request an address, but the router has no DHCP pool available to give it one.So it shows APIPA address.
+ PC2 will request an address, but the router has no DHCP pool available to give it one.So it shows APIPA address.
 
 
 
@@ -324,7 +322,7 @@ PC2 will request an address, but the router has no DHCP pool available to give i
 
 ## Step 7: Fix the DHCP failure
 
-Recreate the pool:
+Recreate the pool:-
 
 
 configure terminal
@@ -429,10 +427,91 @@ On PC2, go to Desktop → IP Configuration and click DHCP again.
 
 
 
-🔗 Full Lab Documentation
-This scenario connects directly to DHCP pool
 
-exhaustion and APIPA scenarios documented in the
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🔗 Full Lab Documentation
+
+This scenario connects directly to DHCP pool exhaustion and APIPA scenarios documented in the
 
 DHCP Configuration Portfolio including:
 
@@ -449,4 +528,13 @@ DHCP Configuration Portfolio including:
 
 
 
-→ View full lab here:
+
+
+
+
+
+
+
+
+
+→ View full lab here:  [DHCP Pool Exhaustion Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)
