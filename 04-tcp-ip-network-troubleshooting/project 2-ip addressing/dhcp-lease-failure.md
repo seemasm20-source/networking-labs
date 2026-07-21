@@ -1,5 +1,5 @@
 
-## 🔴 IP Issue 2 — DHCP Lease Failure
+## 🔴 IP Issue 2 - DHCP Lease Failure
 
 
 
