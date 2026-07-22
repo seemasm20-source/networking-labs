@@ -1,5 +1,6 @@
 
-## 🔴 IP Issue 2 - DHCP Lease Failure
+## 🔴 IP Issue 2 - DHCP Pool Missing - Client Cannot Get IP
+
 
 
 
