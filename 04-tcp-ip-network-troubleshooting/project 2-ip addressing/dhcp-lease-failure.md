@@ -519,7 +519,7 @@ On PC2, go to Desktop → IP Configuration and click DHCP again.
 
 This scenario connects directly to DHCP pool exhaustion and APIPA scenarios documented in the
 
-DHCP Configuration Portfolio including:
+DHCP Configuration Portfolio including:-
 
 
 ✅ Complete Packet Tracer lab setup
