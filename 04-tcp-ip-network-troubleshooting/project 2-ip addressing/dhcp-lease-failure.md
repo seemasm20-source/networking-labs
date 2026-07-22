@@ -33,11 +33,11 @@ available, or the client cannot communicate with the DHCP server.
 ##  Step :1 
 
 🔧 Devices Used
-
-Device	Model	Qty	Purpose
-Router	Cisco 2911	1	Routes traffic + acts as DHCP server
-Switch	Cisco 2960	1	Connects devices within the network
-PC	Generic PC	2	End user devices(PC0 and PC01)
+| Device | Model      | Qty | Purpose                              |
+| ------ | ---------- | --: | ------------------------------------ |
+| Router | Cisco 2911 | 1   | Routes traffic + acts as DHCP server |
+| Switch | Cisco 2960 | 1   | Connects devices within the network  |
+| PC     | Generic PC | 2   | End user devices(PC0 and PC01)       |
 
 
 
