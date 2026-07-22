@@ -6,9 +6,6 @@
 ## 📋 Problem Summary
 
 
-## 📋 Problem Summary
-
-## 📋 Problem Summary
 
 A client was unable to obtain an IP address because the DHCP pool was missing from the router. 
 
@@ -35,12 +32,15 @@ available, or the client cannot communicate with the DHCP server.
 
 ##  Step :1 
 
+🔧 Devices Used
 
-Create the simple topology 
+Device	Model	Qty	Purpose
+Router	Cisco 2911	1	Routes traffic + acts as DHCP server
+Switch	Cisco 2960	1	Connects devices within the network
+PC	Generic PC	2	End user devices(PC0 and PC01)
 
-PC0          Switch0 
-            
-PC1           Router0
+
+
 
 
 Use this network details:
