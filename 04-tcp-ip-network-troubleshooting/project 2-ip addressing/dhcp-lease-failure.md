@@ -6,9 +6,15 @@
 ## 📋 Problem Summary
 
 
-A PC had a working IP address but lost it suddenly mid-session. The network was working fine then
+## 📋 Problem Summary
 
-stopped without any physical changes. The PC shows 0.0.0.0 or 169.254.x.x after losing its IP.
+## 📋 Problem Summary
+
+A client was unable to obtain an IP address because the DHCP pool was missing from the router. 
+
+Restoring the DHCP pool allowed the client to successfully receive a valid IP address.
+
+
 
 
 
