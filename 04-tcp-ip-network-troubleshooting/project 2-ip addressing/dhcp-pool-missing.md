@@ -8,7 +8,9 @@
 
 
 
-A client was unable to obtain an IP address because the DHCP pool was missing from the router. 
+A client was unable to obtain an IP address because the DHCP pool had been deleted from the router configuration. 
+
+The client self-assigned an APIPA address (169.254.x.x) and had no network access.
 
 Restoring the DHCP pool allowed the client to successfully receive a valid IP address.
 
@@ -16,15 +18,17 @@ Restoring the DHCP pool allowed the client to successfully receive a valid IP ad
 
 
 
-## 🔍 What is a DHCP Lease Failure?
+
+
+## 🔍 What is a DHCP Pool Missing?
 
 
 
-A DHCP lease failure occurs when a client device is unable to obtain or renew a valid IP address from a DHCP server. 
+A DHCP Pool Missing failure occurs when a client device requests an IP address from the router but the router
 
-This can happen when the DHCP server is unavailable, the DHCP pool is missing or misconfigured, no IP addresses are 
+has no DHCP pool configured or the pool has been deleted. Without a DHCP pool the router has no addresses to
 
-available, or the client cannot communicate with the DHCP server.
+assign. The client receives no response to its DHCP request and self-assigns an APIPA address (169.254.x.x) instead.
 
 
 
@@ -263,11 +267,11 @@ PC1 → 192.168.10.12
 ## Step 6: Create the DHCP failure in Router
 
 
-enable
+Router> enable
 
-configure terminal
+Router# configure terminal
 
-no ip dhcp pool LAN_POOL
+Router(config)# no ip dhcp pool LAN_POOL...
 
 
 
@@ -331,6 +335,7 @@ no ip dhcp pool LAN_POOL
 
 Recreate the pool:-
 
+enable
 
 configure terminal
 
