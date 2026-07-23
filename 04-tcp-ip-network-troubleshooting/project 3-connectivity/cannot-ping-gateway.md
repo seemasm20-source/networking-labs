@@ -6,11 +6,11 @@
 
 ## 📋 Problem Summary
 
-PC has valid IP but cannot ping its default gateway. No internet access. Cannot reach anything outside local subnet.
+      PC has valid IP but cannot ping its default gateway. No internet access. Cannot reach anything outside local subnet.
 
 
 
-## 🔎 Verify — Step by Step
+## 🔎 Verify - Step by Step
 
 
 
@@ -23,27 +23,209 @@ ipconfig /all
 Note the working IPv4 configuration, including:
 
 IPv4 address
+
 Subnet mask
+
 Default gateway
+
 DHCP status
 
 The correct IPv4 default gateway in this lab was 192.168.0.1.
 
 
-Step 2: Create the Issue
 
-Change the IPv4 configuration from Automatic (IP) to Manual and configure an incorrect default gateway.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (375)" src="https://github.com/user-attachments/assets/d24f9bf3-829f-46db-a825-90bd50bdebba" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Step 2: Create the Issue
+
+Change the IPv4 configuration from Automatic (DHCP) to Manual and configure an incorrect default gateway.
+
+Settings → Network & Internet → Wi-fi 
+→ Hardware properties →  IP assignment → Manual → Toggle IPv4 to ON
 
 Example:
 
-IP Address: 192.168.0.200
+IP Address: 192.168.0.156
+
 Subnet Mask: 255.255.255.0
+
 Default Gateway: 192.168.0.250
+
 DNS Server: 8.8.8.8
 
 
 
-Step 3: Verify the Configuration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (382)" src="https://github.com/user-attachments/assets/c7b11112-9a6d-4b9f-856f-ae186abdd2ab" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Step 3: Verify the Configuration
 
 Run:
 
@@ -54,21 +236,169 @@ The output showed that the incorrect IPv4 default gateway 192.168.0.250 was conf
 
 
 
-Step 4: Test the Configured Gateway
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (380)" src="https://github.com/user-attachments/assets/8fe9ed6a-8179-4227-a6e8-4270b44944be" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Step 4: Test the Configured Gateway
 
 Run:
 
-ping -4 192.168.0.250
+ping  192.168.0.250
 
 The ping failed because the configured gateway address was incorrect and unreachable.
 
 
 
-Step 5: Identify the Root Cause
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (380)" src="https://github.com/user-attachments/assets/5b54ee95-006d-48f5-a625-08d3bbab229a" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Step 5: Identify the Root Cause
 
 Compare the configured gateway with the previously recorded working configuration.
 
 Incorrect Gateway: 192.168.0.250 ❌
+
 Correct Gateway: 192.168.0.1 ✅
 
 The incorrect IPv4 default gateway was identified as the cause of the IPv4 connectivity issue.
@@ -77,18 +407,209 @@ The incorrect IPv4 default gateway was identified as the cause of the IPv4 conne
 
 
 
-🔧 Fix
+## 🔧 Fix
 
 
 1. Change the IPv4 configuration back to Automatic (DHCP) so that the correct IP address, subnet mask, and default gateway are assigned automatically.
 
-2.Cable issue   → replace cable or try different port
+  
 
-3. Switch port   → move to different port
 
-✅ Verification
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (381)" src="https://github.com/user-attachments/assets/63b55e33-65f9-442c-b413-3c7202ed9909" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (383)" src="https://github.com/user-attachments/assets/0193724a-54cf-460c-ba2c-151dcb94c301" />
+
+
+
+
+
+
+
+## ✅ Verification
 
 C:\> ipconfig /all
-C:\> ping 192.168.10.1   Reply ✅
+
+C:\> ping 192.168.0.1   Reply ✅
+
 C:\> ping 8.8.8.8         Reply ✅
+
 C:\> ping google.com      Reply ✅
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (384)" src="https://github.com/user-attachments/assets/d4eeb9d7-956b-429d-8175-014cfa2158e9" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (385)" src="https://github.com/user-attachments/assets/1c44fb1d-0e87-4d23-89cc-ddf421fc8d32" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
