@@ -1,6 +1,6 @@
 
 
-## 🔴 Connectivity 1 — Cannot Ping Gateway
+## 🔴 Connectivity 1 - Cannot Ping Gateway
 
 
 
