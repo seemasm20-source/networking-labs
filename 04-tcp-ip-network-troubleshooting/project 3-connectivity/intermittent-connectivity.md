@@ -26,7 +26,7 @@ Step : 2
 
 ### 1 Sample Output (Illustrative)
 
-
+This command verifies continuous connectivity to the default gateway (router) and detect packet loss or intermittent network issues.
 
 ```text
 C:\> ping -t 192.168.10.1
