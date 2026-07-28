@@ -160,4 +160,7 @@ Reply from 192.168.10.1: bytes=32 time=1ms TTL=64
 
 Ping statistics for 192.168.10.1:
 
+
+The continuous ping test was successful. All 30 packets sent to the destination IP address (192.168.10.1) were received successfully, resulting in 0% packet loss.
+
     Packets: Sent = 30, Received = 30, Lost = 0 (0% loss)
