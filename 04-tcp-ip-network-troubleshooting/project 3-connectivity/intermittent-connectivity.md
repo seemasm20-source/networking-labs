@@ -11,7 +11,7 @@ Connectivity 4 - Intermittent Connectivity
 
 ## 🔎 Verify
 
-Step :1
+Step : 1
 
 C:\> ping ipconfig /all
 
@@ -22,7 +22,7 @@ and adapter status before investigating connectivity or packet loss.
 
 
 
-Step :2
+Step : 2
 
 ### 1 Sample Output (Illustrative)
 
@@ -60,7 +60,7 @@ Note: This sample output demonstrates how intermittent packet loss and increased
 
 
 
-Step :3
+Step : 3
 
 ### 2 Sample Output (Illustrative)
 
