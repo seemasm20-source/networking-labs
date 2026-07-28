@@ -6,15 +6,15 @@
 
 
 
-## 📋 Problem Summary
+ ## 📋 Problem Summary
 
 
  Two PCs on same network cannot reach each other. Ping between them fails even though both have valid IPs and can reach internet individually.
 
 
- 🔍 Issue
+ ## 🔍 Issue
  
-    Possible causes:
+    Possible Cause:
     
 1. Windows Firewall blocking ICMP (ping) 
 
@@ -39,9 +39,9 @@ PC1 → Gateway
 
 C:\> ping 192.168.10.1
 
-Reply ✅   ← Reply from 192.168.10.1: bytes=32 time<1ms TTL=64
+Reply ✅   Reply from 192.168.10.1: bytes=32 time<1ms TTL=64
 
-→ Firewall likely blocking peer-to-peer
+** Firewall likely blocking peer-to-peer request
 
 
 
@@ -72,9 +72,11 @@ C:\> ping 192.168.10.11
 Reply from 192.168.10.11 ✅
 
 
-Resolution: Enabled the File and Printer Sharing (Echo Request - ICMPv4-In) inbound rule in Windows Defender Firewall. This allowed inbound ICMP Echo Requests, restoring 
 
-successful ping communication between the two PCs.
+
+ Resolution: Enabled the File and Printer Sharing (Echo Request - ICMPv4-In) inbound rule in Windows Defender Firewall.
+ 
+ This allowed inbound ICMP Echo Requests,  restoring successful ping communication between the two PCs.
 
 
 
