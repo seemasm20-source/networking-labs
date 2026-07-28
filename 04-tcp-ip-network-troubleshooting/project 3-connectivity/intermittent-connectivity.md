@@ -32,10 +32,15 @@ Step:2
 C:\> ping -t 192.168.10.1
 
 Reply from 192.168.10.1: bytes=32 time=1ms TTL=64
+
 Reply from 192.168.10.1: bytes=32 time=1ms TTL=64
+
 Request timed out.                              (packet dropped)
+
 Reply from 192.168.10.1: bytes=32 time=2ms TTL=64
+
 Request timed out.                             (dropped again!)
+
 Reply from 192.168.10.1: bytes=32 time=45ms TTL=64
 
 ^C
@@ -70,30 +75,44 @@ C:\> pathping google.com
 
 ```text
 Tracing route to google.com [142.250.74.14]
+
 over a maximum of 30 hops:
 
-  0  LAPTOP-ITSUPPORT
-  1  192.168.10.1
-  2  10.100.0.1
-  3  isp-core-router.example.net
-  4  google.com [142.250.74.14]
+### Output
 
-Computing statistics for 100 seconds...
+```text
+Tracing route to google.com
+
+over a maximum of 30 hops:
+
+  0  LAPTOP-MN70JUKE
+
+  1  Default Gateway
+
+  2  ISP Router
+
+  3  ISP Core Router
+
+  4  * * *
+
+Computing statistics for 75 seconds...
 
             Source to Here   This Node/Link
-Hop  RTT    Lost/Sent = Pct  Lost/Sent = Pct  Address
- 0                                           LAPTOP-ITSUPPORT
-                                0/100 = 0%   |
- 1    2ms     3/100 = 3%        3/100 = 3%   192.168.10.1
-                                0/100 = 0%   |
- 2   10ms     3/100 = 3%        0/100 = 0%   10.100.0.1
-                                2/100 = 2%   |
- 3   18ms     5/100 = 5%        2/100 = 2%   isp-core-router.example.net
-                                0/100 = 0%   |
- 4   20ms     5/100 = 5%        0/100 = 0%   google.com
+
+Hop  RTT    Lost/Sent = Pct  Lost/Sent = Pct
+
+ 0                               0/100 = 0%
+
+ 1    6ms     0/100 = 0%         0/100 = 0%
+
+ 2   14ms     0/100 = 0%         0/100 = 0%
+
+ 3   ---     100/100 = 100%      0/100 = 0%
 
 Trace complete.
 ```
+
+
 
 Note: This is illustrative sample output created for documentation purposes. Actual routes, latency, hostnames, and packet loss values vary depending on the network environment.
 
@@ -111,13 +130,34 @@ Note: This is illustrative sample output created for documentation purposes. Act
    Possible Resolutions:
 
 • Verified IP configuration using ipconfig /all.
+
 • Tested connectivity to the default gateway using ping -t.
+
 • Improved Wi-Fi signal by moving closer to the wireless router and using the 5 GHz band.
+
 • Paused bandwidth-intensive applications (Windows Update, OneDrive, cloud sync).
+
 • Updated the wireless network adapter driver.
+
 • If packet loss continues beyond the local network, escalate to the ISP with pathping results.
 
 
 
 
 ## ✅ Verification
+
+Sample Output (Illustrative) 
+
+C:\> ping -t 192.168.10.1
+
+Reply from 192.168.10.1: bytes=32 time=1ms TTL=64
+
+Reply from 192.168.10.1: bytes=32 time=1ms TTL=64
+
+Reply from 192.168.10.1: bytes=32 time=1ms TTL=64
+
+^C
+
+Ping statistics for 192.168.10.1:
+
+    Packets: Sent = 30, Received = 30, Lost = 0 (0% loss)
