@@ -183,6 +183,13 @@ First hop: 192.168.10.1  ✅ traffic going via gateway
 
 
 
+## 🔗 Related Lab
+
+➡️ **[Cannot Reach Default Gateway](./cannot-ping-gateway.md)**
+
+
+
+
 
 
 
