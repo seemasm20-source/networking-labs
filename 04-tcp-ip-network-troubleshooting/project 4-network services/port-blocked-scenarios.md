@@ -41,9 +41,7 @@
 
 
 
-Server → Windows Firewall → Advanced
-
-→ Inbound Rules → Enable Remote Desktop
+Server → Windows Firewall → Advanced → Inbound Rules → Enable Remote Desktop
 
 Or on PC:
 
