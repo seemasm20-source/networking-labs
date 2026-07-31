@@ -19,13 +19,17 @@
 
 
 
-  Column	                         Meaning
-Hop number	                     Which router in the path                             
-Three times	                        Round trip for 3 test packets
-IP/Name	                             Router at that hop
+
+## 📖 Reading Output
 
 
 
+  
+| Column                    | Meaning                                                                                                                    |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Hop Number**            | Identifies the router or Layer 3 device in the path from your computer to the destination.                                 |
+| **Three Times (ms)**      | The round-trip time for **three separate probe packets** sent to that hop. Used to detect latency and intermittent delays. |
+| **IP Address / Hostname** | The IP address or resolved hostname of the router that responded at that hop.                                              |
 
 
   ##  Problem Output
