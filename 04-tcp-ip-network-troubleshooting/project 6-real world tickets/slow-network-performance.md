@@ -1,6 +1,6 @@
 
 
-## 🔴 Scenario 2 — Slow Network Performance
+## 🔴 Scenario 2 - Slow Network Performance
 
 
 ##  📋 Problem Summary
@@ -11,7 +11,7 @@
 
 
 
-   🔎 Step 1 — Measure ping to gateway
+   ## 🔎 Step 1 - Measure ping to gateway
    
      C:\> ping -t 192.168.10.1
      
@@ -31,7 +31,10 @@
 
 
 
-   🔎 Step 2 — pathping for detailed analysis
+
+
+
+   ## 🔎 Step 2 - pathping for detailed analysis
      
      C:\> pathping google.com
 
@@ -49,7 +52,11 @@
 
 
 
-🔧 Fix
+
+
+
+
+  ## 🔧 Fix
       
 Local packet loss → replace cable, different port
 
@@ -62,13 +69,23 @@ WiFi              → move closer, switch to 5GHz
 
 
 
-✅ Verification
+
+
+
+
+
+## ✅ Verification
 
 C:\> ping -t 192.168.10.1
 
 time=1ms  time=1ms  time=1ms
 
 Packets: Sent=50 Received=50  Lost=0 (0% loss) ✅
+
+
+
+
+
 
 
 
