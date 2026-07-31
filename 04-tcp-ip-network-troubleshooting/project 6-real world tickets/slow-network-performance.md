@@ -69,3 +69,10 @@ C:\> ping -t 192.168.10.1
 time=1ms  time=1ms  time=1ms
 
 Packets: Sent=50 Received=50  Lost=0 (0% loss) ✅
+
+
+
+
+
+
+➡️ **Related Lab:** [Intermittent Connectivity](intermittent-connectivity.md)
