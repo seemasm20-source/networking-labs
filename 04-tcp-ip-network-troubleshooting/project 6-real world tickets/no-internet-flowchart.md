@@ -3,12 +3,15 @@
  ## 🔴 Scenario 1 - No Internet Investigation
 
 
-🎯 The 5-Step Diagnostic Flowchart
+      
+      
+      
+      🎯 The 5-Step Diagnostic Flowchart
 
 
 
 
-# 🌐 No Internet Connectivity – Troubleshooting Flowchart
+# 🌐 No Internet Connectivity - Troubleshooting Flowchart
 
 ```text
                      User reports:
@@ -35,7 +38,7 @@
           │                                 │
  Fix DHCP / Static IP / Gateway             ▼
                                     ping <Own IP Address>
-                                    (Example: 192.168.10.50)
+                                    (Example: 192.168.56.1)
                                              │
                         ┌────────────────────┴────────────────────┐
                         │                                         │
@@ -90,6 +93,11 @@
 
 ---
 
+
+
+
+
+
 ## 🎯 Troubleshooting Logic
 
 | Step | Command | Purpose |
@@ -102,6 +110,14 @@
 
 ---
 
+
+
+
+
+
+
+
+
 ## 💡 Key Learning
 
 - If `ping <Own IP>` fails → Investigate the network adapter (NIC) or IP configuration.
@@ -109,3 +125,84 @@
 - If `ping 8.8.8.8` fails → There is no working route to the Internet.
 - If `ping 8.8.8.8` works but `ping google.com` fails → This indicates a DNS resolution issue.
 - Always resolve network connectivity issues before troubleshooting DNS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (412)" src="https://github.com/user-attachments/assets/e4a1fe24-58b9-4b07-9382-d00494dcd45d" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (413)" src="https://github.com/user-attachments/assets/36bd468e-484b-4dc2-946a-3e669cfff574" />
+
