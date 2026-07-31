@@ -75,4 +75,4 @@ Packets: Sent=50 Received=50  Lost=0 (0% loss) ✅
 
 
 
-➡️ **Related Lab:** [Intermittent Connectivity](intermittent-connectivity.md)
+➡️ **Related Lab:** > **Related Troubleshooting Lab:** See **[Intermittent Connectivity](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/intermittent-connectivity.md)** for diagnosing packet loss, high latency, and unstable network connections. :contentReference[oaicite:0]{index=0}
