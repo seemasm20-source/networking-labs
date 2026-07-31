@@ -48,7 +48,7 @@
 
 
 
-## ⭐ Stars (* * *)
+## ⭐ Asterisk (* * *)
 
 Stars with subsequent hops responding → firewall blocking tracert (normal)
 
