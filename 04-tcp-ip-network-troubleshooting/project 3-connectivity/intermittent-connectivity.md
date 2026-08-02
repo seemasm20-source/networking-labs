@@ -1,32 +1,36 @@
 
-Connectivity 4 - Intermittent Connectivity
+     ## Connectivity 4 - Intermittent Connectivity
+
+
+
+
 
 
 ## 📋 Problem Summary
-
-  Connection works then drops randomly. Downloads unreliable. Video calls drop. No clear pattern.
+ 
+   Connection works then drops randomly. Downloads unreliable. Video calls drop. No clear pattern.
 
 
 
 
 ## 🔎 Verify
 
-Step : 1
+ Step : 1
 
-C:\> ping ipconfig /all
+ C:\> ping ipconfig /all
 
-Verify that the active network adapter has a valid IP address, subnet mask, default gateway, DNS servers
+ Verify that the active network adapter has a valid IP address, subnet mask, default gateway, DNS servers
 
-and adapter status before investigating connectivity or packet loss.
+ and adapter status before investigating connectivity or packet loss.
 
 
 
 
 Step : 2
 
-### 1 Sample Output (Illustrative)
+ ### 1 Sample Output (Illustrative)
 
-This command verifies continuous connectivity to the default gateway (router) and detect packet loss or intermittent network issues.
+ This command verifies continuous connectivity to the default gateway (router) and detect packet loss or intermittent network issues.
 
 ```text
 C:\> ping -t 192.168.10.1
@@ -146,7 +150,7 @@ Note: This is illustrative sample output created for documentation purposes. Act
 
 ## ✅ Verification
 
-Sample Output (Illustrative) 
+ Sample Output (Illustrative) 
 
 C:\> ping -t 192.168.10.1
 
