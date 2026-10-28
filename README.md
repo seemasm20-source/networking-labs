@@ -157,7 +157,7 @@ in the troubleshooting folder.
 |---|---|---|---|
 | PCs Could Not Communicate Across LANs | Wrong default gateway on PCs | Set the correct gateway on all PCs | [Wrong Default Gateway Issue](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/wrong-gateway-issue.md) |
 | Router Interface Administratively Down | The `shutdown` command manually disabled the GigabitEthernet0/0 interface. | Enter interface configuration mode and use `no shutdown`. |  [Router Interface Down Issue](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down.issue.md)|
-| Shutdown Had No Effect on Same-LAN Ping | Same-LAN traffic bypasses the router. | Test cross-LAN connectivity instead. | [Router Interface Down Issue](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down-issue.md) |
+| Shutdown Had No Effect on Same-LAN Ping | Same-LAN traffic bypasses the router. | Test cross-LAN connectivity instead. | [Router Interface Down Issue](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down.issue.md)|
 
 
 
