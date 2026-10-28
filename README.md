@@ -185,6 +185,7 @@ in the troubleshooting folder.
 
 ---
 
+
 ## 🎓 Learning Outcome
 
 This project provided hands-on experience
@@ -222,11 +223,11 @@ configuration problems.
 This lab successfully demonstrated
 inter-LAN routing between two separate
 department networks using a Cisco 2911
-router — confirmed through end-to-end
+router confirmed through end-to-end
 ping tests from HR to Finance.
 
 What made this lab valuable was not
-just getting it to work-but breaking
+just getting it to work but breaking
 it deliberately and fixing it.
 
 Three real issues were encountered,
