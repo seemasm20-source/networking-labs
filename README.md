@@ -137,19 +137,8 @@ network segmentation.
 ## 🔴 Issues Encountered
                                                                                                          
 
-Real problems faced during this lab - full details
+Real problems faced during this lab-full details
 in the troubleshooting folder.
-
-
-| Issue                                   | Cause                                                                                        | Fix                                           | File                                                                                                                        |
-| --------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| PCs Could Not Communicate Across LAN's  | Wrong Default Gateway On PCs                                                                 | Set Correct Gateway On All PCs                | [Wrong Default Gateway Issue](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/wrong-gateway-issue.md)  |
-| Router Interface Administratively Down  | The shutdown command was typed on GigabitEthernet0/0  which manually disabled the interface. | Entered Interface Mode First Then No Shutdown | [Router Interface Down Issue](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down.issue.md)|
-| Shutdown Had No Effect on same-LAN Ping | Same-LAN Traffic Bypasses Router                | Tested Cross-LAN Ping Instead                 | 
-[Router Interface Down Issue](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/troubleshooting/interface-down-issue.md) | 
-
-
-
 
 
 
