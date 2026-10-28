@@ -187,27 +187,63 @@ in the troubleshooting folder.
 
 ## 🎓 Learning Outcome
 
-This project provided hands-on experience configuring
-LAN-to-LAN communication using Cisco devices in a
-simulated enterprise environment.
+This project provided hands-on experience
+configuring inter-LAN communication using
+Cisco routers and switches in a simulated
+enterprise environment.
 
-It strengthened practical understanding of IP addressing,
-router CLI configuration, default gateway concepts and
-fault isolation - skills directly relevant to IT Help
-Desk Tier 1 and IT Support roles.
+Working through real configuration errors
+and resolving them independently strengthened
+practical understanding of:
+
+- IPv4 addressing and subnetting across
+  multiple networks
+- Cisco IOS CLI-interface configuration
+  and troubleshooting commands
+- Default gateway concepts and how
+  misconfiguration affects connectivity
+- Fault isolation-identifying root cause
+  before applying a fix
+
+These are core skills required in IT Help
+Desk Tier 1 and IT Support roles where
+users frequently report connectivity issues
+that trace back to gateway or interface
+configuration problems.
+
+
+
 
 ---
 
 ## ✅ Conclusion
 
-Communication between HR (LAN 1) and Finance (LAN 2)
-was successfully established using a Cisco 2911 router.
-All cross-LAN pings confirmed full connectivity.
 
-Three real troubleshooting issues were identified,
-diagnosed and resolved - demonstrating practical
-networking and fault isolation skills required in
-entry-level IT Support positions.
+This lab successfully demonstrated
+inter-LAN routing between two separate
+department networks using a Cisco 2911
+router — confirmed through end-to-end
+ping tests from HR to Finance.
+
+What made this lab valuable was not
+just getting it to work-but breaking
+it deliberately and fixing it.
+
+Three real issues were encountered,
+diagnosed and resolved using Cisco CLI
+diagnostic commands. Each one reflects
+a fault type that appears regularly in
+real IT support environments:
+
+- A wrong gateway stops users reaching
+  other departments-one of the most
+  common Help Desk calls
+- An interface left administratively down
+  takes out an entire network segment
+- Understanding why same-LAN traffic
+  bypasses the router is fundamental
+  to isolating where a fault actually lives
+
 
 
 
