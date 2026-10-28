@@ -2,20 +2,22 @@
 # 🌐 LAN-to-LAN Routing Using Cisco Router
 
 
-**Portfolio:** IT Help Desk Tier 1 — Networking Labs
+**Portfolio:** IT Help Desk Tier 1 & Tier 2 - Networking Labs
 
 **Tool:** Cisco Packet Tracer
+  
+**Purpose:** Network simulation and troubleshooting practice
 
-**Author:** Seema
+**Author:** Seema Soapanahalli Mallikarjunaiah
 
-**Date:** May 14, 2026
+**Date:** May 2026
 
 ---
 
 ## 📌 Objective
 
-This project simulates two office departments -
-**HR (LAN 1)** and **Finance (LAN 2)** - operating
+This project simulates two office departments 
+**HR (LAN 1)** and **Finance (LAN 2)**  operating
 on separate networks within the same organisation.
 
 A Cisco 2911 router connects both departments and
@@ -30,6 +32,31 @@ network segmentation.
 - Network fault diagnosis and resolution
 
 ---
+
+
+
+
+
+
+## 🚀 How to install Cisco Packet Tracer
+
+1. Visit the official Cisco Networking Academy Resource Hub. (https://www.netacad.com/resources/lab-downloads)
+
+2. Sign in to your Cisco account.
+
+3. Download the Windows version of Cisco Packet Tracer.
+
+4. Open the downloaded installer and follow the installation wizard.
+
+5. After installation, launch Cisco Packet Tracer from the Windows Start menu.
+
+
+
+
+
+
+
+
 
 ## 🖥️ Network Topology
 
@@ -52,7 +79,7 @@ network segmentation.
 
 ## 📋 Network Addressing Plan
 
-### LAN 1 — HR Department
+### LAN 1 - HR Department
 
 | Device       | IP Address | Subnet Mask   | Gateway  |
 |--------------|------------|---------------|----------|
@@ -61,7 +88,7 @@ network segmentation.
 | PC2          | 10.0.0.2   | 255.255.255.0 | 10.0.0.4 |
 | PC3          | 10.0.0.3   | 255.255.255.0 | 10.0.0.4 |
 
-### LAN 2 — Finance Department
+### LAN 2 - Finance Department
 
 | Device       | IP Address  | Subnet Mask   | Gateway     |
 |--------------|-------------|---------------|-------------|
@@ -78,7 +105,7 @@ network segmentation.
 |--------|------------|-----|-------------------------------|
 | Router | Cisco 2911 | 1   | Routes traffic between 2 LANs |
 | Switch | Cisco 2960 | 2   | Connects PCs within each LAN  |
-| PC     | Generic PC | 6   | End users — 3 per department  |
+| PC     | Generic PC | 6   | End users - 3 per department  |
 
 ---
 
@@ -86,7 +113,7 @@ network segmentation.
 
 | Technology          | Purpose                        |
 |---------------------|--------------------------------|
-| [Cisco Packet Tracer](https://www.netacad.com/courses/getting-started-cisco-packet-tracer) | Network simulation tool |
+| [Cisco Packet Tracer](https://www.netacad.com/resources/lab-downloads) | Network simulation tool |
 | Cisco 2911 Router   | Inter-LAN routing via CLI      |
 | Cisco 2960 Switch   | Layer 2 switching within LANs  |
 | IPv4 Addressing     | Static IP on all devices       |
@@ -110,7 +137,7 @@ network segmentation.
 ## 🔴 Issues Encountered
                                                                                                          
 
-Real problems faced during this lab — full details
+Real problems faced during this lab - full details
 in the troubleshooting folder.
 
 
@@ -147,7 +174,7 @@ in the troubleshooting folder.
 - Static IPv4 addressing across two /24 networks
 - Inter-LAN routing using directly connected routes
 - Interface troubleshooting — show ip interface brief
-- Routing table verification — show ip route
+- Routing table verification - show ip route
 - Default gateway concepts and troubleshooting
 - Cisco CLI level navigation
 - Network fault isolation and root cause analysis
@@ -173,7 +200,7 @@ simulated enterprise environment.
 
 It strengthened practical understanding of IP addressing,
 router CLI configuration, default gateway concepts and
-fault isolation — skills directly relevant to IT Help
+fault isolation - skills directly relevant to IT Help
 Desk Tier 1 and IT Support roles.
 
 ---
@@ -185,7 +212,7 @@ was successfully established using a Cisco 2911 router.
 All cross-LAN pings confirmed full connectivity.
 
 Three real troubleshooting issues were identified,
-diagnosed and resolved — demonstrating practical
+diagnosed and resolved - demonstrating practical
 networking and fault isolation skills required in
 entry-level IT Support positions.
 
