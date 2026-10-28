@@ -17,6 +17,11 @@
 
 
 
+
+
+
+
+
 [topology](https://github.com/seemasm20-source/networking-labs/blob/main/lan-to-lan-routing%20/topology%20/topology.md)
 
 
@@ -39,10 +44,6 @@
 | Router Cisco 2911 | 1        | Routes Traffic Between 2 LANs |
 | Switch Cisco 2960 | 2        | Connects PCs Within Each LAN  |
 | PC Generic PC     | 6        | End User Devices — 3 Per LAN  |
-
-
-
-
 
 
 
@@ -95,7 +96,7 @@ Cable type: Copper Straight-Through for all connections
 
 
 
-## Step 3 — Assign IPs to All PCs
+## Step 3 - Assign IPs to All PCs
 Click each PC → Desktop tab → IP Configuration → Static
 
 
@@ -133,7 +134,7 @@ LAN 2 PCs (PC4–PC6) → gateway 192.168.1.4
 
 
 
-PC1 IP configuration — LAN 1 (HR):
+PC1 IP configuration - LAN 1 (HR):
 
 
 
@@ -197,7 +198,7 @@ PC1 IP configuration — LAN 1 (HR):
 
 
 
-PC4 IP configuration — LAN 2 (Finance):
+PC4 IP configuration - LAN 2 (Finance):
 
 
 
