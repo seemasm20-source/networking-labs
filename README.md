@@ -40,7 +40,7 @@ network segmentation.
 
 ## 🚀 How to install Cisco Packet Tracer
 
-1. Visit the official Cisco Networking Academy Resource Hub. (https://www.netacad.com/resources/lab-downloads)
+1. Visit the official Cisco Networking Academy Resource Hub. [Cisco Networking Academy Resource Hub](https://www.netacad.com/resources/lab-downloads)
 
 2. Sign in to your Cisco account.
 
