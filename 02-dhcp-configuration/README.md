@@ -3,15 +3,18 @@
 ## 🌐 DHCP Server Configuration using Cisco Router
 
 
+# 🌐 DHCP Server Configuration using Cisco Router
 
-## Portfolio: Networking Labs-DHCP Configuration
 
-## Tool: Cisco Packet Tracer
+**Portfolio:** IT Help Desk Tier 1 & Tier 2 - Networking Labs
 
-## Author: Seema
+**Tool:** Cisco Packet Tracer
+  
+**Purpose:** Network simulation and troubleshooting practice
 
-## Date: May 2026
+**Author:** Seema Soapanahalli Mallikarjunaiah
 
+**Date:** May 2026
 
 
 
