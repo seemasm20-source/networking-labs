@@ -3,7 +3,7 @@
 
 # 🔴 Troubleshooting Issue 1 — Interface Administratively Down
 
-[← Back to Project README](../README.md)
+[← Back to Project README][Networking Labs — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/README.md)
 
 ---
 
