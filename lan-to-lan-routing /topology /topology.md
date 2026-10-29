@@ -1,20 +1,43 @@
-## 🖥️ Network Topology
+# 🖥️ Topology - LAN-to-LAN Routing Lab
+
 
  
- Step 1 - Open Cisco Packet Tracer and add devices to canvas
+ ## Step 1 - Open Cisco Packet Tracer and add devices to canvas
  
 
 
 
 
+## 🔧 Devices Used
+
+| Device | Model | Quantity | Purpose |
+|---|---|---:|---|
+| Router | Cisco 2911 | 1 | Routes traffic between two LANs |
+| Switch | Cisco 2960 | 2 | Connects PCs within each LAN |
+| PC | Generic PC | 6 | End-user devices — 3 per LAN |
 
 
 
 
 
 
+## 🔌 Step 2 - Connect Cables
+
+**Cable Type:** Copper Straight-Through for all connections.
+
+| Source Device | Source Port | Destination Device | Destination Port |
+|---|---|---|---|
+| PC1 | FastEthernet0 | Switch 1 | FastEthernet0/1 |
+| PC2 | FastEthernet0 | Switch 1 | FastEthernet0/2 |
+| PC3 | FastEthernet0 | Switch 1 | FastEthernet0/3 |
+| PC4 | FastEthernet0 | Switch 2 | FastEthernet0/4 |
+| PC5 | FastEthernet0 | Switch 2 | FastEthernet0/5 |
+| PC6 | FastEthernet0 | Switch 2 | FastEthernet0/6 |
+| Switch 1 | GigabitEthernet0/1 | Router | GigabitEthernet0/0 |
+| Switch 2 | GigabitEthernet0/1 | Router | GigabitEthernet0/1 |
 
 
+---
 <img width="1920" height="1080" alt="Screenshot (204)" src="https://github.com/user-attachments/assets/e7285ed4-07ca-492e-b8c2-48b0f8855e6a" />
 
 
@@ -50,13 +73,7 @@
 
 
 
-## 🔧 Devices Used
 
-| Device Model      | Quantity | Purpose                       |
-| ----------------- | -------: | ----------------------------- |
-| Router Cisco 2911 | 1        | Routes Traffic Between 2 LANs |
-| Switch Cisco 2960 | 2        | Connects PCs Within Each LAN  |
-| PC Generic PC     | 6        | End User Devices — 3 Per LAN  |
 
 
 
@@ -68,36 +85,25 @@
 
 
 
-## Step 2 — Connect Cables
-Cable type: Copper Straight-Through for all connections
 
 
 
 
 
 
-| Source Device | Source Port     | Destination Device | Destination Port   |
-| ------------- | --------------- | ------------------ | ------------------ |
-| PC1           | FastEthernet0   | Switch 1           |  FastEthernet      |
-| PC2           | FastEthernet0   | Switch 1           |  FastEthernet      |
-| PC3           | FastEthernet0   | Switch 1           |  FastEthernet      |
-| PC4           | FastEthernet0   | Switch 2           | FastEthernet       |
-| PC5           | FastEthernet0   | Switch 2           |  FastEthernet      |
-| PC6           | FastEthernet0   | Switch 2           | FastEthernet       |
-| Switch 1      | GigabitEthernet | Router             | GigabitEthernet0/0 |
-| Switch 2      | GigabitEthernet | Router             | GigabitEthernet0/1 |
 
 
 
 
 
+**✅ Connection Status**
 
+- 🟢 **Green indicators:** Connections are established.
+- 🔴 **Red indicators:** Check the cable type and port selection, then reconnect if necessary.
 
 
 
 
-✅ All cable dots turn green = connected correctly
-🔴 Red dot = wrong cable or wrong port — delete and redo
 
 
 
@@ -105,13 +111,25 @@ Cable type: Copper Straight-Through for all connections
 
 
 
+## 🌐 Step 3 - Assign IP Addresses to All PCs
 
+**Navigation:** Click each PC → **Desktop** tab → **IP Configuration** → **Static**
 
+### 📋 IP Addressing Table
 
+| PC IP Address | Subnet Mask | Default Gateway |
+|---|---|---|
+| `10.0.0.1` | `255.255.255.0` | `10.0.0.4` |
+| `10.0.0.2` | `255.255.255.0` | `10.0.0.4` |
+| `10.0.0.3` | `255.255.255.0` | `10.0.0.4` |
+| `192.168.1.1` | `255.255.255.0` | `192.168.1.4` |
+| `192.168.1.2` | `255.255.255.0` | `192.168.1.4` |
+| `192.168.1.3` | `255.255.255.0` | `192.168.1.4` |
 
-## Step 3 - Assign IPs to All PCs
-Click each PC → Desktop tab → IP Configuration → Static
+**📝 Note:** The default gateway is the router's IP address on the PC's local network.
 
+- **LAN 1 - HR (PC1–PC3):** `10.0.0.4`
+- **LAN 2 - Finance (PC4–PC6):** `192.168.1.4`
 
 
 
@@ -120,34 +138,9 @@ Click each PC → Desktop tab → IP Configuration → Static
 
 
 
-| PC IP       | Subnet Mask   | Default Gateway |
-| ----------- | ------------- | --------------: |
-| 10.0.0.1    | 255.255.255.0 | 10.0.0.4        |
-| 10.0.0.2    | 255.255.255.0 | 10.0.0.4        |
-| 10.0.0.3    | 255.255.255.0 | 10.0.0.4        |
-| 192.168.1.1 | 255.255.255.0 | 192.168.1.4     |
-| 192.168.1.2 | 255.255.255.0 | 192.168.1.4     |
-| 192.168.1.3 | 255.255.255.0 | 192.168.1.4     |
 
 
-
-
-
-
-Note: Default gateway is the router's IP on that PC's side.
-LAN 1 PCs (PC1–PC3) → gateway 10.0.0.4
-LAN 2 PCs (PC4–PC6) → gateway 192.168.1.4
-
-
-
-
-
-
-
-
-
-
-PC1 IP configuration - LAN 1 (HR):
+### 🖥️ PC1 IP Configuration - LAN 1 (HR)
 
 
 
@@ -173,20 +166,6 @@ PC1 IP configuration - LAN 1 (HR):
 
 
 
-<img width="1920" height="1080" alt="Screenshot (276)" src="https://github.com/user-attachments/assets/a5ce7926-3d53-4857-80e0-0689c30ec177" />
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (277)" src="https://github.com/user-attachments/assets/5c49260e-42e7-41a8-89df-91cb1fa34f2c" />
 
 
 
@@ -211,7 +190,21 @@ PC1 IP configuration - LAN 1 (HR):
 
 
 
-PC4 IP configuration - LAN 2 (Finance):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 🖥️ PC4 IP Configuration - LAN 2 (Finance)
 
 
 
@@ -250,7 +243,6 @@ PC4 IP configuration - LAN 2 (Finance):
 
 
 
-<img width="1920" height="1080" alt="Screenshot (279)" src="https://github.com/user-attachments/assets/3013682b-9651-4f5a-b7ea-9cf93adfe31c" />
 
 
 
@@ -269,7 +261,8 @@ PC4 IP configuration - LAN 2 (Finance):
 
 
 
-<img width="1920" height="1080" alt="Screenshot (280)" src="https://github.com/user-attachments/assets/d0771b32-fbf0-4045-ac89-d1966645867b" />
+
+
 
 
 
