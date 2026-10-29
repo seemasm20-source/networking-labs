@@ -1,19 +1,24 @@
- ## Router Configuration
+## ⚙️ Router Configuration
 
-## Overview:
+### 📌 Overview
 
-The Cisco 2911 router is configured with two interfaces
-one facing HR (LAN 1) and one facing Finance (LAN 2).
+The Cisco 2911 router is configured with two interfaces: one connected to HR (LAN 1) and the other connected to Finance (LAN 2).
+
+ All commands are entered through the **CLI** tab inside Cisco Packet Tracer.
+
+### 🖥️ How to Open Router CLI
+
+1. Click the router on your Packet Tracer canvas.
+2. Select the **CLI** tab at the top of the window.
+3. Press **Enter** if prompted to continue.
+4. The router command prompt will appear
 
 
-All commands are entered in the Router CLI tab inside
-Cisco Packet Tracer.
 
-How to Open Router CLI
-1. Click the Router on your Packet Tracer canvas
-2. Click the CLI tab at the top of the window
-3. Press Enter if prompted to continue
-4. You will see: Router>
+
+
+
+
 
 
 
@@ -30,7 +35,6 @@ How to Open Router CLI
 
 
 
-Note- Every command only works at its correct level. If a command has no effect check your prompt first.
 
 
 
@@ -44,47 +48,28 @@ Note- Every command only works at its correct level. If a command has no effect 
 
 
 
-## Router Configuration Commands:
 
+## ⚙️ Router Configuration Commands
 
-
-
-
-
+```text
 Router> enable
-
 Router# configure terminal
 
-
-
-
 ! --- LAN 1 interface (HR Department) ---
-
 Router(config)# interface GigabitEthernet0/0
-
 Router(config-if)# ip address 10.0.0.4 255.255.255.0
-
 Router(config-if)# no shutdown
-
 Router(config-if)# exit
-
-
-
-
 
 ! --- LAN 2 interface (Finance Department) ---
-
 Router(config)# interface GigabitEthernet0/1
-
 Router(config-if)# ip address 192.168.1.4 255.255.255.0
-
 Router(config-if)# no shutdown
-
 Router(config-if)# exit
-
 
 ! --- Save configuration ---
 Router# write memory
+```
 
 
 
@@ -95,7 +80,26 @@ Router# write memory
 
 
 
-Note:  The default gateway on every PC is the router's IP address on that PC's side. LAN 1 PCs use 10.0.0.4 — LAN 2 PCs use 192.168.1.4
+
+
+
+
+
+
+
+---
+> **📝 Note:** The default gateway on each PC must match the router interface IP address for its LAN.
+>
+> - **LAN 1 (HR):** `10.0.0.4`
+> - **LAN 2 (Finance):** `192.168.1.4`
+---
+
+
+
+
+
+
+
 
 
 
@@ -197,26 +201,19 @@ Note:  The default gateway on every PC is the router's IP address on that PC's s
 
 
 
+---
 
+## 📘 What Each Command Does in CLI
 
-
-## What Each Command Does in CLI:
-
-
-
-
-
-
-
-| Command                           | What It Does                                         |
-| --------------------------------- | ---------------------------------------------------- |
-| Enable                            | Enters privileged mode, full access to all commands |
-| Configure Terminal                | Enters configuration mode, allows changes           |
-| Interface GigabitEthernet0/0      | Selects the port facing LAN 1 (HR)                   |
-| Ip Address 10.0.0.4 255.255.255.0 | Assigns IP and subnet mask to this port              |
-| No ShutDown                       | Opens the port — Cisco ports are locked by default   |
-| Exit                              | Goes back one level to configure next interface      |
-| Write Memory                      | Saves config permanently — survives restart          |
+| Command | What It Does |
+|---|---|
+| `enable` | Enters privileged EXEC mode, providing access to advanced commands. |
+| `configure terminal` | Enters global configuration mode to make configuration changes. |
+| `interface GigabitEthernet0/0` | Selects the router interface connected to LAN 1 (HR). |
+| `ip address 10.0.0.4 255.255.255.0` | Assigns the IP address and subnet mask to the interface. |
+| `no shutdown` | Enables the interface, which may be administratively disabled by default. |
+| `exit` | Exits the current configuration mode and returns to the previous level. |
+| `write memory` | Saves the running configuration to startup configuration so it persists after a restart. |
 
 
 
@@ -229,28 +226,13 @@ Note:  The default gateway on every PC is the router's IP address on that PC's s
 
 
 
-## Verification Commands
-After configuration run show ip interface brief command to confirm everything is working correctly:
+## ✅ Verification Commands
 
+After completing the router configuration, run the following command to verify the interface status and IP addresses:
 
-
-
-
-
-
-
-Check both interfaces are active
+```text
 Router# show ip interface brief
-
-
-Expected output:
-
-
-
-| Interface          | IP-Address  | OK | Status | Protocol |
-| ------------------ | ----------- | :-: | ------ | :------: |
-| GigabitEthernet0/0 | 10.0.0.4    | YES | up     | ✅       |
-| GigabitEthernet0/1 | 192.168.1.4 | YES | up     | ✅       |
+```
 
 
 
@@ -261,9 +243,73 @@ Expected output:
 
 
 
+**Check that both router interfaces are active:**
 
 
-[Screenshot of show ip interface brief output]
+
+**Expected Output:**
+
+| Interface | IP-Address | OK | Status | Protocol |
+|---|---|:---:|---|:---:|
+| GigabitEthernet0/0 | 10.0.0.4 | YES | up | up |
+| GigabitEthernet0/1 | 192.168.1.4 | YES | up | up |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Screenshot - show ip interface brief confirming both interfaces are up:**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -342,8 +388,14 @@ Expected output:
 
 
 
+---
+## 🔎 Ping Test - Cross-LAN Connectivity
 
-Ping Test — Confirm Cross-LAN Communication From PC1 (10.0.0.1) → Desktop → Command Prompt:
+     From PC1 (10.0.0.1) open:
+
+     Desktop → Command Prompt
+
+     Then ping each device:
 
 
 
@@ -426,7 +478,9 @@ Ping Test — Confirm Cross-LAN Communication From PC1 (10.0.0.1) → Desktop �
 
 
 
-Screenshot of successful Cross-LAN ping:
+### 📸 Screenshot - Successful Cross-LAN Ping
+---
+
 
 
 
@@ -476,7 +530,7 @@ Screenshot of successful Cross-LAN ping:
 
 
 
-
+---
 <img width="1920" height="1080" alt="Screenshot (258)" src="https://github.com/user-attachments/assets/1e6423c5-1b04-4b84-a4d7-d33c8ab03e54" />
 
 
@@ -500,7 +554,7 @@ Screenshot of successful Cross-LAN ping:
 
 
 
-
+---
 <img width="1920" height="1080" alt="Screenshot (284)" src="https://github.com/user-attachments/assets/26cd15b3-72d0-4050-9d28-329dcf9e042b" />
 
 
@@ -529,7 +583,7 @@ Screenshot of successful Cross-LAN ping:
 
 
 
-
+ ---
 <img width="1920" height="1080" alt="Screenshot (259)" src="https://github.com/user-attachments/assets/ee4b3825-3902-4cc3-b8c7-4e5fb818bc07" />
 
 
@@ -557,7 +611,7 @@ Screenshot of successful Cross-LAN ping:
 
 
 
-
+ ---
 <img width="1920" height="1080" alt="Screenshot (260)" src="https://github.com/user-attachments/assets/6d7933b4-a667-42e4-9fde-8549134c6086" />
 
 
