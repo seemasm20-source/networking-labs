@@ -31,14 +31,13 @@
 
 
 
-## What is shutdown/ Administratively down means in Router CLI?
+## 💡 What Does Administratively Down Mean?
 
-
-
-
-
-In a router CLI (such as Cisco IOS), "Administratively Down" means an interface has been manually disabled by a network administrator using the shutdown command, or it has never been enabled. It will not pass traffic until re-enabled.
-
+In Cisco IOS an interface showing
+**Administratively Down** means it was
+manually disabled using the `shutdown`
+command or it was never enabled.The interface will not pass any traffic
+until it is re-enabled using `no shutdown`.
 
 
 
@@ -594,8 +593,4 @@ ping 192.168.1.3 → Reply ✅
 
 
 
-User complaint: I can reach PCs in my own office but nothing in the other department works.
 
-Root cause: Router interfaces GigabitEthernet0/0 and Gi0/1 were administratively down no traffic could pass between LANs.
-
-Resolution: Ran no shutdown on both interfaces. Verified with show ip interface brief both ports up/up. Cross-LAN pings confirmed full connectivity restored.
