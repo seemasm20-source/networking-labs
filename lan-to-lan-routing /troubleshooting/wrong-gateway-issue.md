@@ -573,6 +573,7 @@ ping 192.168.1.2  →  Reply ✅
 
 ping 192.168.1.3  →  Reply ✅
 
+"Same configuration applied to PC2 and PC3  
 
 
 
@@ -652,7 +653,6 @@ ping 192.168.1.3  →  Reply ✅
 
 
 
-<img width="1920" height="1080" alt="Screenshot (226)" src="https://github.com/user-attachments/assets/1fb7728b-08c2-48c3-98dd-12e93a58a7a6" />
 
 
 
@@ -707,7 +707,8 @@ ping 192.168.1.3  →  Reply ✅
 
 
 
-<img width="1920" height="1080" alt="Screenshot (286)" src="https://github.com/user-attachments/assets/4d6925a8-1015-41ea-963e-2ef1ed51209c" />
+
+
 
 
 
@@ -799,34 +800,12 @@ ping 192.168.1.3  →  Reply ✅
 
 
 
-🎯 Real-World Help Desk Ticket
-
-User complaint:
+## Key learning:
 
 
-I can reach my colleagues on the same floor but cannot reach anyone in the Finance department 
+Gateway is only needed when traffic leaves the local network. Same-LAN traffic goes through switch directly
 
-or access any shared servers.
-
-
-Root cause:
-
-Default gateway was missing on the user's PC. Same-LAN communication worked because it goes
-
-
-through the switch directly — no gateway needed. Cross-LAN communication failed because the PC
-
-had no exit route to reach the router.
-
-
-Resolution:
-
-
-Added correct default gateway on all PCs. LAN 1 PCs → 10.0.0.4 , LAN 2 PCs → 192.168.1.4
-
-
-Verified with cross-LAN ping test.
-
+gateway is never consulted. Cross-LAN traffic must exit through the router  gateway is mandatory.
 
 
 
