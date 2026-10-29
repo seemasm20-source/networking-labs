@@ -1,7 +1,7 @@
 
 
 
-# 🔴 Troubleshooting Issue 1 — Interface Administratively Down
+# 🔴 Troubleshooting Issue 1 - Interface Administratively Down
 
 [ Back to Project README]  →  [Networking Labs — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/README.md)
 
@@ -16,18 +16,6 @@
 | **Symptom** | Cross-LAN ping fails - Request timed out |
 | **Fix** | Applied `no shutdown` on both interfaces |
 | **Verified** | `show ip interface brief` - both ports up ✅ |
-
-
-
-
-
-
-  Router(config)# interface GigabitEthernet0/0
-
-  
-
-  Router(config-if)# shutdown
-
 
 
 
@@ -258,9 +246,10 @@ Router(config-if)# exit
 
 
 
-## ✅ Verification 1 — Check Interface Status
+## ✅ Verification 1 - Check Interface Status
 
 Run from interface configuration mode:
+
 Router(config-if)# do show ip interface brief
 
 
@@ -321,7 +310,7 @@ Router(config-if)# do show ip interface brief
 
 
 
-## Verification 2 : Ping the PC's of cross LAN(2) to check whether they are communicating each other.
+## Verification 2 - Ping the PC's of cross LAN(2) to check whether they are communicating each other.
 
 
 ping 192.168.1.1 → Reply ✅
