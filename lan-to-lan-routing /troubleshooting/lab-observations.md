@@ -1,4 +1,4 @@
-# 💡 Lab Observations — LAN-to-LAN Routing
+# 💡 Lab Observations - LAN-to-LAN Routing
 
 [← Back to Project README](./README.md)
 
