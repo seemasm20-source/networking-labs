@@ -203,7 +203,7 @@ Router# write memory
 
 ---
 
-## 📘 What Each Command Does in CLI
+## 📘 What Each CLI Command Does
 
 | Command | What It Does |
 |---|---|
