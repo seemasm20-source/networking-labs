@@ -1,7 +1,9 @@
-## Troubleshooting - Issue 2  
 
+# 🔴 Troubleshooting Issue 2 - Wrong Default Gateway
 
-## Issue - PC's Could Not Communicate Between LANs
+[← Back to Project README](../README.md)
+
+---
 
 
 
