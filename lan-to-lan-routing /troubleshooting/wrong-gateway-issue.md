@@ -1,7 +1,7 @@
 
 # 🔴 Troubleshooting Issue 2 - Wrong Default Gateway
 
-[ Back to Project README]  →  [View Networking Labs — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/README.md)
+  [ Back to Project README]  →  [View Networking Labs — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/README.md)
 
 
 
@@ -26,32 +26,6 @@
 | **Fix** | Added correct gateway on all PCs |
 | **Verified** | Cross-LAN ping confirmed   |
 
-
-
-
-
-
-
-
-## 🔍 Cause:-
-
-
-
-The default gateway field was left empty on all PCs during initial IP configuration. Without a gateway the PC has no exit route to send
-
-
-traffic outside its own LAN, it cannot reach the router or any other network.
-
-
-PC → Desktop → IP Configuration
-
-IP Address   : 10.0.0.1       ✅ set
-
-
-Subnet Mask  : 255.255.255.0  ✅ set
-
-
-Default GW   : (empty)        ❌ missing
 
 
 
@@ -116,12 +90,13 @@ Without it the PC is stuck inside its own LAN.
 
 
 
+## 🧪 Ping Test Results
 
+| Test | Result | Reason |
+|---|---|---|
+| Same-LAN ping (`10.0.0.1` → `10.0.0.2`) | Reply ✅ | The switch forwards traffic within the same LAN. A default gateway is not required. |
+| Cross-LAN ping (`10.0.0.1` → `192.168.1.1`) | Timed out  | Communication with another LAN requires a correctly configured default gateway and router routing. |
 
-| Test                                    | Result      | Reason                                      |
-| --------------------------------------- | ----------- | ------------------------------------------- |
-| Same-LAN ping (10.0.0.1 → 10.0.0.2)     |  Reply ✅    | Switch handles same-LAN  gateway not needed |
-| Cross-LAN ping (10.0.0.1 → 192.168.1.1) | Timed out ❌ | Must exit through router gateway missing    |
 
 
 
@@ -184,14 +159,11 @@ Without it the PC is stuck inside its own LAN.
 
 
 
-## Key learning:
 
 
-Gateway is only needed when traffic leaves the local network. Same-LAN traffic goes through switch directly
 
 
 
-gateway is never consulted. Cross-LAN traffic must exit through the router  gateway is mandatory.
 
 
 
@@ -239,13 +211,6 @@ gateway is never consulted. Cross-LAN traffic must exit through the router  gate
 
 
 
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (257)" src="https://github.com/user-attachments/assets/91a912a1-bafd-451e-813c-056b79ff189c" />
 
 
 
@@ -344,31 +309,26 @@ gateway is never consulted. Cross-LAN traffic must exit through the router  gate
 
 
 
-## 🔧 Fix :-
+## 🔧 Fix - Configure the Correct Default Gateway
 
+Added the correct default gateway to all PCs.
 
-Added the correct default gateway on all PCs:
+### Steps
 
+1. Click each PC.
+2. Navigate to **Desktop → IP Configuration**.
+3. Enter the appropriate default gateway for the PC's LAN.
 
+### Default Gateway Configuration
 
+| LAN | PCs | Default Gateway | Router Interface |
+|---|---|---|---|
+| LAN 1 - HR | PC1, PC2, PC3 | `10.0.0.4` | `GigabitEthernet0/0` |
+| LAN 2 - Finance | PC4, PC5, PC6 | `192.168.1.4` | `GigabitEthernet0/1` |
 
+> **📝 Note:** The default gateway must match the IP address of the router interface connected to the PC's local network.
 
-Click each PC → Desktop → IP Configuration
-
-LAN 1 PCs (PC1, PC2, PC3):
-  Default Gateway → 10.0.0.4     (Router Gi0/0 IP)
-
-LAN 2 PCs (PC4, PC5, PC6):
-  Default Gateway → 192.168.1.4  (Router Gi0/1 IP)
-
-
-
-
-
-The gateway must always match the router's
-interface IP on that PC's side of the network.
-
-
+> **📝 Note:** The same default gateway configuration was applied to PC2 and PC3 in LAN 1 and PC4, PC5, and PC6 in LAN 2, using the respective gateway addresses listed in the                    table above.
 
 
 
@@ -444,7 +404,6 @@ interface IP on that PC's side of the network.
 
 
 
-<img width="1920" height="1080" alt="Screenshot (284)" src="https://github.com/user-attachments/assets/4ee2aec0-2aca-495e-aaae-f10e81815c02" />
 
 
 
@@ -490,8 +449,6 @@ interface IP on that PC's side of the network.
 
 
 
-Note : Same gateway configuration applied to PC2 and PC3 (LAN 1) and PC4, PC5, PC6 (LAN 2) with their
-respective gateway addresses from the table above.
 
 
 
@@ -557,23 +514,19 @@ respective gateway addresses from the table above.
 
 
 
+## ✅ Verification - Cross-LAN Connectivity Restored
 
-## ✅ Verification:-
-Cross-LAN pings confirmed communication fully restored
-after adding correct gateway on all PCs:
+Cross-LAN ping tests confirmed that communication was restored after configuring the correct default gateway on all PCs.
 
+### Ping Tests from PC1 (`10.0.0.1`)
 
+| Destination PC | Destination IP | Result |
+|---|---|---|
+| PC4 | `192.168.1.1` | Reply ✅ |
+| PC5 | `192.168.1.2` | Reply ✅ |
+| PC6 | `192.168.1.3` | Reply ✅ |
 
-
-From PC1 (10.0.0.1):
-
-ping 192.168.1.1  →  Reply ✅
-
-ping 192.168.1.2  →  Reply ✅
-
-ping 192.168.1.3  →  Reply ✅
-
-"Same configuration applied to PC2 and PC3  
+**📝 Note:** The same connectivity tests were performed from PC2 and PC3 using the same gateway configuration. 
 
 
 
@@ -605,191 +558,6 @@ ping 192.168.1.3  →  Reply ✅
 
 
 <img width="1920" height="1080" alt="Screenshot (225)" src="https://github.com/user-attachments/assets/f601075c-40ab-44c8-a33b-e485cb31033d" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-💡 Gateway Reference Table
-
-
-
-
-
-
-
-
-
-
-
-
-
-| PC  | LAN             | Default Gateway |
-|-----|-----------------|-----------------|
-| PC1 | LAN 1 — HR      | 10.0.0.4        |
-| PC2 | LAN 1 — HR      | 10.0.0.4        |
-| PC3 | LAN 1 — HR      | 10.0.0.4        |
-| PC4 | LAN 2 — Finance | 192.168.1.4     |
-| PC5 | LAN 2 — Finance | 192.168.1.4     |
-| PC6 | LAN 2 — Finance | 192.168.1.4     |
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
