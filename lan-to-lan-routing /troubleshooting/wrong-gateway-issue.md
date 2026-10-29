@@ -3,20 +3,28 @@
 
 [ Back to Project README]  →  [View Networking Labs — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/README.md)
 
----
 
 
 
 
 
-## 📋 Problem Summary:-
 
 
 
-All PCs across both LANs had no default gateway configured. This blocked all cross-LAN communication
 
 
-between HR (LAN 1) and Finance (LAN 2) while same-LAN communication remained unaffected.
+
+
+
+## 📋 Problem Summary
+
+| | Detail |
+|---|---|
+| **Issue** | PCs could not communicate between LANs |
+| **Cause** | Default gateway missing on all PCs |
+| **Symptom** | Cross-LAN ping timed out same-LAN ping worked |
+| **Fix** | Added correct gateway on all PCs |
+| **Verified** | Cross-LAN ping confirmed   |
 
 
 
@@ -759,14 +767,15 @@ ping 192.168.1.3  →  Reply ✅
 
 
 
-| PCLAN | Default Gateway | Default Gateway |
-| ----- | --------------: | --------------- |
-| PC1   | LAN 1 - HR      | 10.0.0.4        |
-| PC2   | LAN 1 - HR      | 10.0.0.4        |
-| PC3   | LAN 1 - HR      | 10.0.0.4        |
-| PC4   | LAN 2 - Finance | 192.168.1.4     |
-| PC5   | LAN 2 - Finance | 192.168.1.4     |
-| PC6   | LAN 2 - Finance | 192.168.1.4     |
+
+| PC  | LAN             | Default Gateway |
+|-----|-----------------|-----------------|
+| PC1 | LAN 1 — HR      | 10.0.0.4        |
+| PC2 | LAN 1 — HR      | 10.0.0.4        |
+| PC3 | LAN 1 — HR      | 10.0.0.4        |
+| PC4 | LAN 2 — Finance | 192.168.1.4     |
+| PC5 | LAN 2 — Finance | 192.168.1.4     |
+| PC6 | LAN 2 — Finance | 192.168.1.4     |
 
 
 
