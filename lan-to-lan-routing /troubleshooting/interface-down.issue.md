@@ -3,20 +3,22 @@
 
 # 🔴 Troubleshooting Issue 1 — Interface Administratively Down
 
-[← Back to Project README][Networking Labs — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/README.md)
+[ Back to Project README]  →  [Networking Labs — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/README.md)
 
 ---
 
-Without this it looks like a loose
-document with no context.
+## 📋 Problem Summary
+
+| Item | Detail |
+|---|---|
+| **Issue** | Devices in different LANs unable to communicate |
+| **Cause** | Router interface `GigabitEthernet0/0` administratively shut down |
+| **Symptom** | Cross-LAN ping fails - Request timed out |
+| **Fix** | Applied `no shutdown` on both interfaces |
+| **Verified** | `show ip interface brief` - both ports up ✅ |
 
 
-## 📋 Problem Summary:-
 
-## Issue : Devices in different LANs were unable to communicate.
-
-
-## Cause : Router interface GigabitEthernet0/0 was Administratively shut down.
 
 
 
@@ -126,7 +128,22 @@ ping 192.168.1.3  → Request timed out ❌
 
 
 
-## Fix: Changed shutdown to "no shutdown" in Router CLI of both the ports GigabitEthernet0/0 and GigabitEthernet0/1
+## 🔧 Fix
+
+Entered interface configuration mode and applied `no shutdown` to enable both router interfaces.
+
+```text
+Router> enable
+Router# configure terminal
+
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+Router(config)# interface GigabitEthernet0/1
+Router(config-if)# no shutdown
+Router(config-if)# exit
+```
 
 
 
@@ -242,7 +259,10 @@ ping 192.168.1.3  → Request timed out ❌
 
 
 
-## Verification 1 : use "do show ip interface brief in Router CLI" to check the ports are Administratively Up
+## ✅ Verification 1 — Check Interface Status
+
+Run from interface configuration mode:
+Router(config-if)# do show ip interface brief
 
 
 
@@ -419,7 +439,6 @@ ping 192.168.1.3 → Reply ✅
 
 
 
-<img width="1920" height="1080" alt="Screenshot (236)" src="https://github.com/user-attachments/assets/eac41364-b7f8-4391-b9b1-66913a1e7dc2" />
 
 
 
@@ -523,7 +542,8 @@ ping 192.168.1.3 → Reply ✅
 
 
 
-<img width="1920" height="1080" alt="Screenshot (274)" src="https://github.com/user-attachments/assets/7d752467-57d8-44dd-a235-b518b5d67cab" />
+
+
 
 
 
