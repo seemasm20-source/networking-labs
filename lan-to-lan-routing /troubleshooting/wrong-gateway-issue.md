@@ -1,7 +1,7 @@
 
 # 🔴 Troubleshooting Issue 2 - Wrong Default Gateway
 
-[← Back to Project README](../README.md)
+[ Back to Project README]  →  https://github.com/seemasm20-source/networking-labs/blob/main/README.md?utm_source=chatgpt.com
 
 ---
 
