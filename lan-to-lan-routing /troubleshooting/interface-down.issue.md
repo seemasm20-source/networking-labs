@@ -1,6 +1,14 @@
 
-## Troubleshooting Issue-1
 
+
+# 🔴 Troubleshooting Issue 1 — Interface Administratively Down
+
+[← Back to Project README](../README.md)
+
+---
+
+Without this it looks like a loose
+document with no context.
 
 
 ## 📋 Problem Summary:-
