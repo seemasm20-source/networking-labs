@@ -166,7 +166,7 @@ in the troubleshooting folder.
 - Cisco 2960 switch topology design
 - Static IPv4 addressing across two /24 networks
 - Inter-LAN routing using directly connected routes
-- Interface troubleshooting — show ip interface brief
+- Interface troubleshooting - show ip interface brief
 - Routing table verification - show ip route
 - Default gateway concepts and troubleshooting
 - Cisco CLI level navigation
