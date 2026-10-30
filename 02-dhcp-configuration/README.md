@@ -1,6 +1,6 @@
 ## networking-labs / dhcp-configuration / README.md
 
-## 🌐 DHCP Server Configuration using Cisco Router
+
 
 
 # 🌐 DHCP Server Configuration using Cisco Router
@@ -10,7 +10,7 @@
 
 **Tool:** Cisco Packet Tracer
   
-**Purpose:** Network simulation and troubleshooting practice
+**Purpose:** Demonstrate DHCP server setup and troubleshooting skills for IT Help Desk Tier 1 and Tier 2
 
 **Author:** Seema Soapanahalli Mallikarjunaiah
 
@@ -22,46 +22,56 @@
 
  ## 📌 Objective
 
-This project simulates a small enterprise network consisting of two departments:
+This project simulates a small enterprise network
+with two departments:
 
-* HR (LAN 1)
-* Finance (LAN 2)
+- HR (LAN 1)
+- Finance (LAN 2)
 
-A Cisco 2911 router is configured as a DHCP server to automatically provide IP addresses and network configuration details to client devices across both LANs.
+A Cisco 2911 router is configured as a DHCP server
+to automatically provide IP addresses and network
+settings to client devices in both LANs.
 
 The objective of this project is to demonstrate:
 
-* DHCP configuration on a Cisco router
-* Automatic IP address assignment
-* Dynamic distribution of subnet masks, default gateways, and DNS settings
-* Basic network administration and troubleshooting
-
+- DHCP configuration on a Cisco router using two
+  separate address pools, one per LAN
+- Automatic assignment of IP address, subnet mask,
+  default gateway and DNS server to client devices
+- Diagnosis and resolution of common DHCP faults:
+  APIPA addressing (169.254.x.x), pool exhaustion
+  and IP address conflicts
 ---
 
 ## 💡 What is DHCP?
 
-DHCP (Dynamic Host Configuration Protocol) is a network protocol that automatically assigns IP addresses and other network settings to devices on a network.
+DHCP (Dynamic Host Configuration Protocol) is a network
+protocol that automatically assigns IP addresses and
+other network settings to devices, so they can connect
+to the network without manual setup.
 
-Without DHCP, administrators must manually configure every device with:
+Without DHCP, administrators must manually configure
+every device with:
 
-* IP Address
-* Subnet Mask
-* Default Gateway
-* DNS Server
+- IP Address
+- Subnet Mask
+- Default Gateway
+- DNS Server
 
-DHCP automates this process, reducing configuration errors and simplifying network management.
+DHCP automates this process, reducing configuration
+errors and simplifying network management.
 
-| Without DHCP                        | With DHCP                             |
-| ----------------------------------- | ------------------------------------- |
-| Manual IP configuration             | Automatic IP assignment               |
-| Time-consuming setup                | Fast deployment                       |
-| Higher risk of configuration errors | Consistent and centralized management |
-
+| Without DHCP | With DHCP |
+|--------------|-----------|
+| Manual IP configuration | Automatic IP assignment |
+| Time-consuming setup | Fast deployment |
+| Higher risk of errors such as duplicate IPs | Consistent and centralised management |
 ---
 
 ## 🔄 DHCP Process (DORA)
 
-DHCP uses a four-step process known as **DORA**:
+DHCP uses a four-step process known as **DORA**
+(Discover, Offer, Request, Acknowledge):
 
 ### 1. Discover
 
@@ -77,7 +87,15 @@ The client requests to use the offered IP address.
 
 ### 4. Acknowledge
 
-The DHCP server confirms the lease and provides network configuration details.
+The DHCP server confirms the lease and provides
+network configuration details.
+
+```
+Client  ──Discover──►  DHCP Server
+Client  ◄───Offer────  DHCP Server
+Client  ──Request───►  DHCP Server
+Client  ◄─Acknowledge─ DHCP Server
+```
 
  
 
