@@ -194,7 +194,7 @@ in the troubleshooting folder.
 | Issue                           | Cause                       | Fix                          | File          |
 | ------------------------------- | --------------------------- | ---------------------------- | ----          |
 | PCs Showing 169.254.x.x — APIPA | DHCP Service Disabled       | Service Dhcp + Recreate Pool | [APIPA Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)               |
-| DHCP Pool Exhaustion            | DHCP Scope Exhausted        | Show IP Dhcp Binding         |               |
+| DHCP Pool Exhaustion            | DHCP Scope Exhausted        | Show IP Dhcp Binding         |[DHCP Pool Exhaustion Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)             |
 | Duplicate IP Address Conflict   | Static IP Clashes With DHCP | Change Static to DHCP        |               |
 
 
