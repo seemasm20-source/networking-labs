@@ -1,27 +1,20 @@
-## ⚙️ DHCP Configuration
+# ⚙️ DHCP Configuration
 
+[← Back to Project README](../README.md)
 
+---
 
+## 🔰 Cisco CLI Levels: Quick Reference
 
+| Prompt | Level | How to Get There |
+|--------|-------|------------------|
+| `Router>` | User mode | Default when CLI opens |
+| `Router#` | Privileged mode | type: `enable` |
+| `Router(config)#` | Global config mode | type: `configure terminal` |
+| `Router(config-if)#` | Interface mode | type: `interface GigabitEthernet0/0` |
+| `Router(dhcp-config)#` | DHCP pool mode | type: `ip dhcp pool NAME` |
 
-
-
-
-Cisco CLI Levels — Quick Reference:
-
-
-
-
-
-
-
-| Prompt               | Level          | How to get There         |
-| -------------------- | -------------- | -----------------------: |
-| Router>              | User mode      |Default when CLI opens   |
-| Router#              | Privileged     |type:enable             |
-| Router(config)#      | Global config  |type:configure terminal |
-| Router(config-if)#   | Interface mode |type:interface Gi0/0    |
-| Router(dhcp-config)# | DHCP pool mode |type:ip dhcp pool NAME  |
+> **Note:** Every command only works at its correct level. If a command has no effect, check your prompt first.
 
 
 
