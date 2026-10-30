@@ -206,8 +206,8 @@ troubleshooting folder.
 
 
 | Section              | Description                                               | File
-| -------------------- | :-------------------------------------------------------: |
-| Topology             | Network diagram, IP table and build steps                 |
+| -------------------- | :-------------------------------------------------------: | 
+| Topology             | Network diagram, IP table and build steps                 | [DHCP Network Topology](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/topology/topology.md)
 | DHCP Config          | Full router CLI commands with explanation                 |
 | APIPA Issue          | 169.254.x.x — DHCP service disabled                       |
 | DHCP Pool Exhaustion | DHCP scope exhausted, no available IP addresses remaining |
