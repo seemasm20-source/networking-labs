@@ -16,81 +16,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <img width="1920" height="1080" alt="Screenshot (295)" src="https://github.com/user-attachments/assets/9ade0c38-071b-4934-be9c-2e6ab0438648" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -119,37 +45,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 | Device | Model      | Qty | Purpose                              |
 | ------ | ---------- | -- | ------------------------------------ |
 | Router | Cisco 2911 | 1   | Routes traffic + acts as DHCP server |
 | Switch | Cisco 2960 | 2   | Connects devices within each LAN     |
 | PC     | Generic PC | 4   | End user devices                     |
 | Laptop | Generic    | 2   | End user devices-PC3 and PC6         |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -175,39 +76,12 @@
 
 
 
-
-
-
-
- 
-
-
-
-
-
-
-
 1. Open Cisco Packet Tracer
 2. Drag 1 x Router 2911   → place in the centre
 3. Drag 2 x Switch 2960   → one left, one right
 4. Drag 4 x PC            → 2 below each switch
 5. Drag 2 x Laptop        → PC3 under Switch 1
                              PC6 under Switch 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -227,17 +101,6 @@
 
 
 Cable type: Copper Straight-Through for all connections
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -263,105 +126,7 @@ Cable type: Copper Straight-Through for all connections
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <img width="1920" height="1080" alt="Screenshot (296)" src="https://github.com/user-attachments/assets/0ecc9b7d-5e39-4d43-be1f-a4f06c3837e9" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -389,150 +154,12 @@ Note: Router assigns IPs after DHCP pools are configured
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <img width="1920" height="1080" alt="Screenshot (297)" src="https://github.com/user-attachments/assets/5ff1a87c-f458-46ed-a594-85b4c3b4d995" />
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 📋 IP Address Plan
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -549,25 +176,6 @@ Note: Router assigns IPs after DHCP pools are configured
 | PC4          | auto via DHCP | 255.255.255.0 | 192.168.20.1      |
 | PC5          | auto via DHCP | 255.255.255.0 | 192.168.20.1      |
 | PC6 (Laptop) | auto via DHCP | 255.255.255.0 | 192.168.20.1      |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
