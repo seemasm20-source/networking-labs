@@ -199,20 +199,15 @@ troubleshooting folder.
 
 
 
- 📂 Project Files
+ ## 📂 Project Files
 
-
-
-
-
-| Section              | Description                                               | File
-| -------------------- | :-------------------------------------------------------: | 
-| Topology             | Network diagram, IP table and build steps                 | [DHCP Network Topology](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/topology/topology.md)
-| DHCP Config          | Full router CLI commands with explanation                 |
-| APIPA Issue          | 169.254.x.x — DHCP service disabled                       |
-| DHCP Pool Exhaustion | DHCP scope exhausted, no available IP addresses remaining |
-| IP Conflicts         | Static IP clashing with DHCP lease                        |
-
+| Section | Description | File |
+|---------|-------------|------|
+| Topology | Network diagram, IP table and build steps | [DHCP Network Topology](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/topology/topology.md) |
+| DHCP Config | Full router CLI commands with explanation | [DHCP Server Configuration](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/config/dhcp-config.md) |
+| APIPA Issue | 169.254.x.x: DHCP service disabled | [APIPA Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md) |
+| DHCP Pool Exhaustion | DHCP scope exhausted, no available IP addresses remaining | [DHCP Pool Exhaustion](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md) |
+| IP Conflicts | Static IP clashing with DHCP lease | [IP Conflict](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/ip-conflict.md) |
 
 
 
