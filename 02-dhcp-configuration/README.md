@@ -99,66 +99,57 @@ Client  ◄─Acknowledge─ DHCP Server
 
  
 
+## 🔧 Devices Used
 
-
-
-
-
-
-
-
+| Device | Model | Quantity | Purpose |
+|--------|-------|:--------:|---------|
+| Router | Cisco 2911 | 1 | Routes traffic between LANs and provides DHCP services |
+| Switch | Cisco 2960 | 2 | Connects end devices within each LAN |
+| PC | Generic PC | 4 | End-user workstations (PC1, PC2, PC4, PC5) |
+| Laptop | Generic Laptop | 2 | End-user workstations (PC3 in LAN 1, PC6 in LAN 2) |
 
 
 
 
 ## 🖥️ Network Topology
 
-
-
-
-
-
-
-
-
-                   ```text
-                ROUTER (Cisco 2911)
+```text
+            ROUTER (Cisco 2911)
           DHCP Server for Both LANs
-                   /        \
-              Gi0/0          Gi0/1
+               /          \
+          Gi0/0            Gi0/1
       192.168.10.1      192.168.20.1
-             |                |
+            |                |
         SWITCH 1          SWITCH 2
        (Cisco 2960)      (Cisco 2960)
-         /  |  \           /  |  \
-       PC1 PC2 PC3      PC4 PC5 PC6
+        /   |   \         /   |   \
+      PC1  PC2  PC3     PC4  PC5  PC6
+
+  ◄──── LAN 1 (HR) ────►  ◄── LAN 2 (Finance) ──►
 ```
 
+| LAN Name | Network | Gateway | Excluded Addresses | DHCP Pool Range |
+|----------|---------|---------|--------------------|-----------------|
+| LAN 1 (HR) | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.1 – 192.168.10.9 | 192.168.10.10 – 192.168.10.254 |
+| LAN 2 (Finance) | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.1 – 192.168.20.9 | 192.168.20.10 – 192.168.20.254 |
 
-  
-.
 
 
-| LAN Name        | Network         | Gateway      | IP Pool                     |
-| --------------- | --------------- | ------------ | ----------------------------|
-| LAN 1 (HR)      | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.1 – 192.168.10.9 |
-| LAN 2 (Finance) | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.1 – 192.168.20.9 |
+
+
+
+
  
 
 
 
 
-                   
 
 
+ ## 📋 IP Address Plan
 
+### Router Interfaces (manually configured)
 
-
-
-
- 📋 IP Address Plan
-
-   Router Interfaces manually configured
 
 
 | Interface    | IP address   | Subnetmask    | Role                      |
@@ -168,7 +159,7 @@ Client  ◄─Acknowledge─ DHCP Server
 
 
 
- Device IP Addressing Information
+### Client Devices (addressed by DHCP)
 
 
 
@@ -181,34 +172,12 @@ Client  ◄─Acknowledge─ DHCP Server
 | PC5          | LAN 2 (Finance)| DHCP                | 192.168.20.1   |
 | PC6 (Laptop) | LAN 2 (Finance)| DHCP                | 192.168.20.1   |
 
+
+
+
+
                                                            
-                                                              
- 🔧 Devices Used
 
-
-| Device | Model          | Quantity | Purpose                                                |
-| ------ | -------------- | -------- | ------------------------------------------------------ |
-| Router | Cisco 2911     | 1        | Routes traffic between LANs and provides DHCP services |
-| Switch | Cisco 2960     | 2        | Connects end devices within each LAN                   |
-| PC     | Generic PC     | 4        | End-user workstations                                  |
-| Laptop | Generic Laptop | 2        | PC3 (LAN 1) and PC6 (LAN 2)                            |
-
-
-
-
-
-
-  🛠️ Technologies Used
-
-
-
-| Technology          | Purpose                                               |
-| ------------------- | ----------------------------------------------------- |
-| Cisco Packet Tracer | Network simulation and testing environment            |
-| Cisco 2911 Router   | Inter-LAN routing and DHCP services                   |
-| Cisco 2960 Switch   | Layer 2 switching within each LAN                     |
-| DHCP Protocol       | Automatic IP address assignment                       |
-| Cisco IOS CLI       | Router configuration and management                   |
 
 
 
