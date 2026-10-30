@@ -128,21 +128,15 @@ Client  ◄─Acknowledge─ DHCP Server
   ◄──── LAN 1 (HR) ────►  ◄── LAN 2 (Finance) ──►
 ```
 
-| LAN Name | Network | Gateway | Excluded Addresses | DHCP Pool Range |
-|----------|---------|---------|--------------------|-----------------|
-| LAN 1 (HR) | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.1 – 192.168.10.9 | 192.168.10.10 – 192.168.10.254 |
-| LAN 2 (Finance) | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.1 – 192.168.20.9 | 192.168.20.10 – 192.168.20.254 |
-
-
-| LAN Name | Network | Gateway | Excluded Addresses | Planned Client Range |
-|----------|---------|---------|--------------------|----------------------|
-| LAN 1 (HR) | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.1 – 192.168.10.9 | 192.168.10.10 – 192.168.10.50 |
-| LAN 2 (Finance) | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.1 – 192.168.20.9 | 192.168.20.10 – 192.168.20.50 |
+| LAN Name | Network | Gateway | Excluded Addresses | Planned Client Range | Maximum Possible Range |
+|----------|---------|---------|--------------------|----------------------|------------------------|
+| LAN 1 (HR) | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.1 – 192.168.10.9 | 192.168.10.10 – 192.168.10.50 | 192.168.10.10 – 192.168.10.254 |
+| LAN 2 (Finance) | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.1 – 192.168.20.9 | 192.168.20.10 – 192.168.20.50 | 192.168.20.10 – 192.168.20.254 |
 
 > Addresses .1 – .9 are excluded so DHCP never assigns the router's
 > interface IP or other reserved addresses. The lab plans client
-> addresses from .10 to .50.
-> 
+> addresses from .10 to .50, but the pool could lease up to .254
+> because no further exclusion was configured.
 
 
 
