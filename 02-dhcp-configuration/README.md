@@ -182,21 +182,17 @@ Client  ◄─Acknowledge─ DHCP Server
 
 
 
- 🔴 Issues Encountered
+ ## 🔴 DHCP Troubleshooting Scenarios
 
-Real problems faced during this lab full details
+Three common DHCP faults were simulated, diagnosed and
+resolved during this lab. Full details are in the
+troubleshooting folder.
 
-in the troubleshooting folder.
-
-
-
-
-| Issue                           | Cause                       | Fix                          | File          |
-| ------------------------------- | --------------------------- | ---------------------------- | ----          |
-| PCs Showing 169.254.x.x — APIPA | DHCP Service Disabled       | Service Dhcp + Recreate Pool | [APIPA Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)               |
-| DHCP Pool Exhaustion            | DHCP Scope Exhausted        | Show IP Dhcp Binding         |[DHCP Pool Exhaustion Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)             |
-| Duplicate IP Address Conflict   | Static IP Clashes With DHCP | Change Static to DHCP        |    https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/ip-conflict.md           |
-
+| Scenario | Cause | Fix | File |
+|----------|-------|-----|------|
+| PCs showing 169.254.x.x (APIPA) | DHCP service disabled | `service dhcp` + recreate pool | [APIPA Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md) |
+| DHCP pool exhaustion | DHCP scope exhausted | Reviewed leases with `show ip dhcp binding` | [DHCP Pool Exhaustion](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md) |
+| Duplicate IP address conflict | Static IP clashes with DHCP lease | Changed static IP to DHCP | [IP Conflict](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/ip-conflict.md) |
 
 
 
