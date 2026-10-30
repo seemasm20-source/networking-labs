@@ -205,7 +205,7 @@ troubleshooting folder.
 
 
 
-| Section              | Description                                               |
+| Section              | Description                                               | File
 | -------------------- | :-------------------------------------------------------: |
 | Topology             | Network diagram, IP table and build steps                 |
 | DHCP Config          | Full router CLI commands with explanation                 |
