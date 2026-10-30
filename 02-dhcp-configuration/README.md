@@ -134,13 +134,18 @@ Client  ◄─Acknowledge─ DHCP Server
 | LAN 2 (Finance) | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.1 – 192.168.20.9 | 192.168.20.10 – 192.168.20.254 |
 
 
+| LAN Name | Network | Gateway | Excluded Addresses | Planned Client Range |
+|----------|---------|---------|--------------------|----------------------|
+| LAN 1 (HR) | 192.168.10.0/24 | 192.168.10.1 | 192.168.10.1 – 192.168.10.9 | 192.168.10.10 – 192.168.10.50 |
+| LAN 2 (Finance) | 192.168.20.0/24 | 192.168.20.1 | 192.168.20.1 – 192.168.20.9 | 192.168.20.10 – 192.168.20.50 |
+
+> Addresses .1 – .9 are excluded so DHCP never assigns the router's
+> interface IP or other reserved addresses. The lab plans client
+> addresses from .10 to .50.
+> 
 
 
 
-
-      Note : > The DHCP pool allows .10 to .254. Only a few addresses
-       
-       > (.10 to .12) were used in this lab to keep the topology small.
 
 
 
