@@ -138,6 +138,11 @@ Client  ◄─Acknowledge─ DHCP Server
 
 
 
+      Note : > The DHCP pool allows .10 to .254. Only a few addresses
+       
+       > (.10 to .12) were used in this lab to keep the topology small.
+
+
 
  
 
