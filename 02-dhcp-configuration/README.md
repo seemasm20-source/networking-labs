@@ -214,70 +214,63 @@ troubleshooting folder.
 
 
 
- 🎯  Real-World Help Desk Relevance
+                                                                                    
 
 
-| Users complaint                    | Root Cause            | Fix                          |
-| ---------------------------------- | --------------------- | ---------------------------- |
-| Limited Connectivity / 169.254.x.x | DHCP Disabled         | Service Dhcp + Recreate Pool  |                      
-| Random Disconnects                 | Duplicate IP Conflict | Change Static to DHCP        |
-| New PC Has No Network Access       | Pool Exhausted        | Show IP Dhcp Binding         |
-                                                                                         
+## 📚 Skills Demonstrated
+
+- Cisco 2911 router configured as a DHCP server via CLI
+- Dual DHCP pool configuration, one per LAN
+- Excluded address ranges to protect network devices
+- DHCP verification using `show ip dhcp binding`
+- APIPA diagnosis and resolution (169.254.x.x)
+- DHCP pool exhaustion diagnosis
+- IP address conflict root cause analysis
+- Technical documentation for GitHub portfolio
 
 
+## 🎯 Real-World Help Desk Tickets
+
+| Caller Complaint | Root Cause | Fix Applied |
+|------------------|------------|-------------|
+| "My PC says limited connectivity" (169.254.x.x) | DHCP service disabled on the router | `service dhcp` + recreated the DHCP pool |
+| "My connection keeps dropping at random" | Duplicate IP: static IP clashing with a DHCP lease | Changed the static IP to DHCP |
+| "My new PC has no network access" | DHCP pool exhausted, no free addresses | Checked leases with `show ip dhcp binding` to confirm the pool was full |
 
 
+  ## 🎓 Learning Outcome
 
+This project provided hands-on experience configuring a
+Cisco router as a DHCP server across two LANs.
 
- 📚 Skills Demonstrated
-
-
-1.Cisco 2911 router configured as DHCP server via CLI
-
-2.Dual DHCP pool configuration — one per LAN
-
-3.Excluded address ranges to protect network devices
-
-4.DHCP verification using show ip dhcp binding
-
-5.APIPA diagnosis and resolution (169.254.x.x)
-
-6.IP address conflict root cause analysis
-
-7.Technical documentation for GitHub portfolio
-
-
-
-
-
-   🎓 Learning Outcome
-
-This project provided hands-on experience configuring a Cisco router as a DHCP server across two LANs. It
-
-demonstrated how DHCP automates IP management and strengthened understanding of common DHCP faults
-
+It showed how DHCP automates IP management and built
+practical understanding of common DHCP faults, which are
 directly relevant to IT Help Desk Tier 1 roles.
 
+---
+
+## ✅ Conclusion
+
+A Cisco 2911 router was successfully configured as a DHCP
+server to provide automatic IP address assignment for
+devices across two separate LANs.
+
+All client devices obtained valid network configurations,
+including IP addresses, subnet mask and default gateways 
+
+Three common DHCP faults were identified, diagnosed and
+resolved:
+
+- APIPA addressing (169.254.x.x)
+- DHCP pool exhaustion
+- IP address conflict
+
+Together these show a systematic approach to fault
+isolation in a simulated enterprise network.
 
 
- ✅ Conclusion
 
 
-A Cisco 2911 router was successfully configured as a DHCP server to provide automatic IP address assignment for devices across two separate LANs.
-
-All client devices obtained valid network configurations, including IP addresses, subnet masks, default gateways and DNS server information.
-
-The project also demonstrated practical troubleshooting by identifying, diagnosing and resolving three common DHCP-related issues:
-
-* APIPA Addressing (169.254.x.x)
-
-* DHCP Pool Exhaustion
-
-* IP Address Conflict
-
-
-
-This lab strengthened my understanding of DHCP operations, network troubleshooting, Cisco IOS configuration, and systematic problem resolution in a simulated enterprise network environment.
 
 
                    
