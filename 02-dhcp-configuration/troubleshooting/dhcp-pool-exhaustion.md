@@ -1,138 +1,51 @@
 
-## Troubleshooting Issue- 2 
+# 🔴 Troubleshooting Issue 2 - DHCP Pool Exhaustion
 
 
 
+ [ Back to Project README](../README.md) → [DHCP Configuration — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/README.md)
+
+
+
+---
+
+  
+  
 ## 📋 Problem Summary
 
-A new PC connects to the network but cannot receive an IP address. The DHCP pool has run out of available addresses all IPs are already assigned to existing devices. 
-
-The new PC shows 0.0.0.0 or self-assigns a 169.254.x.x APIPA address.
+  A new PC (PC7) connected to LAN 2 (Finance) but could not receive an IP address. All addresses in the DHCP pool were already leased to existing devices, so PC7 assigned itself an APIPA     address (169.254.x.x). In this lab the pool was limited to three addresses (.10 – .12) to simulate the fault.
 
 
 
+---
 
 
-## What is DHCP Pool Exhaustion?
+
+
+
+
+## 💡 What is DHCP Pool Exhaustion?
 
 DHCP Pool Exhaustion occurs when all available IP addresses in a DHCP pool have been assigned to devices, leaving no free addresses for new clients.
 
 As a result, new devices cannot obtain an IP address from the DHCP server and may experience network connectivity issues.
 
-### Example
+---
 
-DHCP Pool Range:
 
-```text
-192.168.10.10 - 192.168.10.15
-```
 
-Assigned Addresses:
 
-```text
-PC1 → 192.168.10.10
-PC2 → 192.168.10.11
-PC3 → 192.168.10.12
-PC4 → 192.168.10.13
-PC5 → 192.168.10.14
-PC6 → 192.168.10.15
-```
+## 🔧 Create the Problem
 
-All available addresses have been leased.
+### Step 1 — Baseline: Normal DHCP
 
-When a new device (PC7) requests an IP address, the DHCP server cannot provide one because the pool has no remaining addresses.
+DHCP is configured as in [DHCP Configuration](../config/dhcp-config.md). PC4, PC5 and PC6 received their addresses from the LAN 2 pool:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 🔧 How to Create the Problem in Packet Tracer:
-
-
- ## Step 1 :
- 
-Set up normal DHCP first
-
-
-
-
-Router>enable
-
-Router#configure terminal
-
-Router(config)# interface GigabitEthernet0/1
-
-Router(config-if)#ip address 192.168.20.1 255.255.255.0
-
-
-Router(config-if)#no shutdown
-
-Router(config-if)#exit
-
-Router(config)# ip dhcp excluded-address 192.168.20.1 192.168.20.9
-
-Router(config)# ip dhcp excluded-address 192.168.20.13 192.168.20.254
-
-Router(config)#ip dhcp pool LAN2_POOL
-
-Router(dhcp-config)#network 192.168.20.0 255.255.255.0
-
-Router(dhcp-config)#default-router 192.168.20.1
-
-Router(dhcp-config)#dns-server 8.8.8.8
-
-
-
-
-
-
-
-
-
-
-On each PC:
-
-Desktop → IP Configuration → DHCP
-
-
-PC4 gets 192.168.20.10 (screenshot attached)
-
-PC5 gets 192.168.20.11
-
-PC6 gets 192.168.20.12
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Device | IP Address |
+|--------|------------|
+| PC4 | 192.168.20.10 |
+| PC5 | 192.168.20.11 |
+| PC6 | 192.168.20.12 |
 
 
 
@@ -145,6 +58,7 @@ PC6 gets 192.168.20.12
 
 
 
+---
 
 
 
@@ -152,42 +66,18 @@ PC6 gets 192.168.20.12
 
 
 
+### Step 2 — Shrink the Pool
 
+Exclude the rest of the range so only three addresses remain:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Step: 2
-
-Shrink the pool to simulate exhaustion
-
-Router(config)# ip dhcp excluded-address 192.168.20.1 192.168.20.9
-
+```text
+Router> enable
+Router# configure terminal
 Router(config)# ip dhcp excluded-address 192.168.20.13 192.168.20.254
-
 Router(config)# end
+```
 
-Router# write memory
-
+**Screenshot: excluded range configured on the router:**
 
 
 
@@ -219,6 +109,7 @@ Router# write memory
 
 
 
+---
 
 
 
@@ -228,54 +119,51 @@ Router# write memory
 
 
 
-## Step 3:
-
-
-
-Now add PC7 and set it to DHCP.
-
-Since all available addresses are already leased, PC7 will not receive an IP address (or may eventually show an APIPA address 169.254.x.x).
 
 
 
 
+### Step 3 — Add PC7
+
+Connect PC7 to Switch 2, then go to **PC7 → Desktop → IP Configuration → DHCP**.
+
+---
+
+
+## 🔎 Verify the Problem
+
+### Check the DHCP leases
+
+```text
+Router# show ip dhcp binding
+```
+
+| IP Address | Client-ID / Hardware Address | Lease Expiration | Type |
+|------------|------------------------------|------------------|------|
+| 192.168.20.10 | 0090.0C57.2A40 | -- | Automatic |
+| 192.168.20.11 | 00E0.F969.B81C | -- | Automatic |
+| 192.168.20.12 | 000D.BD58.3C5E | -- | Automatic |
+
+> All available addresses in the pool are already leased.
+
+**Screenshot: `show ip dhcp binding` showing all three leases:**
+
+### Check PC7
+
+| Device | IP Address |
+|--------|------------|
+| PC4 | 192.168.20.10 |
+| PC5 | 192.168.20.11 |
+| PC6 | 192.168.20.12 |
+| PC7 | 169.254.x.x (APIPA) |
+
+**Screenshot: PC7 showing an APIPA address:**
 
 
 
-| Device | IP Address    |
-| ------ | ------------: |
-| PC4    | 192.168.20.10 |
-| PC5    | 192.168.20.11 |
-| PC6    | 192.168.20.12 |
-| PC7    | 169.254.x.x   |
 
 
 
-
-
-
-
-
-
-## Step:4 
-
-
-
-type show ip dhcp binding
-
-This displays all IP addresses that the DHCP server has leased to clients.
-
-
-
-
-| IP Address    | Client-ID/Hardware Address | Lease Expiration | Type      |
-| ------------- | -------------------------- | ---------------- | --------- |
-| 192.168.20.10 | 0090.0C57.2A40             | --               | Automatic |
-| 192.168.20.11 | 00E0.F969.B81C             | --               | Automatic |
-| 192.168.20.12 | 000D.BD58.3C5E             | --               | Automatic |
-
-
-Note: This confirms that all available DHCP addresses are already leased.
 
 
 
@@ -306,6 +194,7 @@ Note: This confirms that all available DHCP addresses are already leased.
 
 
 
+---
 
 
 
@@ -326,34 +215,31 @@ Note: This confirms that all available DHCP addresses are already leased.
 
 
 
-## Step:5 
+## 🔧 Fix
 
+Increase the available range by reducing the excluded range:
 
-Add new PC → PC7 in LAN B
+```text
+Router> enable
+Router# configure terminal
+Router(config)# no ip dhcp excluded-address 192.168.20.13 192.168.20.254
+Router(config)# ip dhcp excluded-address 192.168.20.21 192.168.20.254
+Router(config)# end
+Router# write memory
+```
 
-Connect PC7 to Switch 2
-
-Go to:
-
-PC7 → Desktop → IP Configuration → DHCP
-
-Expected Result
-
-PC7 cannot obtain an IP address because the DHCP pool is exhausted. PC gets APIPA error
-
-
-
+DHCP can now assign **192.168.20.10 – 192.168.20.20**.
 
 
 
 
+**Screenshot: excluded range updated on the router:**
 
+Then renew the address on PC7:
 
-
-
-
-
-
+```text
+PC7> ipconfig /release
+PC7> ipconfig /renew
 
 
 
@@ -362,6 +248,16 @@ PC7 cannot obtain an IP address because the DHCP pool is exhausted. PC gets APIP
 
 
 
+
+
+
+
+
+
+
+
+
+delete this later
 
 
 <img width="1920" height="1080" alt="Screenshot (321)" src="https://github.com/user-attachments/assets/3db22e59-cf48-48e0-a832-5e68d6269271" />
@@ -382,127 +278,31 @@ PC7 cannot obtain an IP address because the DHCP pool is exhausted. PC gets APIP
 
 
 
-
-
-## Step:6 
-
-
-
-
-## Fix the Problem
-
-Increase the available range:
-
-Router(config)# no ip dhcp excluded-address 192.168.20.13 192.168.20.254
-
-Router(config)# ip dhcp excluded-address 192.168.20.21 192.168.20.254
-
-
-
-
-Router Configuration:
-
-Router>enable
-
-Router# configure terminal
-
-Router(config)# no ip dhcp excluded-address 192.168.20.13 192.168.20.254
-
-Router(config)# ip dhcp excluded-address 192.168.20.21 192.168.20.254
-
-Router(config)#ip dhcp pool LAN2_POOL
-
-Router(dhcp-config)#network 192.168.20.0 255.255.255.0
-
-Router(dhcp-config)#default-router 192.168.20.1
-
-Router(dhcp-config)#dns-server 8.8.8.8
-
-Router(dhcp-config)#exit
-
-
-
-
-
-Now DHCP can assign:
-
-
-192.168.20.10 - 192.168.20.20
-
-Then on PC7:
-
-Desktop → IP Configuration → DHCP
-
-PC7 should receive: 192.168.20.13
-
-
-
-
-
-
-
-
-
-
-
-
-
 <img width="1920" height="1080" alt="Screenshot (328)" src="https://github.com/user-attachments/assets/0c5d4ca8-cee2-485d-9396-5b5d85f5aed4" />
 
 
 
 
+---
 
 
 
 
 
 
+## ✅ Verification
 
+### Verification 1 — PC7 IP configuration
 
+```text
+PC7> ipconfig
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Step : 7
-
-
-Renew IP ON the new PC7
-
-ipconfig /release
-
-ipconfig /renew
-
-ipconfig
-
-Expected after fix:
-
-IP Address      : 192.168.20.13  ✅ IP assigned
-
-Subnet Mask     : 255.255.255.0   ✅
-
-Default Gateway : 192.168.20.1    ✅ gateway present
-
-
-
-
-
-
-
+| Field | Result |
+|-------|--------|
+| IP Address | 192.168.20.13 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 192.168.20.1 |
 
 
 
@@ -519,87 +319,18 @@ Default Gateway : 192.168.20.1    ✅ gateway present
 
 
 
+### Verification 2 — DHCP leases
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (327)" src="https://github.com/user-attachments/assets/e0ca1045-89d0-44f9-b004-25739d4ef921" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Step : 8
-
-## Verification-1
-
-
-
-
-
+```text
 Router# show ip dhcp binding
+```
 
-Now shows multiple entries-new PC has an IP ✅
+PC7 (192.168.20.13) now appears in the binding table.
+
+**Screenshot: `show ip dhcp binding` after the fix:**
+
+
+
 
 
 
@@ -613,60 +344,17 @@ Now shows multiple entries-new PC has an IP ✅
 
 
 
+### Verification 3 — Connectivity
+
+```text
+PC7> ping 192.168.20.1
+```
+
+PC7 receives replies from the router gateway.
+
+**Screenshot: successful ping to 192.168.20.1:**
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Verification-2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-From new PC — Desktop — Command Prompt:
-
-ping 192.168.20.1    ← ping router gateway
-
-Expected: Reply from 192.168.20.1   ✅
 
 
 
@@ -680,71 +368,26 @@ Expected: Reply from 192.168.20.1   ✅
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 📋 Issue Summary
 
+| | Detail |
+|---|---|
+| **Issue** | New PC (PC7) cannot get an IP address |
+| **Cause** | DHCP pool exhausted: all addresses already leased |
+| **Symptom** | PC7 shows an APIPA address (169.254.x.x); existing devices work normally |
+| **Diagnose** | `show ip dhcp binding` shows every pool address leased |
+| **Fix** | Reduced the excluded range (.13 – .254 → .21 – .254) to expand the pool to .10 – .20 |
+| **Verified** | PC7 received 192.168.20.13; ping to 192.168.20.1 successful |
 
-
-| Issue                            | Cause                      | Symptom                        | Fix                                              | Verified                        |
-| -------------------------------- | -------------------------- | ------------------------------ | ------------------------------------------------ | :-----------------------------: |
-| 1.    New PC cannot get IP        | DHCP Pool Exhausted        | Only new device fails          | Expanded Pool by reducing Excluded-Address Range | ipconfig /renew → IP   Assigned ✅ |
-| 2.   Shows 0.0.0.0 or 169.254.x.x | No IPs available to assign | All existing devices work fine | -                                                |  Ping Successful ✅              |           |
-
-
-
-
-
-
-
-
-
-
-
-Real World Ticket:
-
-User Complaint:
-
-I just connected my new laptop to the office network but I have no internet at all. All my colleagues sitting next to me are working fine.
-
-Root Cause:
-
-DHCP pool exhausted. All available IP addresses in the pool were already assigned to existing devices. The new laptop had no IP left to receive.
-
-Resolution:
-
- Expanded the pool by reducing the excluded-address range. Ran ipconfig /renew on the new laptop. IP 192.168.20.13 assigned and internet access restored.
+---
 
 
 
 
 
+## 💡 Next Step
 
-
+→ [IP Address Conflict](./ip-conflict.md)
 
 
 
