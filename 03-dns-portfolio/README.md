@@ -1,13 +1,18 @@
-          🌐 DNS Portfolio — IT Help Desk Tier 1
+
               
-           Author: Seema              Windows 10/11
-                 
-           IT Help Desk Tier 1        June 2026
+          **Portfolio:** IT Help Desk Tier 1 & Tier 2 - Networking Labs
 
 
 
+# 🌐 DNS Troubleshooting Portfolio
 
-
+| | Detail |
+|---|---|
+| **Portfolio** | IT Help Desk Tier 1 & Tier 2: Networking Labs |
+| **Purpose** | Demonstrate hands-on DNS troubleshooting skills for IT Help Desk roles |
+| **Tool** | Windows 11 (Command Prompt, network settings) |
+| **Author** | Seema Soapanahalli Mallikarjunaiah |
+| **Date** | May 2026 |
 
 
 
