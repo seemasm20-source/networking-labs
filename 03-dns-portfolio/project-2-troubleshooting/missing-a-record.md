@@ -1,413 +1,109 @@
+# 🔴 Scenario 1 — Missing A Record
 
-## 🔴 Scenario 1 - Missing A Record
+[← Back to Project 2 README](./README.md)
 
-
-
-
+---
 
 ## 📋 Problem Summary
 
-User can reach a server by IP address but cannot reach it by name. All other websites work normally. Only this specific hostname fails.
+A user can reach a server by IP address but cannot reach it by name. All other websites work normally. Only the hostname **server01** fails.
 
+---
 
+## 💡 What is an A Record?
 
+An A record is a DNS entry that maps a hostname to an IPv4 address. If the record is missing, DNS cannot resolve the name, even though the server itself is reachable by IP.
 
+> **Lab limitation:** This home lab has no production DNS environment and no real server named server01. The scenario demonstrates the troubleshooting method used to identify a missing A record. The fix and verification steps cannot be completed here, because they need a DNS administrator.
 
-## 🔍 Issue
+---
 
-Users were unable to access the server using the hostname **server01**. DNS could not resolve the hostname because the required **A Record** was missing or unavailable.
+## 🔧 Create the Problem
 
-As a result, name based access failed even though network connectivity to a reachable IP address on the network was functional.
+No setup is needed. The hostname **server01** does not exist in DNS, so the lookup fails on its own.
 
-### Symptoms
+---
 
-```plaintext
-ping server01     → Failed (hostname could not be resolved)
+## 🔎 Verify the Problem
 
-ping 192.168.0.1  → Successful (IP connectivity confirmed)
+### Test 1 — Ping by name
+
+```text
+C:\> ping server01
+
+Ping request could not find host server01.
+Please check the name and try again.
 ```
 
+### Test 2 — Query DNS
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 🔎 Verify the Issue
-
-## C:\> ping server01
-
-Ping request could not find host server01
-
-Please check the name and try again.
-
-## C:\> nslookup server01
+```text
+C:\> nslookup server01
 
 *** No A or AAAA records available for server01
+```
 
-Findings:
+### Findings
 
-The hostname server01 could not be resolved.
+| Test | Result | Meaning |
+|------|--------|---------|
+| Ping by name | Failed | The hostname could not be resolved |
+| `nslookup` | No A or AAAA record returned | DNS has no record for server01 |
+| Ping by IP (reported by the user) | Works | The network is fine; only name resolution fails |
 
-DNS did not return an A Record or AAAA Record.
+> The fault is DNS name resolution, not network connectivity.
 
-The issue appears to be related to DNS name resolution.
+**Screenshot: ping and nslookup failing for server01:**
 
-
-
-
-
-
-## Lab Limitation:
-
-This home lab does not contain a production DNS environment or an actual server named server01. The scenario demonstrates the troubleshooting methodology used to identify a potential missing DNS A Record.
-
-In a production environment, additional verification would include testing connectivity directly to the server's IP address to confirm that network connectivity is working while DNS name resolution is failing.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (342)" src="https://github.com/user-attachments/assets/37e5aae0-6e69-4994-9fec-ad594d819aa6" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 ## 🔧 Fix
-    Escalate to Tier 2 to add A Record in DNS Manager.
 
-    Provide:-
+A Tier 1 technician cannot add DNS records, so the ticket is escalated to Tier 2 with these details:
 
-  Hostname  : server01
-   
-  IP Address: 192.168.10.50
-  
-  DNS Zone  : company.local
-  
- Record Type: A Record
+| Field | Value |
+|-------|-------|
+| **Hostname** | server01 |
+| **IP Address** | 192.168.10.50 |
+| **DNS Zone** | company.local |
+| **Record Type** | A record |
 
+The Tier 2 administrator adds the record in **DNS Manager**.
 
+---
 
+## ✅ Verification
 
+After the A record is created, the same tests are repeated:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ✅ Verification and Validation
-
-
-
-After the DNS Administrator creates the required A Record for **server01** the following validation steps should be performed.
-
-### Commands Used
-
-```cmd
-nslookup server01
+```text
+C:\> nslookup server01
+C:\> ping server01
 ```
 
-```cmd
-ping server01
-```
+**Expected result:**
 
-### Expected Results
+| Test | Expected Result |
+|------|-----------------|
+| `nslookup server01` | Returns 192.168.10.50 |
+| `ping server01` | Replies from 192.168.10.50 |
+| User access | The server opens by hostname |
 
-* DNS successfully resolves the hostname **server01** to its assigned IP address.
-* `nslookup` returns the correct A Record.
-* `ping server01` succeeds.
-* Users can access the server using its hostname.
+---
 
+## 📋 Issue Summary
 
+| | Detail |
+|---|---|
+| **Issue** | Server reachable by IP but not by name |
+| **Cause** | A record for server01 missing in DNS |
+| **Symptom** | Ping by name fails, ping by IP works |
+| **Diagnose** | `ping server01` and `nslookup server01` both fail to resolve |
+| **Fix** | Escalated to Tier 2 to add the A record in DNS Manager |
+| **Verified** | Expected: `nslookup` returns 192.168.10.50 and `ping server01` succeeds |
 
+---
 
+## 💡 Next Step
 
-
-
-
-Expected Outcome
-
-The hostname can be resolved successfully through DNS, confirming that the missing A Record issue has been resolved.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Issue Summary
-
-
-
-
-
-
-
-
-
-
-
-
-
-| Issue                                  | Symptom                               | Diagnose                               | Fix                                          | Verified                      |
-| -------------------------------------- | ------------------------------------- | -------------------------------------- | -------------------------------------------- | :---------------------------: |
-| Server reachable by IP but not by name | ping by name fails & ping by IP works | nslookup returns Non-existent domain | Add A Record in DNS / hosts file temporarily | nslookup returns correct IP ✅ |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-User complaint
-"I cannot connect to our file server by name. The IP address works fine."
-
-Root cause
-A Record missing in DNS, hostname has no IP address entry in DNS database.
-
-Resolution
-Confirmed with nslookup Non-existent domain error. Added temporary hosts file entry. Escalated to Tier 2 to create permanent A Record. Verified with nslookup after fix.
+→ [Scenario 2: Wrong DNS Server](./wrong-dns-server.md)
