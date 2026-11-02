@@ -1,19 +1,53 @@
+# 🔴 Scenario 2 — Wrong DNS Server
 
-## 🔴 Scenario 2 - Wrong DNS Server
+[← Back to Project 2 README](./README.md)
 
-
+---
 
 ## 📋 Problem Summary
 
-      User cannot open any website or reach any server by name. Only one user is affected colleagues on same network work fine.
+A user cannot open any website or reach any server by name. Only this user is affected; colleagues on the same network work fine.
 
-## 🔍 Issue
+---
 
-     PC configured with incorrect DNS server IP — pointing to a fake or unreachable server. Every DNS query times out.
 
-     Configured DNS: 0.0.0.0  ← does not exist
 
-     Real DNS      : 192.168.0.1  
+## 💡 What is a DNS Server?
+
+A DNS server translates names (such as google.com) into IP addresses. If a PC points to a DNS server that does not exist or does not answer, every name lookup times out, even though the internet connection itself works.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 🔧 Create the Problem
+
+**Environment:** Windows 11, home network (Command Prompt, Windows network settings).
+
+### Step 1 — Configure an invalid DNS server
+
+1. Press **Windows + I** → **Network & Internet**
+2. Open your active connection (Wi-Fi or Ethernet)
+3. Click **Hardware properties**
+4. Next to **DNS server assignment**, click **Edit** → choose **Manual** → turn on **IPv4**
+5. Enter an invalid address:
+   - Preferred DNS: `0.0.0.0`
+   - Alternate DNS: `0.0.0.0`
+6. Click **Save** and close all windows
+
+**Screenshot: invalid DNS server 0.0.0.0 configured:**
 
 
 
@@ -23,6 +57,17 @@
 
 
 
+---
+
+### Step 2 — Disable IPv6
+
+1. Press **Win + R**, type `ncpa.cpl`
+2. Right-click the active network adapter → **Properties**
+3. Untick **Internet Protocol Version 6 (TCP/IPv6)** → **OK**
+
+> **Note:** I wanted to simulate a total DNS failure. After setting the dummy IPv4 DNS address my browsers could still resolve websites, because Windows was falling back to IPv6 DNS through my router. Disabling IPv6 forced Windows to rely on the IPv4 setting, so all DNS requests hit a dead end and the test environment was isolated.
+
+---
 
 
 
@@ -39,170 +84,32 @@
 
 
 
+## 🔎 Verify the Problem
 
+```text
+C:\> ipconfig /all
+DNS Servers . . . : 0.0.0.0        ← wrong address
 
-
-
-
-
-
-
-
-
-
-
-## 🔎 Verify the Issue
-
-
-## C:\> ipconfig /all
-
-DNS Servers: 0.0.0.0   ← wrong IP
-
-## C:\> nslookup google.com
-
+C:\> nslookup google.com
 *** Request to 0.0.0.0 timed-out
 
-## C:\> ping 8.8.8.8
-
-Reply from 8.8.8.8  ← internet works ❌ DNS is the problem
-
-## C:\> nslookup google.com 8.8.8.8
-
-Address: 142.251.14.102 ✅ works with correct DNS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (346)" src="https://github.com/user-attachments/assets/c723cc09-ac8d-439e-a202-b61f2b21026b" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+C:\> ping 8.8.8.8
+Reply from 8.8.8.8                 ← the internet works
+
+C:\> nslookup google.com 8.8.8.8
+Address: 142.251.14.102            ← works with a valid DNS server
+```
+
+| Test | Result | Meaning |
+|------|--------|---------|
+| `ipconfig /all` | DNS server is 0.0.0.0 | The PC points to a DNS server that does not exist |
+| `nslookup google.com` | Timed out | The DNS server does not answer |
+| `ping 8.8.8.8` | Reply | Network connectivity is fine |
+| `nslookup google.com 8.8.8.8` | Resolves | DNS works when a valid server is used |
+
+> The internet works, but names do not resolve, so the fault is the DNS server setting.
+
+**Screenshot: ipconfig /all showing DNS server 0.0.0.0:**
 
 
 
@@ -235,47 +142,11 @@ Address: 142.251.14.102 ✅ works with correct DNS
 
 
 
+---
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Screenshot: nslookup timing out and ping 8.8.8.8 succeeding:**
 
 
 
@@ -287,32 +158,43 @@ Address: 142.251.14.102 ✅ works with correct DNS
 
 
 
+---
 
 
 
 
+## 🔧 Fix
 
+Set the DNS server back to a valid address:
 
+1. **Windows + I** → **Network & Internet** → your connection → **Hardware properties**
+2. Next to **DNS server assignment**, click **Edit**
+3. Choose **Automatic (DHCP)**, or enter a valid server (for example the router at `192.168.0.1`)
+4. Click **Save**
 
+Re-enable IPv6 if you disabled it for the lab: **Win + R** → `ncpa.cpl` → adapter **Properties** → tick **Internet Protocol Version 6 (TCP/IPv6)** → **OK**.
 
 
 
 
 
+**Screenshot: Assigning dhcp from manual to Automatic(dhcp):**
 
 
 
+<img width="1920" height="1080" alt="Screenshot (381)" src="https://github.com/user-attachments/assets/3ed451af-ed43-40ef-9b87-f4d22f470f0c" />
 
 
 
 
 
 
-##  🔧 Fix :
 
 
 
+<img width="1920" height="1080" alt="Screenshot (383)" src="https://github.com/user-attachments/assets/4ebd5af2-f62a-4eb1-b01c-67dcf99fb171" />
 
+---
 
 
 
@@ -325,99 +207,17 @@ Address: 142.251.14.102 ✅ works with correct DNS
 
 
 
+## ✅ Verification
 
+### Verification 1 — DNS server
 
+```text
+C:\> ipconfig /all
+```
 
-## Step 1: Configure an Invalid DNS Server
+The client now shows a valid DNS server.
 
-1. Press Windows + I → Network and Internet
-
-2. Navigate to your active connection (Wi-fi or Ethernet)
-
-3. Click on Wi-fi
-
-4. Click on Hardware Properties.
-
-5. Click on DNS server assignment → Edit → Choose manual → Enable IPV4 → Toggle it ON
-
-6. Enter Invalid DNS Server Address:
-
-   Preferred DNS Server: 0.0.0.0
-
-   Alternate DNS Server: 0.0.0.0
-
-9. Click Save & close all windows.
-
-
-       
-
-
-
-
-
-
-
-
-
-## Step 2: Disable IPv6
-
-1. Press Win + R →  type ncpa.cpl
-
-2. Right click your Active Network Adapter
-
-3. Properties  → Uncheck Internet Protocol Version 6 ( TCP/IPV6 )
-
-4. Click OK
-
-
-Note: I wanted to simulate a total DNS resolution failure on my machine. Initially, 
-
-I changed the IPv4 DNS server settings to a dummy address(0.0.0.0) under Windows Network Settings,
-
-but I noticed my browsers could still resolve websites. I realized Windows was automatically falling back 
-
-to IPv6 DNS routing via my router.To fix this loophole, I went into the Network Adapter properties and 
-
-disabled the IPv6 protocol entirely. This forced the OS to rely strictly on my modified IPv4 configuration, 
-
-successfully driving all browser DNS requests into a dead end and confirming my test environment was isolated.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## ✅ Verification and Validation :
-
-
-
-
-## 1. C:\> ipconfig /all
-
-   
-
-
-
-
-
-
-
-
- Confirmed that the client is configured with a valid DNS server.
-
-
-
-
+**Screenshot: ipconfig /all showing a valid DNS server:**
 
 
 
@@ -431,26 +231,19 @@ successfully driving all browser DNS requests into a dead end and confirming my 
 
 
 
-## 2. C:\> nslookup google.com
-    Name: google.com
-   
-    
+---
 
 
 
-  Confirmed successful DNS name resolution. 
+### Verification 2 — Name resolution
 
+```text
+C:\> nslookup google.com
+```
 
+The hostname resolves to an IP address.
 
-
-
-
-
-
-
-
-
-
+**Screenshot: nslookup google.com returning an address:**
 
 
 
@@ -464,48 +257,19 @@ successfully driving all browser DNS requests into a dead end and confirming my 
 
 
 
+---
 
 
 
+### Verification 3 — Connectivity by name
 
+```text
+C:\> ping google.com
+```
 
+The name resolves and the client reaches the destination.
 
-
-
-
-
-
-
-
-
-
-
-
-
-## 3. C:\> ping google.com
- 
-
-
-
-
-
-
-  Confirmed that the hostname was successfully resolved by DNS and the client could communicate with the destination over the network.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Screenshot: ping google.com with replies:**
 
 
 
@@ -523,317 +287,25 @@ successfully driving all browser DNS requests into a dead end and confirming my 
 
 
 
+---
 
 
 
+## 📋 Issue Summary
 
+| | Detail |
+|---|---|
+| **Issue** | Unable to open websites by name |
+| **Cause** | Incorrect DNS server (0.0.0.0) configured on the client |
+| **Symptom** | Websites fail by name; connectivity to IP addresses works |
+| **Diagnose** | `ipconfig /all` showed 0.0.0.0, `nslookup google.com` timed out, `ping 8.8.8.8` worked |
+| **Fix** | Set the DNS server back to a valid address in network settings |
+| **Verified** | `nslookup google.com` and `ping google.com` succeed; websites load |
 
+---
 
+## 💡 Next Step
 
+→ [Scenario 3: Internal vs External DNS](./internal-vs-external-dns.md)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-| **Problem**                                  | **Root Cause**                                | **User Symptoms**                                                                                   | **Diagnosis**                                                                                                                                                      | **Resolution**                                                                     | **Verification**                                                                                                                      |
-| -------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Unable to access websites using domain names | Incorrect DNS server configured on the client | Websites fail to load by name (e.g., `google.com`), while connectivity to IP addresses is available | Verified DNS configuration using `ipconfig /all`; confirmed DNS resolution failure using `nslookup google.com`; confirmed network connectivity with `ping 8.8.8.8` | Updated the client with a valid DNS server address in the network&Internet  settings | `nslookup google.com` successfully resolved the hostname, `ping google.com` succeeded, and websites loaded normally in the browser.  |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Real IT Tickets:
-
-User complaint
-
-I cannot open any websites. My colleagues next to me are all working fine.
-
-Root cause
-
-
-Wrong DNS server IP every query sent to non-existent server and timed out.
-
-Resolution
-
-Confirmed via ipconfig /all-DNS was 0.0.0.0 Ping 8.8.8.8 worked confirming internet fine. Changed DNS and All websites now load.
