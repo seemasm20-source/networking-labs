@@ -3,7 +3,7 @@
 
 
 
- [ Back to Project README](../README.md) → [DHCP Configuration — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/README.md)
+  [ Back to Project README](../README.md) → [DHCP Configuration — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/README.md)
 
 
 
@@ -16,7 +16,7 @@
 
 ## 📋 Problem Summary
 
-PCs in the HR Department (LAN 1) showed an APIPA address (169.254.x.x) with no network access. The DHCP service on the router was disabled, so no IP addresses were assigned automatically.
+ PCs in the HR Department (LAN 1) showed an APIPA address (169.254.x.x) with no network access. The DHCP service on the router was disabled, so no IP addresses were assigned automatically.
 
 
 
@@ -28,7 +28,7 @@ PCs in the HR Department (LAN 1) showed an APIPA address (169.254.x.x) with no n
 
 ## 💡 What is APIPA?
 
-When a PC cannot reach a DHCP server, it assigns itself a temporary 169.254.x.x address (Automatic Private IP Addressing). This address only works on the local segment. There is no default gateway, so the PC cannot reach other networks or the internet.
+ When a PC cannot reach a DHCP server, it assigns itself a temporary 169.254.x.x address (Automatic Private IP Addressing). This address only works on the local segment. There is no    default gateway, so the PC cannot reach other networks or the internet.
 
 ```text
 DHCP disabled → no lease received → PC self-assigns 169.254.x.x → no network access
@@ -40,7 +40,7 @@ DHCP disabled → no lease received → PC self-assigns 169.254.x.x → no netwo
 
 ## 🔧 Create the Problem
 
-Disable the DHCP service on the router:
+ Disable the DHCP service on the router:
 
 ```text
 Router> enable
@@ -110,7 +110,7 @@ Then make the affected PC request a new address: **Desktop → IP Configuration*
 
 ## 🔎 Verify the Problem
 
-On the affected PC: **Desktop → Command Prompt**
+ On the affected PC: **Desktop → Command Prompt**
 
 ```text
 PC> ipconfig
@@ -272,7 +272,7 @@ PC> ipconfig
 
 ## 🔧 Fix
 
-Restore the DHCP service and recreate the LAN 1 pool:
+ ### Step 1 :  Restore the DHCP service and recreate the LAN 1 pool
 
 ```text
 Router> enable
@@ -373,7 +373,7 @@ Router# write memory
 
 
 
-### Step 2 — Renew the IP address on the PC
+### Step 2 - Renew the IP address on the PC
 
 ```text
 PC> ipconfig /release
@@ -457,9 +457,6 @@ PC> ipconfig
 
 
 
-
-
-<img width="1920" height="1080" alt="Screenshot (307)" src="https://github.com/user-attachments/assets/dbd1df9e-ab8f-4bff-85cb-1fee57756f93" />
 
 
 
@@ -577,7 +574,7 @@ After the renew, the PC received a valid address from the DHCP pool:
 
 ## 💡 Next Step
 
-→ [DHCP Pool Exhaustion][DHCP Pool Exhaustion Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)
+ [DHCP Pool Exhaustion] →[DHCP Pool Exhaustion Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)
 
 
 
