@@ -417,7 +417,7 @@ PC7 receives replies from the router gateway.
 
 ## 💡 Next Step
 
-→ [IP Address Conflict](./ip-conflict.md)
+→ [IP Conflict Troubleshooting](https://github.com/seemasm20-source/networking-labs/edit/main/02-dhcp-configuration/troubleshooting/ip-conflict.md)
 
 
 
