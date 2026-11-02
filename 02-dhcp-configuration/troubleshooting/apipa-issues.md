@@ -45,7 +45,7 @@ Disable the DHCP service on the router:
 ```text
 Router> enable
 Router# configure terminal
-Router(config)# no service dhcp
+Router(config)# no ip dhcp pool LAN1_POOL
 Router(config)# end
 ```
 
@@ -108,12 +108,69 @@ Then make the affected PC request a new address: **Desktop → IP Configuration*
 
 ---
 
+## 🔎 Verify the Problem
+
+On the affected PC: **Desktop → Command Prompt**
+
+```text
+PC> ipconfig
+```
+
+| Field | Value Seen |
+|-------|------------|
+| IP Address | 169.254.x.x (APIPA) |
+| Default Gateway | empty |
+
+> **Symptom:** 169.254.x.x + empty gateway = the PC could not get a lease from a DHCP server.
+
+**Screenshot: PC showing the APIPA address:**
 
 
 
- ## Impact:
 
-DHCP disabled → No IP address lease received → Windows assigns an APIPA address (`169.254.x.x`) → Network connectivity is limited or unavailable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (303)" src="https://github.com/user-attachments/assets/2ae09b4c-d991-470a-9543-6850ff8eeab6" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
 
 
 
@@ -189,44 +246,7 @@ DHCP disabled → No IP address lease received → Windows assigns an APIPA addr
 
 
 
-## 🔎 Verify the Problem
 
-On the affected PC: **Desktop → Command Prompt**
-
-```text
-PC> ipconfig
-```
-
-| Field | Value Seen |
-|-------|------------|
-| IP Address | 169.254.x.x (APIPA) |
-| Default Gateway | empty |
-
-> **Symptom:** 169.254.x.x + empty gateway = the PC could not get a lease from a DHCP server.
-
-**Screenshot: PC showing the APIPA address:**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (303)" src="https://github.com/user-attachments/assets/2ae09b4c-d991-470a-9543-6850ff8eeab6" />
 
 
 
@@ -353,22 +373,21 @@ Router# write memory
 
 
 
-✅ Renew IP on the PC:
+### Step 2 — Renew the IP address on the PC
 
-ipconfig /release
+```text
+PC> ipconfig /release
+PC> ipconfig /renew
+PC> ipconfig
+```
 
-ipconfig /renew
+**Result after fix:**
 
-ipconfig
-
-Expected after fix:
-
-IPv4 Address   : 192.168.10.10  
-
-Subnet Mask   : 255.255.255.0
-
-Default Gateway: 192.168.10.1
-
+| Field | Value Received |
+|-------|----------------|
+| IP Address | 192.168.10.10 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 192.168.10.1 |
 
 
 
@@ -485,10 +504,17 @@ Default Gateway: 192.168.10.1
 
 
 
+# ✅ Verification
 
+After the renew, the PC received a valid address from the DHCP pool:
 
+| Field | Value Received |
+|-------|----------------|
+| IP Address | 192.168.10.10 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 192.168.10.1 |
 
-## 📋 Quick Summary Table:
+**Screenshot: PC with the correct DHCP-assigned address:**
 
 
 
@@ -511,6 +537,7 @@ Default Gateway: 192.168.10.1
 
 
 
+<img width="1920" height="1080" alt="Screenshot (307)" src="https://github.com/user-attachments/assets/51829b21-98ca-433e-ba6c-ba595bcbf21b" />
 
 
 
@@ -533,65 +560,24 @@ Default Gateway: 192.168.10.1
 
 
 
+---
 
+## 📋 Issue Summary
 
-| Step             | Command / Action                     | Purpose                                                                                                     |
-| ---------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| Create Problem   | no service dhcp                      | Disables the DHCP service on the router, preventing clients from obtaining IP addresses automatically.      |
-| Verify Issue     | ipconfig (on PC)                     | Checks the client's IP configuration and confirms whether an APIPA address (169.254.x.x) has been assigned. |
-| Fix Problem      | service dhcp + recreate DHCP pool    | Re-enables the DHCP service and restores the DHCP configuration.                                            |
-| Renew IP Address |ipconfig /release then ipconfig /renew| Releases the current IP address and requests a new lease                                                  |
+| | Detail |
+|---|---|
+| **Issue** | PCs showing APIPA address (169.254.x.x) |
+| **Cause** | DHCP service disabled on the router |
+| **Symptom** | 169.254.x.x address, empty default gateway, no network access |
+| **Diagnose** | `ipconfig` on the PC shows an APIPA address |
+| **Fix** | `service dhcp` on the router, then `ipconfig /release` and `/renew` on the PC |
+| **Verified** | PC received 192.168.10.10 with gateway 192.168.10.1 |
 
+---
 
+## 💡 Next Step
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-REAL WORLD TICKET:
-
-
-
-
-
-
-
-User complaint
-
-"My PC shows Limited Connectivity. Cannot access internet or shared drives."
-
-Root cause
-
-DHCP service disabled. PC self-assigned 169.254.x.x - unable to communicate.
-
-Resolution
-
-Re-enabled DHCP + recreated pool. Ran ipconfig /renew. IP 192.168.10.10 assigned — connectivity restored.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+→ [DHCP Pool Exhaustion](./dhcp-pool-exhaustion.md)
 
 
 
