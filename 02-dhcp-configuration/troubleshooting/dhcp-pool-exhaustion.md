@@ -146,7 +146,7 @@ Router# show ip dhcp binding
 
 > All available addresses in the pool are already leased.
 
-**Screenshot: `show ip dhcp binding` showing all three leases:**
+
 
 ### Check PC7
 
@@ -157,7 +157,6 @@ Router# show ip dhcp binding
 | PC6 | 192.168.20.12 |
 | PC7 | 169.254.x.x (APIPA) |
 
-**Screenshot: PC7 showing an APIPA address:**
 
 
 
@@ -179,6 +178,11 @@ Router# show ip dhcp binding
 
 
 
+
+
+
+
+**Screenshot: `show ip dhcp binding` showing all three leases:**
 
 
 
@@ -186,6 +190,32 @@ Router# show ip dhcp binding
 
 
 <img width="1920" height="1080" alt="Screenshot (325)" src="https://github.com/user-attachments/assets/8f7f8701-caa2-49da-aef6-af2e8977e780" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Screenshot: PC7 showing an APIPA address:**
+
+
+<img width="1920" height="1080" alt="Screenshot (321)" src="https://github.com/user-attachments/assets/239a79d8-95a1-4c8b-81bf-c75271eb173a" />
+
+
+
+
+
+
 
 
 
