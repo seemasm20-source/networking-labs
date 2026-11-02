@@ -1,51 +1,55 @@
-## Troubleshooting Issue 1 — APIPA (169.254.x.x) Error
+# 🔴 Troubleshooting Issue 1 - APIPA (169.254.x.x)
+
+
+
+
+ [ Back to Project README](../README.md) → [DHCP Configuration — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/README.md)
 
 
 
 
 
 
-
- ## 📋 Problem Summary
- 
-PCs in HR Department (LAN 1) showing APIPA address 169.254.x.x with no internet access. DHCP service on the router was disabled, no IPs assigned automatically.
+---
 
 
 
+## 📋 Problem Summary
 
-
-
-
-
-## What is APIPA?
-
-When a PC cannot reach a DHCP server it self-assigns a temporary 169.254.x.x address. This IP cannot communicate with any other device on the network.
+PCs in the HR Department (LAN 1) showed an APIPA address (169.254.x.x) with no network access. The DHCP service on the router was disabled, so no IP addresses were assigned automatically.
 
 
 
 
+---
 
 
-## 🔧 How to Create the Problem:
 
+
+## 💡 What is APIPA?
+
+When a PC cannot reach a DHCP server, it assigns itself a temporary 169.254.x.x address (Automatic Private IP Addressing). This address only works on the local segment. There is no default gateway, so the PC cannot reach other networks or the internet.
+
+```text
+DHCP disabled → no lease received → PC self-assigns 169.254.x.x → no network access
 ```
+
+---
+
+
+
+## 🔧 Create the Problem
+
+Disable the DHCP service on the router:
+
+```text
 Router> enable
-
 Router# configure terminal
-
-! === Create APIPA Issue ===
-
 Router(config)# no service dhcp
-
-! OR alternatively:
-
-Router(config)# no ip dhcp pool LAN1_POOL
-
 Router(config)# end
-
-Router# write memory
 ```
 
+Then make the affected PC request a new address: **Desktop → IP Configuration**, click **Static**, then **DHCP** again.
 
 
 
@@ -56,6 +60,8 @@ Router# write memory
 
 
 
+
+*Screenshot: DHCP service disabled on the router:**
 
 
 
@@ -100,7 +106,7 @@ Router# write memory
 
 
 
-
+---
 
 
 
@@ -183,29 +189,23 @@ DHCP disabled → No IP address lease received → Windows assigns an APIPA addr
 
 
 
-## 🔎 Verify the APIPA Issue:
+## 🔎 Verify the Problem
 
+On the affected PC: **Desktop → Command Prompt**
 
-On affected PC → Desktop → Command Prompt:
+```text
+PC> ipconfig
+```
 
+| Field | Value Seen |
+|-------|------------|
+| IP Address | 169.254.x.x (APIPA) |
+| Default Gateway | empty |
 
+> **Symptom:** 169.254.x.x + empty gateway = the PC could not get a lease from a DHCP server.
 
+**Screenshot: PC showing the APIPA address:**
 
-
-ipconfig
-
-You will see:
-
-IPv4 Address  : 169.254.45.78  ← APIPA!
-
-Subnet Mask   : 255.255.255.0
-
-Default Gateway: ------
-
-
-Symptom
-
-169.254.x.x + empty gateway = DHCP failed.
 
 
 
@@ -243,33 +243,35 @@ Symptom
 
 
 
-## 🔧 Fix: 
-
-Restore DHCP Service
 
 
-Router# enable
+
+
+
+---
+
+## 🔧 Fix
+
+Restore the DHCP service and recreate the LAN 1 pool:
+
+```text
+Router> enable
 Router# configure terminal
 
-! === Fix APIPA Issue ===
-
+! --- Fix APIPA issue ---
 Router(config)# service dhcp
 
-! Recreate pool for LAN 1
-
+! --- Recreate pool for LAN 1 ---
 Router(config)# ip dhcp pool LAN1_POOL
-
 Router(dhcp-config)# network 192.168.10.0 255.255.255.0
-
 Router(dhcp-config)# default-router 192.168.10.1
-
 Router(dhcp-config)# dns-server 8.8.8.8
-
 Router(dhcp-config)# exit
-
 Router(config)# end
-
 Router# write memory
+```
+
+**Screenshot: DHCP service re-enabled and pool recreated:**
 
 
 
