@@ -577,7 +577,7 @@ After the renew, the PC received a valid address from the DHCP pool:
 
 ## 💡 Next Step
 
-→ [DHCP Pool Exhaustion](./dhcp-pool-exhaustion.md)
+→ [DHCP Pool Exhaustion][DHCP Pool Exhaustion Issue](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)
 
 
 
