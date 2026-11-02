@@ -237,9 +237,6 @@ Result: four replies from 192.168.10.1, no packet loss.
 
 ---
 
-## 💡 Next Step
-
-→ [Back to Project README](../README.md)
 
 
 
