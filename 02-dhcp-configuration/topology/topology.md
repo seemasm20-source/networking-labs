@@ -242,7 +242,7 @@ Cable type: **Copper Straight-Through** for all connections.
 
 ## 💡 Next Step
 
-→ (https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/config/dhcp-config.md)
+DHCP CONFIGURATION→ (https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/config/dhcp-config.md)
 
 
 
