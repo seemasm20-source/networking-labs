@@ -1,191 +1,43 @@
+# 🔴 Project 2: DNS Troubleshooting Lab
 
+[← Back to DNS Portfolio README](../README.md)
 
-## 🔴 Project 2 - DNS Troubleshooting Lab
+---
 
-      5 Scenarios
-   ## Real Tier 1 Incidents
+## 📋 Overview
 
+Five real-world DNS fault scenarios, each built and tested on Windows 11. Every scenario follows the same structure: problem, cause, verify, fix, verification and issue summary.
 
+---
 
+## 🏗️ Environment
 
+| Component | Detail |
+|-----------|--------|
+| **Operating System** | Windows 11 |
+| **Network Type** | Home network |
+| **Tools** | Command Prompt, Windows network settings, Chrome / Edge |
 
+---
 
+## 📁 Scenarios
 
+| # | Scenario | Root Cause | File |
+|---|----------|------------|------|
+| 1 | Ping by IP works, name fails | Missing or incorrect A record | [Missing A Record](./missing-a-record.md) |
+| 2 | Cannot open any website (only one user affected) | Wrong DNS server configured on the PC | [Wrong DNS Server](./wrong-dns-server.md) |
+| 3 | Intranet website not loading | Incorrect internal or external DNS configuration | [Internal vs External DNS](./internal-vs-external-dns.md) |
+| 4 | New server unreachable by name | Hostname not added to DNS | [Hostname Not Resolving](./hostname-not-resolving.md) |
+| 5 | Cannot open any website (entire office) | DNS service down | [DNS Service Down](./dns-service-down.md) |
 
+---
 
+## 📋 Reference
 
-| Scenario                 | User Complaint                        | Possible Cause                                  |
-| ------------------------ | ------------------------------------- | ----------------------------------------------- |
-| Missing A Record         | Reach server by IP but not name       | Missing A record in DNS                         |
-| Wrong DNS Server         | Cannot open any website-others fine   | Configured wrong DNS server                     |
-| Internal vs External DNS | Google works but intranet does not    | Different DNS settings for internal vs external |
-| Hostname Not Resolving   | New server unreachable by name        | Hostname not added to DNS                       |
-| DNS Service Down         | Entire office cannot open any website | DNS service is down                             |
+→ [DNS Cheatsheet](../project-4-nslookup/dns-cheatsheet.md)
 
+---
 
+## 💡 Next Step
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## How to make DNS Server Unavailable?
-
-Objective: Simulate a DNS failure on a Windows 11 machine and troubleshoot the issue using basic networking tools. 
-
-The computer was unable to resolve domain names because an invalid DNS server address was configured. 
-
-Users experienced issues accessing websites using domain names such as www.google.com.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Environment used:
-
-Operating System: Windows 11
-
-Network Type: Home Network
-
-Browser: Google Chrome / Microsoft Edge
-
-Command-Line Tool: Command Prompt
-
-
-
-
-
-
-
-
-
-
-
-## Steps to Simulate the Issue:
-
-
-
-
-
-
-## Step 1: Configure an Invalid DNS Server
-
-1. Press Windows + I → Network and Internet
-
-2. Navigate to your active connection (Wi-fi or Ethernet)
-
-3. Click on Wi-fi
-
-4. Click on Hardware Properties.
-
-5. Click on DNS server assignment → Edit → Choose manual → Enable IPV4
-
-6. Enter Invalid DNS Server Address:
-
-   Preferred DNS Server: 0.0.0.0
-
-   Alternate DNS Server: 0.0.0.0
-
-9. Click Save & close all windows.
-
-
-       
-
-
-
-
-
-
-
-
-
-## Step 2: Disable IPv6
-
-1. Press Win + R →  type ncpa.cpl
-
-2. Right click your Active Network Adapter
-
-3. Properties  → Uncheck Internet Protocol Version 6 ( TCP/IPV6 )
-
-4. Click OK
-
+→ [Project 3: DNS Cache Troubleshooting](../project-3-cache/)
