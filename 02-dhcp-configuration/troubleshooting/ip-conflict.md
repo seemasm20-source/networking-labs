@@ -1,261 +1,91 @@
 
-## Troubleshooting Issue-3
-
-
-IP Address Conflict (Static vs DHCP)
+# 🔴 Troubleshooting Issue 3 - IP Address Conflict
 
 
 
+ [ Back to Project README](../README.md) → [DHCP Configuration — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/README.md)
 
 
+ ---
 
 ## 📋 Problem Summary
 
-PC2 manually assigned static IP 192.168.10.10 , same IP DHCP had already assigned to PC1. IP conflict caused intermittent failures for both devices.
+PC2 was manually assigned the static IP 192.168.10.10, the same address DHCP had already assigned to PC1. The duplicate address caused intermittent connection failures for both devices.
 
+---
 
 
 
 
-## 🔧 Router Configuration
 
 
+## 💡 What is an IP Address Conflict?
 
-enable
+An IP address conflict occurs when two devices on the same network use the same IP address. The network cannot tell which device should receive the traffic, so connections drop or become unreliable.
 
-configure terminal
+It commonly happens when a static IP is set inside the range that DHCP also hands out.
 
-interface gigabitEthernet0/0
 
-ip address 192.168.10.1 255.255.255.0
+---
 
-no shutdown
 
-exit
 
-ip dhcp excluded-address 192.168.10.1 192.168.10.9
 
-ip dhcp pool LAN1_POOL
 
-network 192.168.10.0 255.255.255.0
 
-default-router 192.168.10.1
+## 🔧 Create the Problem
 
-dns-server 8.8.8.8
+### Step 1 - Baseline: PC1 gets its address from DHCP
 
-exit
+DHCP is configured as in [DHCP Configuration](../config/dhcp-config.md).
 
-end
+On PC1: **Desktop → IP Configuration → DHCP**, then check the result:
 
-write memory
+```text
+PC1> ipconfig /all
+```
 
+| Field | Value |
+|-------|-------|
+| IP Address | 192.168.10.10 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 192.168.10.1 |
 
+The address belongs to the 192.168.10.0/24 network and was assigned automatically by DHCP.
 
+**Screenshot: PC1 with the DHCP-assigned address:**
 
 
 
 
 
+<img width="1920" height="1080" alt="Screenshot (307)" src="https://github.com/user-attachments/assets/d55d4ef9-c865-4028-80e0-2dc2b55185c7" />
 
 
 
-## Step 1: Verify DHCP is Working
 
-On PC1, navigate to:
 
-Desktop → IP Configuration → DHCP
+---
 
-The PC should automatically receive an IP address from the DHCP server.
+### Step 2 - Set the same address statically on PC2
 
-To verify the assigned network settings, open Command Prompt and run:
-
-ipconfig /all
-
-Expected Output
-
-IP Address      : 192.168.10.10
-
-Subnet Mask     : 255.255.255.0
-
-Default Gateway : 192.168.10.1
-
-
-Verification Confirm that:
-
-The IP address belongs to the 192.168.10.0/24 network
-
-The subnet mask is 255.255.255.0
-
-The default gateway is 192.168.10.1
-
-The IP address was assigned automatically by DHCP.
-
-This confirms that DHCP is functioning correctly before creating the troubleshooting scenario.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (308)" src="https://github.com/user-attachments/assets/1e440650-ed4e-428e-a15d-a2825e345ece" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Step 2: Create an IP Address Conflict
-
-On **PC2**, navigate to:
-
-**Desktop → IP Configuration → Static**
-
-Configure the following settings:
+On PC2: **Desktop → IP Configuration → Static**
 
 ```text
 IP Address      : 192.168.10.10
-
 Subnet Mask     : 255.255.255.0
-
 Default Gateway : 192.168.10.1
-
 DNS Server      : 8.8.8.8
 ```
 
-### Conflict Scenario
-
-At this point:
+Both devices now use the same address:
 
 ```text
-PC1 = 192.168.10.10 (Assigned by DHCP)
-
-PC2 = 192.168.10.10 (Configured Manually)
+PC1 = 192.168.10.10  (assigned by DHCP)
+PC2 = 192.168.10.10  (configured manually)
 ```
 
-Both devices are using the same IP address, creating an **IP address conflict** on the network.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Screenshot: PC2 static IP configuration:**
 
 
 
@@ -266,67 +96,43 @@ Both devices are using the same IP address, creating an **IP address conflict** 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 🔎 Troubleshooting Process:
-
-
-
-
-
-## User Report
-
-Users report intermittent network connectivity. The connection drops randomly, and network access is unreliable.
-
 ---
 
 
 
-### Check IP Configuration
+
+
+## 🔎 Verify the Problem
 
 On both PCs, open **Command Prompt** and run:
 
-```bash
-
-ipconfig /all
-```
-
-### Findings
-
 ```text
-PC1 IPv4 Address : 192.168.10.10
-
-PC2 IPv4 Address : 192.168.10.10
+PC> ipconfig /all
 ```
 
-⚠️ Both devices are using the same IP address (`192.168.10.10`).
+| Device | IPv4 Address |
+|--------|--------------|
+| PC1 | 192.168.10.10 |
+| PC2 | 192.168.10.10 |
+
+> Both devices are using the same IP address. This is the conflict.
+
+**Screenshot: ipconfig /all on both PCs showing 192.168.10.10:**
+
+
+
+
+
+<img width="1920" height="1080" alt="Screenshot (314)" src="https://github.com/user-attachments/assets/2a95488d-d204-4212-9fa8-c1617d010225" />
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -335,79 +141,17 @@ PC2 IPv4 Address : 192.168.10.10
 
 
 
-## Impact:
+## 🔧 Fix
 
-1.Intermittent connectivity
+Change PC2 from a static configuration to DHCP:
 
-2.Communication failures
+**PC2 → Desktop → IP Configuration → DHCP**
 
-3.Access issues
+The router's DHCP server assigns PC2 the next available address from the pool.
 
-4.Duplicate IP warnings in logs
+**Screenshot: PC2 switched to DHCP:**
 
-5.Unpredictable network behaviour
-
-
-
-
-
-
-
-
-
-
-
-
-## Resolution
-
-To resolve the IP address conflict, change PC2 from a static IP configuration to DHCP.
-
-## Step 1: Configure PC2 to Use DHCP
-
-Navigate to:
-
-PC2 → Desktop → IP Configuration → DHCP
-
-## Step 2: Verify the New IP Address
-
-The router's DHCP server assigns the next available IP address from the DHCP pool.
-
-PC1 IP Address : 192.168.10.10
-
-PC2 IP Address : 192.168.10.11
-
-✅ Both devices now have unique IP addresses.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> **Prevention:** Give statically configured devices an address from the excluded range (.1 – .9). DHCP never leases those, so they cannot clash with a client.
 
 
 <img width="1920" height="1080" alt="Screenshot (312)" src="https://github.com/user-attachments/assets/bca70cea-2ac7-4fe1-8988-856c53f5cf29" />
@@ -418,182 +162,28 @@ PC2 IP Address : 192.168.10.11
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (310)" src="https://github.com/user-attachments/assets/7b4f8d05-657c-4eb5-8a3f-4e8173b0b7e2" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (311)" src="https://github.com/user-attachments/assets/234f5baa-1a8a-44fc-9373-7efc4727b74a" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Verification
-
-### Test Connectivity
-
-From **PC2**, open **Command Prompt** and run:
-
-```bash
-ping 192.168.10.1
-```
-
-### Expected Result
-
-```text
-Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
-
-Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
-
-Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
-
-Reply from 192.168.10.1: bytes=32 time<1ms TTL=255
-```
-
-✅ Successful replies confirm connectivity to the default gateway.
-
 ---
 
-### Verify IP Address Assignment
 
-On both PCs, run:
 
-```bash
-ipconfig /all
-```
 
-### Results
+
+
+
+## ✅ Verification
+
+### Verification 1 - Unique IP addresses
 
 ```text
-PC1 IPv4 Address : 192.168.10.10
-
-PC2 IPv4 Address : 192.168.10.11
+PC> ipconfig /all
 ```
 
-✅ Both devices now have unique IP addresses.
+| Device | IPv4 Address |
+|--------|--------------|
+| PC1 | 192.168.10.10 |
+| PC2 | 192.168.10.11 |
 
----
-
-### Outcome
-
-* IP address conflict resolved
-  
-* DHCP functioning correctly
- 
-* Network connectivity restored
-  
-* Devices can communicate without interruption
-  
-* Ping tests successful
-
-
-
-
-
-
-
-
+**Screenshot: ipconfig /all showing unique addresses:**
 
 
 
@@ -607,27 +197,49 @@ PC2 IPv4 Address : 192.168.10.11
 
 
 
+---
 
+### Verification 2 - Connectivity
 
+From PC2, ping the default gateway:
 
+```text
+PC2> ping 192.168.10.1
+```
 
+Result: four replies from 192.168.10.1, no packet loss.
 
+**Screenshot: successful ping to 192.168.10.1:**
 
 
 
 
+<img width="1920" height="1080" alt="Screenshot (313)" src="https://github.com/user-attachments/assets/a77126ca-b10f-4724-81bf-7a4ca4a9ee9f" />
 
 
 
 
 
 
+---
 
 
+## 📋 Issue Summary
 
+| | Detail |
+|---|---|
+| **Issue** | PC1 and PC2 used the same IP address (192.168.10.10) |
+| **Cause** | PC2 was set to a static IP already leased by DHCP to PC1 |
+| **Symptom** | Intermittent connectivity, random drops, unreliable communication |
+| **Diagnose** | `ipconfig /all` on both PCs showed the same IPv4 address |
+| **Fix** | Changed PC2 from static to DHCP, which gave it 192.168.10.11 |
+| **Verified** | Unique addresses on both PCs; ping to 192.168.10.1 successful |
 
+---
 
+## 💡 Next Step
 
+→ [Back to Project README](../README.md)
 
 
 
@@ -648,7 +260,6 @@ PC2 IPv4 Address : 192.168.10.11
 
 
 
-<img width="1920" height="1080" alt="Screenshot (314)" src="https://github.com/user-attachments/assets/b5db0da6-ee33-4eeb-abef-893a2cb84216" />
 
 
 
@@ -673,50 +284,13 @@ PC2 IPv4 Address : 192.168.10.11
 
 
 
-## 📋 Issue Summary:
 
 
 
 
 
-| Category         | Details                                                                                                                             |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **Issue**        | PC1 and PC2 were both assigned the IP address **192.168.10.10**.                                                                    |
-| **Cause**        | PC2 was manually configured with the same IP address that DHCP had already assigned to PC1.                                         |
-| **Symptoms**     | Intermittent connectivity, random network drops and unreliable communication between devices.                                      |
-| **Resolution**   | Changed PC2 from a static IP configuration to **DHCP**, allowing it to receive a unique IP address (**192.168.10.11**).             |
-| **Verification** | Successfully pinged the default gateway (**192.168.10.1**) ✅ and confirmed unique IP addresses on both PCs using `ipconfig /all`   |
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-User complaint
-
-My connection randomly drops every few minutes no clear pattern.
-
-Root cause
-
-Duplicate IP conflict. PC2 manually set to same IP already leased to PC1. Network could not determine which device to reply to.
-
-Resolution
-
-Identified duplicate via ipconfig /all. Changed PC2 to DHCP. Router assigned unique IP 192.168.10.11. Connectivity stable andresolved.
 
