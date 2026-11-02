@@ -37,7 +37,7 @@ As a result, new devices cannot obtain an IP address from the DHCP server and ma
 
 ## 🔧 Create the Problem
 
-### Step 1 — Baseline: Normal DHCP
+### Step 1 - Baseline: Normal DHCP
 
 DHCP is configured as in [DHCP Configuration](../config/dhcp-config.md). PC4, PC5 and PC6 received their addresses from the LAN 2 pool:
 
@@ -66,7 +66,7 @@ DHCP is configured as in [DHCP Configuration](../config/dhcp-config.md). PC4, PC
 
 
 
-### Step 2 — Shrink the Pool
+### Step 2 - Shrink the Pool
 
 Exclude the rest of the range so only three addresses remain:
 
@@ -123,7 +123,7 @@ Router(config)# end
 
 
 
-### Step 3 — Add PC7
+### Step 3 - Add PC7
 
 Connect PC7 to Switch 2, then go to **PC7 → Desktop → IP Configuration → DHCP**.
 
@@ -228,18 +228,13 @@ Router(config)# end
 Router# write memory
 ```
 
-DHCP can now assign **192.168.20.10 – 192.168.20.20**.
+DHCP can now assign **192.168.20.10 - 192.168.20.20**.
 
 
 
 
 **Screenshot: excluded range updated on the router:**
 
-Then renew the address on PC7:
-
-```text
-PC7> ipconfig /release
-PC7> ipconfig /renew
 
 
 
@@ -257,10 +252,9 @@ PC7> ipconfig /renew
 
 
 
-delete this later
 
 
-<img width="1920" height="1080" alt="Screenshot (321)" src="https://github.com/user-attachments/assets/3db22e59-cf48-48e0-a832-5e68d6269271" />
+
 
 
 
@@ -292,10 +286,16 @@ delete this later
 
 ## ✅ Verification
 
-### Verification 1 — PC7 IP configuration
+### Verification 1 - PC7 IP configuration
 
 ```text
 PC7> ipconfig
+
+Then renew the address on PC7:
+
+```text
+PC7> ipconfig /release
+PC7> ipconfig /renew
 ```
 
 | Field | Result |
@@ -319,7 +319,7 @@ PC7> ipconfig
 
 
 
-### Verification 2 — DHCP leases
+### Verification 2 - DHCP leases
 
 ```text
 Router# show ip dhcp binding
@@ -344,7 +344,7 @@ PC7 (192.168.20.13) now appears in the binding table.
 
 
 
-### Verification 3 — Connectivity
+### Verification 3 - Connectivity
 
 ```text
 PC7> ping 192.168.20.1
