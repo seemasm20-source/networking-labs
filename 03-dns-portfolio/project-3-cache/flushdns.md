@@ -1,6 +1,6 @@
 # 🧹 DNS Cache: ipconfig /flushdns
 
-[ Back to README] → [README.md](./README.md)
+[ Back to DNS Portfolio README] → [DNS Troubleshooting — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/README.md)
 
 ---
 
