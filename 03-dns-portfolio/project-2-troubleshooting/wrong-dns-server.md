@@ -36,7 +36,7 @@ A DNS server translates names (such as google.com) into IP addresses. If a PC po
 
 **Environment:** Windows 11, home network (Command Prompt, Windows network settings).
 
-### Step 1 — Configure an invalid DNS server
+### Step 1 - Configure an invalid DNS server
 
 1. Press **Windows + I** → **Network & Internet**
 2. Open your active connection (Wi-Fi or Ethernet)
@@ -59,7 +59,7 @@ A DNS server translates names (such as google.com) into IP addresses. If a PC po
 
 ---
 
-### Step 2 — Disable IPv6
+### Step 2 - Disable IPv6
 
 1. Press **Win + R**, type `ncpa.cpl`
 2. Right-click the active network adapter → **Properties**
@@ -209,7 +209,7 @@ Re-enable IPv6 if you disabled it for the lab: **Win + R** → `ncpa.cpl` → ad
 
 ## ✅ Verification
 
-### Verification 1 — DNS server
+### Verification 1 - DNS server
 
 ```text
 C:\> ipconfig /all
@@ -235,7 +235,7 @@ The client now shows a valid DNS server.
 
 
 
-### Verification 2 — Name resolution
+### Verification 2 - Name resolution
 
 ```text
 C:\> nslookup google.com
@@ -261,7 +261,7 @@ The hostname resolves to an IP address.
 
 
 
-### Verification 3 — Connectivity by name
+### Verification 3 - Connectivity by name
 
 ```text
 C:\> ping google.com
@@ -306,6 +306,6 @@ The name resolves and the client reaches the destination.
 
 ## 💡 Next Step
 
-→ [Scenario 3: Internal vs External DNS](./internal-vs-external-dns.md)
+→ Scenario 3: [Internal vs. External DNS Resolution](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/internal-vs-external.md)
 
 
