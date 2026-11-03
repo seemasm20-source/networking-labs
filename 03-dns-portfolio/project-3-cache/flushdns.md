@@ -1,4 +1,6 @@
-# 🧹 DNS Cache: ipconfig /flushdns
+
+
+# 💡 DNS Cache: ipconfig /flushdns
 
 [ Back to DNS Portfolio README] → [DNS Troubleshooting — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/README.md)
 
@@ -38,11 +40,11 @@ Windows stores recent DNS lookups in a local cache so it does not have to ask th
 
 ## 🔧 Fix
 
-### Step 1 – Open Command Prompt as Administrator
+### Step 1 - Open Command Prompt as Administrator
 
 Press the **Windows key**, type `cmd`, then select **Run as administrator**.
 
-### Step 2 – Flush the DNS cache
+### Step 2 - Flush the DNS cache
 
 ```text
 C:\> ipconfig /flushdns
