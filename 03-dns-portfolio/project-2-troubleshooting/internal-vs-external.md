@@ -1,7 +1,7 @@
 
 # 🔴 Scenario 3 - Internal vs External DNS
 
-[← Back to Project 2 README](./README.md)
+[ Back to Project 2 README] → [README.md](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md)
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## 📋 Problem Summary
 
-A user can open external websites such as google.com, but cannot reach the company intranet or internal servers by name. Multiple users on the same floor are affected.
+  A user can open external websites such as google.com, but cannot reach the company intranet or internal servers by name. Multiple users on the same floor are affected.
 
 ---
 
@@ -30,7 +30,7 @@ A PC that uses only a public DNS server can browse the internet but cannot resol
 
 ## 🔧 Create the Problem
 
-Point the PC at a public DNS server:
+   Point the PC at a public DNS server:
 
 1. **Windows + I** → **Network & Internet** → your connection → **Hardware properties**
 2. Next to **DNS server assignment**, click **Edit** → **Manual** → turn on **IPv4**
@@ -75,7 +75,7 @@ C:\> nslookup intranet.company.local
 
 ## 🔧 Fix
 
-Change the PC to use the company's internal DNS server:
+  Change the PC to use the company's internal DNS server:
 
 | Setting | Value |
 |---------|-------|
