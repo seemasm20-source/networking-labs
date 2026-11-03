@@ -1,4 +1,4 @@
-# 🔴 Scenario 1 — Missing A Record
+# 🔴 Scenario 1 - Missing A Record
 
 [← Back to Project 2 README](./README.md)
 
@@ -26,7 +26,7 @@ No setup is needed. The hostname **server01** does not exist in DNS, so the look
 
 ## 🔎 Verify the Problem
 
-### Test 1 — Ping by name
+### Test 1 - Ping by name
 
 ```text
 C:\> ping server01
@@ -35,7 +35,7 @@ Ping request could not find host server01.
 Please check the name and try again.
 ```
 
-### Test 2 — Query DNS
+### Test 2 - Query DNS
 
 ```text
 C:\> nslookup server01
