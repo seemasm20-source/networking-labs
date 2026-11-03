@@ -1,6 +1,6 @@
 # 🔴 Project 2: DNS Troubleshooting Lab
 
-[← Back to DNS Portfolio README](../README.md)
+[ Back to DNS Portfolio README] → [DNS Troubleshooting — GitHub README](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/README.md)
 
 ---
 
