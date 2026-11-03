@@ -100,7 +100,7 @@ A (Host) Record . . . : 142.251.14.113
 
 ## 💡 Next Step
 
-→ [DNS Cheatsheet](./dns-cheatsheet.md)
+→ https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md
 
 
 
