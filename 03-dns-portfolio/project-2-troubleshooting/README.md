@@ -6,7 +6,9 @@
 
 ## 📋 Overview
 
-Five real-world DNS fault scenarios, each built and tested on Windows 11. Every scenario follows the same structure: problem, cause, verify, fix, verification and issue summary.
+Four real-world DNS fault scenarios and a command cheatsheet, built and tested on Windows 11. Each scenario follows the same structure: problem summary, cause, verify the problem, fix, verification and issue summary.
+
+Scenario 2 was built and tested end to end on a real machine. Scenarios 1, 3 and 4 need an enterprise DNS server, so they show the troubleshooting method and are marked with a Lab Note.
 
 ---
 
@@ -27,14 +29,15 @@ Five real-world DNS fault scenarios, each built and tested on Windows 11. Every 
 | 1 | Ping by IP works, name fails | Missing or incorrect A record | [Missing A Record](./missing-a-record.md) |
 | 2 | Cannot open any website (only one user affected) | Wrong DNS server configured on the PC | [Wrong DNS Server](./wrong-dns-server.md) |
 | 3 | Intranet website not loading | Incorrect internal or external DNS configuration | [Internal vs External DNS](./internal-vs-external-dns.md) |
-| 4 | New server unreachable by name | Hostname not added to DNS | [Hostname Not Resolving](./hostname-not-resolving.md) |
-| 5 | Cannot open any website (entire office) | DNS service down | [DNS Service Down](./dns-service-down.md) |
+| 4 | Cannot open any website (entire office) | DNS service down | [DNS Service Down](./dns-service-down.md) |
 
 ---
 
 ## 📋 Reference
 
-→ [DNS Cheatsheet](../project-4-nslookup/dns-cheatsheet.md)
+| File | Description |
+|------|-------------|
+| [DNS Cheatsheet](./dns-cheatsheet.md) | Command reference, troubleshooting decision flow and diagnostic checklist |
 
 ---
 
