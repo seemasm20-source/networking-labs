@@ -28,7 +28,7 @@ Scenario 2 was built and tested end to end on a real machine. Scenarios 1, 3 and
 |---|----------|------------|------|
 | 1 | Ping by IP works, name fails | Missing or incorrect A record | [Missing A Record](./missing-a-record.md) |
 | 2 | Cannot open any website (only one user affected) | Wrong DNS server configured on the PC | [Wrong DNS Server](./wrong-dns-server.md) |
-| 3 | Intranet website not loading | Incorrect internal or external DNS configuration | [Internal vs External DNS](./internal-vs-external-dns.md) |
+| 3 | Intranet website not loading | Incorrect internal or external DNS configuration | (https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/internal-vs-external.md) |
 | 4 | Cannot open any website (entire office) | DNS service down | [DNS Service Down](./dns-service-down.md) |
 
 ---
