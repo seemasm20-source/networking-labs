@@ -118,7 +118,7 @@ C:\> nslookup google.com
 
 ## 💡 Next Step
 
-→ [Scenario 4: [DNS Service Down](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/dns-service-down.md)
+→ Scenario 4: [DNS Service Down](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/dns-service-down.md)
 
 
 
