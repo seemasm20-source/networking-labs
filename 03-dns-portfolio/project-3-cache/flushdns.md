@@ -1,91 +1,43 @@
 
-## 📋Cache- ipconfig /flushdns
+📋 DNS Cache: ipconfig /flushdns
+   
+   What is ipconfig /flushdns?
 
+ipconfig /flushdns clears all entries from the local DNS Resolver Cache on a Windows computer. After the cache is cleared, Windows performs a fresh DNS lookup the next time a hostname is accessed.
 
-What is ipconfig/ flushdns?
+💡 When to Run flushdns
+✅ A website loads an old or wrong version
+✅ A server moved to a new IP, but the old IP is still cached
+✅ A DNS record was updated, but the PC ignores the update
+✅ A new server hostname fails on some PCs
 
-ipconfig /flushdns clears all entries from the local DNS Resolver Cache on a Windows computer. After the cache is cleared, Windows performs a fresh DNS lookup the next time hostname is accessed.
+---
 
+🔧 How to Run
 
-## 💡 When to Run flushdns
+Step 1 – Open Command Prompt as Administrator
 
-✅ Website loads old/wrong version
+Press the Windows key, type cmd, then select Run as administrator.
 
-✅ Server moved to new IP- old IP still cached
+Step 2 – Generate a DNS lookup
+C:\> ping google.com
 
-✅ DNS record updated but PC ignores update
+This triggers a DNS lookup and caches the result.
 
-✅ New server hostname fails on some PCs
-
-
-
-
-
-
-
-
-## 🔧 How to Run :
-
-
-## Step 1 - Open CMD as Administrator
-
-Windows key → type cmd → Run as Administrator
-
-
-
-## Step 2 - C:\> ping google.com
-
-Generates a DNS lookup and caches the result.
-
-## Step 3 - Run command
+Step 3 – Confirm the record is in the cache
 C:\> ipconfig /displaydns
 
-Confirms the DNS record is in the cache
+The entry for google.com appears in the output.
 
-
-
-## Step 4 - Run command
-
+Step 4 – Flush the DNS cache
 C:\> ipconfig /flushdns
 
-Successfully flushed the DNS Resolver Cache
+Expected output: Successfully flushed the DNS Resolver Cache.
 
-
-
-## Step 5 - Run command
-
+Step 5 – Verify the cache is cleared
 C:\> ipconfig /displaydns
 
-nothing shown cache is empty
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The google.com entry is gone, so the cache was cleared.
 
 
 
