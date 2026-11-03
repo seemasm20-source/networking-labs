@@ -1,91 +1,53 @@
 
-## Scenario 3 - Internal vs External DNS
+# 🔴 Scenario 3 - Internal vs External DNS
 
-> **Lab Note:** This is a simulated enterprise DNS scenario.The internal domain names and IP addresses
->
-> are fictional and used to demonstrate IT Support troubleshooting methodology.
+[← Back to Project 2 README](./README.md)
+
+---
 
 
+> **Lab Note:** This is a simulated enterprise DNS scenario. The internal domain names and IP addresses are fictional, and the home lab has no internal DNS infrastructure. The scenario shows the troubleshooting method. The fix and verification results are marked as expected, because they need an organisation's Active Directory DNS server.
 
 ## 📋 Problem Summary
 
-User can open external websites like google.com perfectly. 
+A user can open external websites such as google.com, but cannot reach the company intranet or internal servers by name. Multiple users on the same floor are affected.
 
-Cannot reach company intranet or internal servers by name.
+---
 
-Multiple users affected on the same floor.
 
+## 💡 Internal vs External DNS
 
+| | External (public) DNS | Internal (company) DNS |
+|---|---|---|
+| **Example** | 8.8.8.8 | 192.168.10.5 |
+| **Knows** | Public websites | Internal names such as `intranet.company.local` |
+| **Result for internal names** | Non-existent domain | Resolves correctly |
 
+A PC that uses only a public DNS server can browse the internet but cannot resolve internal hostnames.
 
-## 🔍 Issue
+---
 
- PC using public DNS (8.8.8.8) instead of the company's internal DNS server. Public DNS has no records for internal company hostnames.
 
+## 🔧 Create the Problem
 
+Point the PC at a public DNS server:
 
+1. **Windows + I** → **Network & Internet** → your connection → **Hardware properties**
+2. Next to **DNS server assignment**, click **Edit** → **Manual** → turn on **IPv4**
+3. Preferred DNS: `8.8.8.8` → **Save**
 
+---
 
 
+## 🔎 Verify the Problem
 
+```text
+C:\> nslookup google.com
+Address: <public IP>                  ← external DNS works
 
-
-
-## 🔎 Verify the Issue
-
-
-## C:\> nslookup google.com
-
-Addresses: <Public IP returned by DNS>   ✅ External DNS working
-
-
-
-
-## C:\> nslookup intranet.company.local
-
-*** 8.8.8.8 can't find intranet.company.local: Non-existent domain
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+C:\> nslookup intranet.company.local
+*** can't find intranet.company.local: Non-existent domain
+```
 
 
 
@@ -97,99 +59,66 @@ Addresses: <Public IP returned by DNS>   ✅ External DNS working
 
 
 
+---
 
+| Test | Result | Meaning |
+|------|--------|---------|
+| `nslookup google.com` | Resolves | The public DNS server works |
+| `nslookup intranet.company.local` | Non-existent domain | The public DNS server has no internal records |
 
+> External names work and internal names fail, so the PC is using the wrong DNS server.
 
+**Screenshot: nslookup for google.com (works) and intranet.company.local (fails):**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 
 ## 🔧 Fix
 
+Change the PC to use the company's internal DNS server:
+
+| Setting | Value |
+|---------|-------|
+| **Preferred DNS** | 192.168.10.5 (internal DNS server) |
 
 
+## ✅ Verification
+
+After the DNS server is changed (expected results):
+
+```text
+C:\> ipconfig /flushdns
+C:\> ipconfig /all
+C:\> nslookup intranet.company.local
+C:\> nslookup google.com
+```
 
 
-1. Press Windows + I → Network and Internet
+| Command | Expected Result |
+|---------|-----------------|
+| `ipconfig /flushdns` | Clears the cached failed lookups, so the new DNS server is used |
+| `ipconfig /all` | DNS server shows 192.168.10.5 |
+| `nslookup intranet.company.local` | Resolves to the intranet's IP |
+| `nslookup google.com` | Still resolves (the internal DNS forwards external names) |
 
-2. Navigate to your active connection (Wi-fi or Ethernet)
-
-3. Click on Wi-fi
-
-4. Click on Hardware Properties
-
-5. Click on DNS server assignment → Edit → Choose manual → Enable IPV4 → Toggle it ON
-
-6. Enter Invalid DNS Server Address:
-
-   Preferred DNS Server: 10.10.10.10
-
-   Alternate DNS Server:192.168.100.100
-
-9. Click Save & close all windows
-
-
-
-
-
-## ✅ Verification and Validation
-
-## Step:1 Open Command Prompt and clear the DNS cache:
-
-ipconfig /flushdns
-
-## Step:2 Verify the new DNS configuration:
-
-ipconfig /all
-
-## Step:3 Verify internal DNS resolution:
-
- nslookup intranet.company.local
-
-## Step:4 Verify external DNS resolution 
-
- nslookup google.com
-
-
-
-
-
-## Lab Limitation: This resolution represents the procedure followed in a production enterprise environment. 
-
-Validation of the internal DNS server  requires access to an organization's Active Directory
-
-DNS infrastructure, which was not available in this home lab.
-
-
-
-
-
-
-
-
+---
 
 ## 📋 Issue Summary
 
+| | Detail |
+|---|---|
+| **Issue** | Intranet unreachable while external websites work |
+| **Cause** | Client used a public DNS server, which has no internal records |
+| **Symptom** | `google.com` resolves; `intranet.company.local` fails |
+| **Diagnose** | `nslookup intranet.company.local` returned Non-existent domain |
+| **Fix** | Pointed the client to the internal DNS server (192.168.10.5) |
+| **Verified** | Expected: internal and external names both resolve (needs a production DNS) |
+
+---
+
+## 💡 Next Step
+
+→ [Scenario 4: Hostname Not Resolving](./hostname-not-resolving.md)
 
 
 
@@ -220,14 +149,6 @@ DNS infrastructure, which was not available in this home lab.
 
 
 
-| **Category**     | **Details**                                                                                                                                        |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Problem**      | Unable to access the company intranet while external websites work normally.                                                                       |
-| **Root Cause**   | The client was configured to use a **public DNS server**, which has no records for internal company hostnames.                                     |
-| **Symptoms**     | External websites (e.g., `google.com`) resolve successfully, but internal hostnames (e.g., `intranet.company.local`) fail to resolve.              |
-| **Diagnosis**    | `nslookup intranet.company.local` returned **Non-existent domain**, confirming that the public DNS server could not resolve the internal hostname. |
-| **Resolution**   | Updated the client's DNS configuration to use the organization's **internal DNS server** (e.g., `192.168.10.5`).                                   |
-| **Verification** | `nslookup intranet.company.local` successfully resolved the hostname after the DNS configuration was updated in (production environment). ✅           |
 
 
 
@@ -249,20 +170,12 @@ DNS infrastructure, which was not available in this home lab.
 
 
 
- Real World IT tickets:
 
 
-User complaint
 
-"Google works fine but I cannot reach our company intranet or file server."
 
-Root cause
 
-PC configured with public DNS. Public DNS has no records for internal company hostnames.
 
-Resolution
-
-Confirmed with nslookup — public DNS returned Non-existent domain for internal names. Changed DNS to internal server 192.168.10.5. Intranet and file server now resolve correctly.
 
 
 
