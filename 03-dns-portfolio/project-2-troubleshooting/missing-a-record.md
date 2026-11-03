@@ -1,6 +1,6 @@
 # 🔴 Scenario 1 - Missing A Record
 
-[← Back to Project 2 README](./README.md)
+[ Back to Project 2 README] → [README.md](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md)
 
 ---
 
