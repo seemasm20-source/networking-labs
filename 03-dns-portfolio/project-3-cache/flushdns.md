@@ -66,18 +66,8 @@ Successfully flushed the DNS Resolver Cache.
 
 ---
 
-## 📋 Issue Summary
 
-| | Detail |
-|---|---|
-| **Issue** | A PC uses an old or wrong DNS answer |
-| **Cause** | An outdated entry in the local DNS Resolver Cache |
-| **Symptom** | Old website version, or a moved server still reached at the old IP |
-| **Diagnose** | `ipconfig /displaydns` shows the cached record |
-| **Fix** | `ipconfig /flushdns` from an administrator Command Prompt |
-| **Verified** | The cached entry is gone and a fresh lookup succeeds |
 
----
 
 ## 💡 Next Step
 
