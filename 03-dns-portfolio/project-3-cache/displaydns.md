@@ -98,6 +98,10 @@ A (Host) Record . . . : 142.251.14.113
 
 
 
+## 💡 Next Step
+
+→ [DNS Cheatsheet](./dns-cheatsheet.md)
+
 
 
 
