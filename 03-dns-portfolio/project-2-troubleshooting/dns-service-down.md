@@ -1,5 +1,5 @@
 
-# 🔴 Scenario 5 - DNS Service Down
+# 🔴 Scenario 4 - DNS Service Down
 
 [ Back to Project 2 README] → README.md
 
