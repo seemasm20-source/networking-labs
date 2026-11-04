@@ -298,4 +298,4 @@ Address: 142.251.14.138     ← IP returned
 
 
 
-→ [DNS Cheatsheet](./dns-cheatsheet.md)
+→ [DNS Reverse Lookup](https://github.com/seemasm20-source/networking-labs/edit/main/03-dns-portfolio/project-4-nslookup/reverse-lookup.md)
