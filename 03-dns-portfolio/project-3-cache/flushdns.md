@@ -71,7 +71,7 @@ Successfully flushed the DNS Resolver Cache.
 
 ## 💡 Next Step
 
-→ [DNS Cheatsheet](./dns-cheatsheet.md)
+→ [DNS Forward Lookup](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-4-nslookup/forward-lookup.md)
 
 
 
