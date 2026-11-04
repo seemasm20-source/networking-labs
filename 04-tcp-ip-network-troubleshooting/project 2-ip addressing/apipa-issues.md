@@ -61,7 +61,7 @@ If the PC still shows an APIPA address:
 
 ## ⬆️ Investigation (Tier 2)
 
-If the PC still shows APIPA after the Tier 1 steps, or several PCs are affected, escalate.
+If the PC still shows APIPA after the Tier 1 steps or several PCs are affected, escalate.
 
 | Field | Value |
 |-------|-------|
@@ -80,7 +80,7 @@ If the PC still shows APIPA after the Tier 1 steps, or several PCs are affected,
 - Recreate or correct the DHCP pool
 - Clear old leases or widen the pool if the scope is exhausted
 
-Escalate further** to a Network Engineer or Infrastructure team if the DHCP server is fine but clients on one VLAN or switch still cannot reach it. That points to a switch, VLAN or relay problem outside Tier 2 acces
+
 ---
 
 ## 🔗 Full Lab Documentation
