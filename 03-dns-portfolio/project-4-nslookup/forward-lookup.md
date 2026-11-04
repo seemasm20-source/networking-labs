@@ -291,3 +291,11 @@ Address: 142.251.14.138     ← IP returned
 | **Non-authoritative Answer** | The DNS server returned a cached or recursive response rather than responding as the authoritative DNS server for the domain. | `Yes`                   |
 | **Name**                     | The hostname (domain name) that was queried.                                                                                  | `google.com`            |
 | **Addresses**                | The IP address(es) returned by the DNS server. This may include both IPv4 (A records) and IPv6 (AAAA records).                | `142.251.14.138 ` (IPv4) |
+
+
+
+
+
+
+
+→ [DNS Cheatsheet](./dns-cheatsheet.md)
