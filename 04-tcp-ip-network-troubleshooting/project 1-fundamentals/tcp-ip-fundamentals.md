@@ -105,8 +105,7 @@ C:\> ping 192.168.10.1
 
 ---
 
-## 📋 Key Facts for Tier 1
-
+## 📋 Key Facts for Tier 1 & 2
 | Item | Detail |
 |------|--------|
 | **Loopback** | `127.0.0.1`: always your own PC (the whole `127.0.0.0/8` range is loopback) |
