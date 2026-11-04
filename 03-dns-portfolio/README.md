@@ -29,7 +29,7 @@ The objective of this project is to demonstrate:
 - DNS cache troubleshooting using `ipconfig /displaydns`
   and `ipconfig /flushdns`
 - Forward and reverse lookups using `nslookup`
-- Clear escalation of faults that are outside Tier 1 scope
+- Clear escalation of faults that are outside Tier 1 & 2 scope
 
 > **Lab Note:** An enterprise DNS server outage cannot be
 > reproduced in a home lab. Where a scenario depends on a
@@ -156,7 +156,7 @@ more were covered in Project 3 (cache) and Project 4
 - Isolating a company DNS fault by querying a public DNS server
 - Clearing stale entries with `ipconfig /flushdns`
 - Forward lookups (A and AAAA records) and reverse lookups (PTR records)
-- Deciding when to fix a fault at Tier 1 and when to escalate
+- Deciding when to fix a fault at Tier 1 & 2 and when to escalate
 - Technical documentation for a GitHub portfolio
 
 ---
@@ -181,7 +181,7 @@ on Windows 11 using built-in command-line tools.
 It built practical understanding of how to tell a DNS fault from
 a network fault, how to test name resolution, and when a fault
 needs to be escalated, which is directly relevant to IT Help
-Desk Tier 1 roles.
+Desk Tier 1 & 2 roles.
 
 ---
 
@@ -194,8 +194,8 @@ diagnosed and resolved or escalated:
 - Hostname not resolving
 - Incorrect DNS server configuration
 - Missing or incorrect A and PTR records
-- Stale DNS cache
+
 
 Together these show a systematic approach to fault isolation:
 confirm the symptom, test by IP and by name, isolate the DNS
-server, fix what Tier 1 can fix and escalate the rest.
+server, fix what Tier 1 & 2 can fix and escalate the rest.
