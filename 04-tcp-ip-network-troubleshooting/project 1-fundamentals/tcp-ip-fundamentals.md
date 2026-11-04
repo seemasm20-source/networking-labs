@@ -1,126 +1,117 @@
+# 📖 TCP/IP Fundamentals
 
-  ## 📖 TCP/IP Fundamentals
-
-
+---
 
 ## 💡 What is TCP/IP?
 
+**TCP/IP** is the set of protocols that devices use to communicate on a network, including the internet. It is built from two main protocols.
 
- ## TCP- Transmission Control Protocol (TCP) is a connection-oriented protocol that ensures data is delivered reliably, in the correct order and without loss.
- 
-  
+### TCP: Transmission Control Protocol
 
- ## IP- Internet Protocol (IP) is a network layer protocol responsible for addressing and routing data packets between devices on a network. 
-   
- ## It assigns a unique IP address to each device, allowing data to be sent from a source device to the correct destination device.
+TCP is a **connection-oriented** protocol that delivers data reliably and in the correct order. If data is lost on the way, TCP detects it and retransmits it.
 
+### IP: Internet Protocol
 
+IP works at the **Internet layer** (called the Network layer in the OSI model) and is responsible for **addressing and routing** data packets between devices. Each device on a network uses an IP address, which allows data to be sent from a source device to the correct destination device. Addresses are assigned by an administrator or automatically by DHCP.
 
+---
 
- ##  🔄 The TCP/IP 4-Layer Model
+## 🔄 The TCP/IP 4-Layer Model
 
+| Layer | Name | Purpose | Examples |
+|:-----:|------|---------|----------|
+| 4 | **Application** | Services the user interacts with | HTTP, HTTPS, DNS, FTP, SMTP, RDP |
+| 3 | **Transport** | Delivery between applications | TCP (reliable), UDP (fast, no confirmation) |
+| 2 | **Internet** | IP addressing and routing | IPv4, IPv6, ICMP (ping) |
+| 1 | **Network Access** | Physical delivery on the local network | Ethernet cables, Wi-Fi, MAC addresses, switches |
 
+---
 
+## 🌐 IPv4 Basics
 
+An IPv4 address is written as four numbers separated by dots:
 
-  ## Layer 4-APPLICATION
-  HTTP, HTTPS, DNS, FTP, SMTP, RDP
-
- ## Layer 3-TRANSPORT
-  TCP (reliable) vs UDP (fast, no confirmation)
-
- ## Layer 2-INTERNET
-  IP addressing and routing - IPv4, ICMP (ping)
-
- ## Layer 1-NETWORK ACCESS
-  Ethernet cables, WiFi, MAC addresses, switches
-
-
-
-
-
- ## 🌐 IPv4 Basics
-
-
+```text
 192.168.10.50
+```
 
-IPv4 uses 32 bits to represent an IP address.
+IPv4 uses **32 bits** to represent an address, split into four groups of 8 bits (octets). Each octet is a number from 0 to 255.
 
+```text
 8 + 8 + 8 + 8 = 32 bits
+```
 
-Three things every device needs:
+**Three core settings for every device:**
 
-1. IP Address     → unique identity
-    
-2. Subnet Mask    → defines local vs remote
- 
-3. Default Gateway → exit door to other networks
+| Setting | Purpose |
+|---------|---------|
+| **IP Address** | Identity on the network |
+| **Subnet Mask** | Defines which addresses are local and which are remote |
+| **Default Gateway** | The exit door to other networks (needed to leave the local network) |
 
+> Most devices also need a **DNS server** so they can use hostnames such as `google.com`.
 
+---
 
-##  🏠 Public vs Private IP
+## 🏠 Public vs Private IP
 
+**Private addresses** are used inside an office or home:
 
-PRIVATE - inside office or home:
+| Range | Notes |
+|-------|-------|
+| `10.0.0.0` – `10.255.255.255` | Large networks |
+| `172.16.0.0` – `172.31.255.255` | Medium networks |
+| `192.168.0.0` – `192.168.255.255` | Most common in homes and small offices |
 
-10.0.0.0    – 10.255.255.255
+Private addresses are only unique inside one network. Different networks can use the same private address.
 
-172.16.0.0  – 172.31.255.255
+**Public addresses** are assigned by an ISP and are unique worldwide.
 
-192.168.0.0 – 192.168.255.255  ← most common
+---
 
-PUBLIC - assigned by ISP, unique worldwide
+## ⚙️ Static vs DHCP
 
+| Type | How Assigned | Used For |
+|------|--------------|----------|
+| **Static** | Manually by an admin | Servers, printers, routers |
+| **DHCP** | Automatically from a DHCP server | PCs, laptops, phones |
 
-
-##  ⚙️ Static vs DHCP
-
-
-
-
-
-
-
-| Type   | How Assigned          | Used For                   |
-| ------ | --------------------- | -------------------------- |
-| Static | Manually by admin     | Servers, printers, routers |
-| DHCP   | Auto from DHCP server | PCs, laptops, phones       |
-
-
+---
 
 ## 🚪 Default Gateway
 
+The default gateway is the router address that devices use to leave their local network.
 
+```text
 C:\> ipconfig
 
-Default Gateway: 192.168.10.1   ← your router
+Default Gateway . . . . . : 192.168.10.1     ← your router
+```
 
-Without gateway → stuck on local network only
+| Without a gateway | With a gateway |
+|-------------------|----------------|
+| Stuck on the local network only | Can reach the internet and other LANs |
 
-With gateway    → can reach internet and other LANs
+**Quick test:**
 
-Quick test:
+```text
+C:\> ping 192.168.10.1
+```
 
-ping 192.168.10.1
+| Result | Meaning |
+|--------|---------|
+| ✅ Reply | The gateway is reachable |
+| ❌ Request timed out | Possible gateway or connection problem (cable, switch or firewall can also cause this) |
 
-Reply ✅  → gateway up
-
-Timeout ❌ → gateway problem
-
-
-
-
-
-
+---
 
 ## 📋 Key Facts for Tier 1
 
-
-| Item           | Detail                         |
-| -------------- | ------------------------------ |
-| Loopback       | 127.0.0.1 - always your own PC |
-| APIPA          | 169.254.x.x -  DHCP failed     |
-| Common Private | 192.168.x.x                    |
-| Subnet /24     | 255.255.255.0                  |
-| Ping 127.0.0.1 | Tests local TCP/IP stack       |
-| Ping 8.8.8.8   | Tests internet bypassing DNS   |
+| Item | Detail |
+|------|--------|
+| **Loopback** | `127.0.0.1`: always your own PC (the whole `127.0.0.0/8` range is loopback) |
+| **APIPA** | `169.254.x.x`: the PC could not reach a DHCP server and gave itself an address |
+| **Common private range** | `192.168.x.x` |
+| **Subnet /24** | `255.255.255.0` |
+| **`ping 127.0.0.1`** | Tests the local TCP/IP stack |
+| **`ping 8.8.8.8`** | Tests internet connectivity without using DNS (if the network allows ping) |
