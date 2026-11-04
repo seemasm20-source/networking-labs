@@ -1,96 +1,97 @@
+# 🔴 IP Issue 4 - APIPA (169.254.x.x)
 
-  ## 🔴 IP Issue 4 - APIPA (169.254.x.x)
+[ Back to Project 2 README] → [README.md](./README.md)
 
+---
 
-  ## 📋 Problem Summary
-  
-       PC shows an IP address starting with 169.254.x.x and has no internet or network access. The DHCP
+## 📋 Problem Summary
 
-      server is unavailable so the PC has self-assigned an APIPA address.
+A PC shows an IP address starting with `169.254.x.x` and has no network or internet access. The PC could not reach a DHCP server, so Windows gave itself an APIPA address.
 
+---
 
+## 💡 Quick Overview
 
+APIPA (Automatic Private IP Addressing) activates automatically on Windows when a PC set to DHCP cannot reach a DHCP server. The PC assigns itself an address from the `169.254.0.0/16` range.
 
-      .
+This address is a self-assigned fallback only. It cannot reach the gateway, other networks or the internet. It can only talk to other APIPA devices on the same local network.
 
-   ## 🔍 Quick Overview
+| Sign | Meaning |
+|------|---------|
+| `169.254.x.x` | APIPA address |
+| Subnet mask `255.255.0.0` | Default mask for the APIPA range |
+| Empty default gateway | The PC never received DHCP settings |
+| No network or internet access | The PC is isolated from the rest of the network |
 
+---
 
-             169.254.x.x = APIPA address
-   
-            → = DHCP failed to respond
-            
-            →  = PC is isolated from network
-            
-           → = Cannot reach gateway or internet
+## 🔎 Verify the Problem
 
+```text
+C:\> ipconfig
 
+Autoconfiguration IPv4 Address. . : 169.254.45.78   ← APIPA!
+Subnet Mask . . . . . . . . . . . : 255.255.0.0
+Default Gateway . . . . . . . . . :                  ← empty
+```
 
-    APIPA (Automatic Private IP Addressing) activates automatically on Windows when a PC set to DHCP cannot reach a DHCP server. 
-    
-    The PC assigns itself an address from the 169.254.0.0/16 range. This address cannot communicate with any real network device
-    
-    it is a self-assigned fallback only.
+```text
+C:\> ping 192.168.10.1
+Request timed out.   ❌
+```
 
+> The ping result can also show "Destination host unreachable" or "General failure". All of them mean the gateway cannot be reached.
 
+---
 
-      
-       
-      
-   ## 🔍 Quick verify
+## 🔧 Basic Troubleshooting (Tier 1)
 
-       C:\> ipconfig
+```text
+C:\> ipconfig /release
+C:\> ipconfig /renew
+```
 
-       IP Address:      169.254.45.78   ← APIPA!
-       
-      Subnet Mask:     255.255.0.0
-      
-      Default Gateway:                 ← empty
+If the PC still shows an APIPA address:
 
+1. Check that the network cable is connected, or that Wi-Fi is connected to the right network
+2. Check that the switch port is active
+3. Check whether other PCs on the same network also have `169.254.x.x` addresses
 
-     C:\> ping 192.168.10.1 
-     
-     Request timed out ❌
+---
 
+## ⬆️ Investigation (Tier 2)
 
-  ## 🔧 Quick Fix
+If the PC still shows APIPA after the Tier 1 steps, or several PCs are affected, escalate.
 
+| Field | Value |
+|-------|-------|
+| **Issue** | PC has a `169.254.x.x` address and cannot get a DHCP lease |
+| **Impact** | One PC or multiple PCs on the same network |
+| **Confirmed** | `ipconfig` shows APIPA and the gateway ping times out |
+| **Tier 1 steps done** | `ipconfig /release`, `ipconfig /renew`, cable and switch port checked |
+| **Tier 2 checks** | DHCP service running, DHCP scope not exhausted, DHCP reachable from the VLAN |
 
-
-
-  C:\> ipconfig /release
-  
-  C:\> ipconfig /renew
-
-If still APIPA:
-
-→ Check cable is connected
-
-→ Check DHCP server is running
-
-→ Check switch port is active
-
-
- ## 🔗 Full Lab Documentation
-
-
- This scenario was fully documented in the
-
-DHCP Configuration Portfolio including:
-
-✅ Complete Packet Tracer lab setup
-
-✅ Router DHCP configuration commands
-
-✅ Fault simulation steps
-
-✅ Step-by-step fix with CLI commands
-
-✅ Verification screenshots
-
-✅ Real-world help desk ticket
-
-→ View full lab here:
+> **First triage question:** how many users are affected? One PC points to the PC, cable or port. Many PCs point to the DHCP server.
 
 
-[APIPA (169.254.x.x) Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)
+**Common Tier 2 fixes:**
+
+- Re-enable the service with `service dhcp`
+- Recreate or correct the DHCP pool
+- Clear old leases or widen the pool if the scope is exhausted
+
+Escalate further** to a Network Engineer or Infrastructure team if the DHCP server is fine but clients on one VLAN or switch still cannot reach it. That points to a switch, VLAN or relay problem outside Tier 2 acces
+---
+
+## 🔗 Full Lab Documentation
+
+This scenario was fully documented in the DHCP Configuration Portfolio, including:
+
+- ✅ Complete Packet Tracer lab setup
+- ✅ Router DHCP configuration commands
+- ✅ Fault simulation steps
+- ✅ Step-by-step fix with CLI commands
+- ✅ Verification screenshots
+- ✅ Real-world help desk ticket
+
+→ View the full lab here: [APIPA (169.254.x.x) Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)
