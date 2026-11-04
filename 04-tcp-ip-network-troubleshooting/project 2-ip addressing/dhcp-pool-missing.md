@@ -273,6 +273,19 @@ Then connect a new PC (PC2) to the switch and select **DHCP** under **Desktop �
 
 
 
+## 🔎 Verify the Problem
+
+PC2 sends a DHCP request, but the router cannot offer an address because the matching pool no longer exists. After the request times out, PC2 assigns itself an APIPA address (`169.254.x.x`).
+
+**Screenshot: PC2 showing an APIPA address:**
+
+
+
+
+
+
+
+
 
 
 
@@ -319,11 +332,8 @@ Then connect a new PC (PC2) to the switch and select **DHCP** under **Desktop �
 
 
 
-## 🔎 Verify the Problem
 
-PC2 sends a DHCP request, but the router cannot offer an address because the matching pool no longer exists. After the request times out, PC2 assigns itself an APIPA address (`169.254.x.x`).
 
-**Screenshot: PC2 showing an APIPA address:**
 
 
 
@@ -331,67 +341,6 @@ PC2 sends a DHCP request, but the router cannot offer an address because the mat
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (373)" src="https://github.com/user-attachments/assets/ccaac241-07de-4df1-8e87-955d5e4773b4" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (374)" src="https://github.com/user-attachments/assets/e5a429a0-ae43-47b8-8a9b-0a2b755f0b36" />
 
 
 
@@ -422,6 +371,12 @@ Router(config)# end
 ```
 
 On PC2, go to **Desktop → IP Configuration → DHCP**. The client should now obtain a valid IP address from the restored pool.
+
+
+
+<img width="1920" height="1080" alt="Screenshot (374)" src="https://github.com/user-attachments/assets/e5a429a0-ae43-47b8-8a9b-0a2b755f0b36" />
+
+
 
 ---
 
@@ -455,7 +410,7 @@ PC2> ipconfig /all
 
 <img width="1920" height="1080" alt="Router CLI after recreating the DHCP pool" src="https://github.com/user-attachments/assets/ccaac241-07de-4df1-8e87-955d5e4773b4" />
 
-<img width="1920" height="1080" alt="PC2 IP configuration with a valid DHCP address" src="https://github.com/user-attachments/assets/e5a429a0-ae43-47b8-8a9b-0a2b755f0b36" />
+
 
 ---
 
