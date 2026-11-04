@@ -119,21 +119,23 @@ PC  ──────Connects────────►  google.com
 
 ## 🔴 DNS Troubleshooting Scenarios
 
-Five common DNS faults were diagnosed in Project 2, and two
-more were covered in Project 3 (cache) and Project 4
-(lookups). Full details are in each project folder.
+Five common DNS faults were diagnosed in the DNS Troubleshooting Lab,
+and four more were covered in DNS Cache Troubleshooting and the
+NSLOOKUP Lab. Full details are in each project folder.
 
-| Scenario | Root Cause | Fix | Project |
-|----------|------------|-----|---------|
-| Cannot open any website | DNS service down | Isolated with `nslookup google.com 8.8.8.8`, escalated to Tier 2 / Infrastructure | [Project 2](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
-| New server unreachable by name | Hostname not resolving | Confirmed ping by IP works and name fails, requested DNS record check | [Project 2](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
-| Intranet website not loading | Incorrect internal or external DNS configuration | Corrected the DNS server setting on the PC | [Project 2](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
-| Ping by IP works, name fails | Missing or incorrect A record | Verified with `nslookup`, escalated for A record correction | [Project 2](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
-| Some websites work, some don't | Incorrect DNS server configuration | Corrected the DNS server on the PC | [Project 2](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
-| User sees an old version of a website | Stale DNS cache | `ipconfig /flushdns` | [Flush DNS](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md) |
-| DNS changes not reflected after server migration | Outdated DNS cache | `ipconfig /flushdns` | [Flush DNS](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md) |
-| Cannot access `fileserver.company.local` by hostname | Missing or incorrect A record (forward lookup failure) | Verified with `nslookup hostname` | [Project 4](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-4-nslookup/) |
-| Unable to identify the hostname of an IP address | Missing or incorrect PTR record (reverse lookup failure) | Verified with `nslookup IP address` | [Project 4](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-4-nslookup/) |
+
+| Scenario | Root Cause | Fix | Topic |
+|----------|------------|-----|-------|
+| Cannot open any website | DNS service down | Isolated with `nslookup google.com 8.8.8.8`, escalated to Tier 2 / Infrastructure | [DNS Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
+| New server unreachable by name | Hostname not resolving | Confirmed ping by IP works and name fails, requested DNS record check | [DNS Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
+| Intranet website not loading | Incorrect internal or external DNS configuration | Corrected the DNS server setting on the PC | [DNS Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
+| Ping by IP works, name fails | Missing or incorrect A record | Verified with `nslookup`, escalated for A record correction | [DNS Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
+| Some websites work, some don't | Incorrect DNS server configuration | Corrected the DNS server on the PC | [DNS Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
+| User sees an old version of a website | Stale DNS cache | `ipconfig /flushdns` | [DNS Cache Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md) |
+| DNS changes not reflected after server migration | Outdated DNS cache | `ipconfig /flushdns` | [DNS Cache Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md) |
+| Cannot access `fileserver.company.local` by hostname | Missing or incorrect A record (forward lookup failure) | Verified with `nslookup hostname` | [NSLOOKUP Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-4-nslookup/) |
+| Unable to identify the hostname of an IP address | Missing or incorrect PTR record (reverse lookup failure) | Verified with `nslookup IP address` | [NSLOOKUP Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-4-nslookup/) |
+
 
 ---
 
