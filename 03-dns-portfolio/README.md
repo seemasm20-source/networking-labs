@@ -141,7 +141,7 @@ more were covered in Project 3 (cache) and Project 4
 
 | Section | Description | File |
 |---------|-------------|------|
-| Project 1 | DNS fundamentals: what DNS is, how it works, key terms | [DNS Fundamentals](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-1-fundamentals/) |
+| Project 1 | DNS fundamentals: what DNS is, how it works, key terms | [DNS Fundamentals](https://github.com/seemasm20-source/networking-labs/tree/main/03-dns-portfolio/project-1) |
 | Project 2 | 5 DNS fault scenarios and DNS cheatsheet | [DNS Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-2-troubleshooting/README.md) |
 | Project 3 | `displaydns` and `flushdns` | [Flush DNS](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md) |
 | Project 4 | Forward and reverse lookup with `nslookup` | [NSLOOKUP Lab](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-4-nslookup/) |
