@@ -144,6 +144,9 @@ Address: 8.8.8.8
 
 
 
+## 💡 Next Step
+
+→ [TCP/IP Network Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting)
 
 
 
