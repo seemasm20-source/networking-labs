@@ -529,8 +529,14 @@ DHCP Configuration Portfolio including:-
 
 
 
-
+---
 
 
 
 → View full lab here:  [DHCP Pool Exhaustion Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)
+
+
+
+💡 Next Step
+
+→ Scenario 3 
