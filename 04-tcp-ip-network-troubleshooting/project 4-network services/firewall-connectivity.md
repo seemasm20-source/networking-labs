@@ -106,7 +106,7 @@ Enabling the rule restored access, which confirms the blocked SMB rule was the c
 
 ## 💡 Next Step
 
-→ [Service 5](./service-5.md)
+→ [Port Blocked Scenarios](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%204-network%20services/port-blocked-scenarios.md)
 
 
 
