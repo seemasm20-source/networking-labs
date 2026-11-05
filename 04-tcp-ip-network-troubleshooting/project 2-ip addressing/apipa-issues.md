@@ -95,3 +95,8 @@ This scenario was fully documented in the DHCP Configuration Portfolio, includin
 - ✅ Real-world help desk ticket
 
 → View the full lab here: [APIPA (169.254.x.x) Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)
+
+
+💡 Next Step
+
+[DHCP Pool Missing](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/dhcp-pool-missing.md)
