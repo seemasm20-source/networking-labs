@@ -96,6 +96,8 @@ This scenario was fully documented in the DHCP Configuration Portfolio, includin
 
 → View the full lab here: [APIPA (169.254.x.x) Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/apipa-issues.md)
 
+---
+
 
 💡 Next Step
 
