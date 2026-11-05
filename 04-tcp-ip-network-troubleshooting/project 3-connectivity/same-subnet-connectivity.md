@@ -82,3 +82,6 @@ Change one setting at a time and retest after each change to identify the actual
 ---
 
 
+## 💡 Next Step
+
+→ [Same Subnet Connectivity Issues](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/same-subnet-connectivity.md)
