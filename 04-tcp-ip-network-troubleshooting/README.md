@@ -1,158 +1,174 @@
+## networking-labs / 04-tcp-ip-network-troubleshooting / README.md
 
-## 🌐 TCP/IP Network Troubleshooting Portfolio
+# 🌐 TCP/IP Network Troubleshooting Portfolio
 
+**Portfolio:** IT Help Desk Tier 1 & Tier 2 - Networking Labs
 
-**Portfolio:** IT Help Desk Tier 1 - Networking Labs
+**Tool:** Windows 10/11 (Command Prompt, network settings, Windows Defender Firewall)
 
-**Tool:** Windows 10/11
+**Purpose:** Demonstrate hands-on TCP/IP troubleshooting skills for IT Help Desk Tier 1 and Tier 2
 
-**Author:** Seema
+**Author:** Seema Soapanahalli Mallikarjunaiah
 
-**Date:**  2026
+**Date:** 2026
 
+---
 
+## 📌 Objective
 
+This portfolio covers TCP/IP from fundamentals to real-world troubleshooting, using Windows command-line tools and simulated help desk scenarios.
 
+The objective of this portfolio is to demonstrate:
 
-## 📌 What is This Portfolio?
+- Understanding of the TCP/IP model, IPv4 addressing and the default gateway
+- Diagnosis of IP addressing faults: APIPA, missing or exhausted DHCP pools and IP address conflicts
+- Diagnosis of connectivity faults: wrong gateway, DNS failures, blocked ping and intermittent drops
+- Diagnosis of service faults: blocked ports, firewall rules and shared drive access
+- Use of `ping`, `tracert`, `pathping`, `nslookup`, `arp`, `netstat` and `ipconfig` to find where a fault starts
+- A step-by-step method for "no internet" and "slow network" complaints
 
+> **Lab Note:** Faults that come and go, such as intermittent drops and slow performance, cannot be reproduced on demand. Where a scenario uses illustrative output, it is labelled as such. Commands that were run on a real machine have screenshots.
 
+---
 
+## 💡 What is TCP/IP?
 
-Hands-on TCP/IP troubleshooting scenarios covering the full range of network connectivity issues faced in real IT Help Desk Tier 1 roles.
+TCP/IP is the set of protocols that devices use to communicate on a network, including the internet. **TCP** delivers data reliably and in order. **IP** handles addressing and routing between devices.
 
-Every scenario documents the user complaint, root cause, step-by-step diagnosis, fix and verification.
+| Layer | Name | Examples |
+|:-----:|------|----------|
+| 4 | **Application** | HTTP, HTTPS, DNS, FTP, SMTP, RDP |
+| 3 | **Transport** | TCP, UDP |
+| 2 | **Internet** | IPv4, IPv6, ICMP (ping) |
+| 1 | **Network Access** | Ethernet, Wi-Fi, MAC addresses, switches |
 
+Every device needs three core settings: an **IP address**, a **subnet mask** and a **default gateway**. Most also need a **DNS server** to use names.
 
+---
 
+## 🎯 Troubleshooting Approach
 
+Work from the PC outward. The first test that fails shows where the problem is.
 
+| Step | Command | Tests |
+|:----:|---------|-------|
+| 1 | `ipconfig /all` | IP address, mask, gateway, DNS and DHCP settings |
+| 2 | `ping <own IP>` | The adapter's IP configuration |
+| 3 | `ping <default gateway>` | The local network |
+| 4 | `ping 8.8.8.8` | Routing to the internet |
+| 5 | `ping google.com` | DNS name resolution |
 
+If these pass but one application fails, test the application's port, and check the firewall and the service itself.
 
+---
 
+## 🔧 Tools Used
 
+| Tool | Purpose |
+|------|---------|
+| `ipconfig` | Shows and refreshes the IP configuration and the DNS cache |
+| `ping` | Tests connectivity and measures delay and packet loss |
+| `tracert` | Shows each router between the PC and the destination |
+| `pathping` | Combines ping and tracert, with packet loss per hop |
+| `nslookup` | Tests DNS name resolution |
+| `arp -a` | Shows the IP-to-MAC table, useful for duplicate IPs |
+| `netstat -an` | Shows connections and listening ports |
+| `route print` | Shows the routing table |
+| Windows Defender Firewall | Checks inbound rules for ICMP, SMB and RDP |
 
+---
 
 ## 📁 Portfolio Structure
 
-
-
-
-| Project   | Topic                            |
-| --------- | -------------------------------- |
-| Project 1 | TCP/IP Fundamentals              |
-| Project 2 | IP Addressing Troubleshooting    |
-| Project 3 | Connectivity Troubleshooting     |
-| Project 4 | Network Services Troubleshooting |
-| Project 5 | Ping and Tracert Lab             |
-| Project 6 | Windows Network Commands         |
-| Project 7 | Real-World Scenarios             |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 🎯TCP /IP TROUBLESHOOTING MATRIX COVERED
-
-
-
-
-
-
-
-
-
-
-| User Complaint          | Root Cause             | Project |
-| ----------------------- | ---------------------- | ------- |
-| No internet at all      | DNS/gateway/cable      | P3 + P7 |
-| PC shows 0.0.0.0        | DHCP not responding    | P2      |
-| PC shows 169.254.x.x    | APIPA-DHCP failed     | P2      |
-| IP works name fails     | DNS problem            | P3      |
-| Same-LAN PC unreachable | Firewall blocking ping | P3      |
-| Internet randomly drops | Packet loss-cable     | P3      |
-| Cannot ping gateway     | Wrong gateway / cable  | P3      |
-| Cannot RDP to server    | Port 3389 blocked      | P4      |
-| Cannot print            | Printer IP changed     | P7      |
-| Shared folder error     | Port 445 blocked       | P7      |
-| One website fails       | Stale DNS cache        | P7      |
-| Slow internet           | Packet loss-pathping   | P7      |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 📋 Key Commands Quick Reference
-
-
-
-
-| Command            | Purpose                                |
-| ------------------ | -------------------------------------- |
-| ipconfig /all      | Full IP config-check IP, gateway, DNS |
-| ping 127.0.0.1     | Test local TCP/IP stack                |
-| ping [gateway]     | Test local network                     |
-| ping 8.8.8.8       | Test internet without DNS              |
-| ping -t [IP]       | Continuous ping -catch drops           |
-| tracert [dest]     | Trace route-find where it breaks      |
-| pathping [dest]    | Detailed packet loss per hop           |
-| nslookup [name]    | Test DNS resolution                    |
-| arp -a             | Show IP to MAC table                   |
-| netstat -an        | Show active connections and ports      |
-| route print        | Show routing table                     |
-| ipconfig /flushdns | Clear DNS cache                        |
-| ipconfig /release  | Drop DHCP IP                           |
-| ipconfig /renew    | Get new DHCP IP                        |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Project | Topic | Key Skills |
+|---------|-------|------------|
+| Project 1 | TCP/IP Fundamentals | TCP/IP model, IPv4, public and private IPs, default gateway |
+| Project 2 | IP Addressing Troubleshooting | APIPA, DHCP pool missing and exhausted, IP address conflict |
+| Project 3 | Connectivity Troubleshooting | Gateway, DNS, blocked ping, intermittent connectivity |
+| Project 4 | Network Services Troubleshooting | Default gateway, blocked ports, firewall and shared drives |
+| Project 5 | Ping and Tracert Lab | Ping and tracert guides, reading results |
+| Project 6 | Real-World Scenarios | No internet investigation, slow network performance |
+
+---
+
+## 🔴 TCP/IP Troubleshooting Scenarios
+
+| Scenario | Root Cause | Fix | Topic |
+|----------|------------|-----|-------|
+| PC shows 169.254.x.x | APIPA: the PC could not reach a DHCP server | `ipconfig /release` and `/renew`; DHCP service or pool restored | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
+| New PC gets no IP address | DHCP pool missing | Recreated the DHCP pool | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
+| New PC gets no IP address | DHCP pool exhausted | Expanded the pool (full lab in the [DHCP portfolio](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)) | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
+| Connection drops, IP conflict warning | Duplicate IP address | Set one device to DHCP or a unique IP | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
+| Cannot ping gateway | Wrong default gateway configured manually | Set back to Automatic (DHCP) | [Cannot Ping Gateway](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/cannot-ping-gateway.md) |
+| Ping by IP works, name fails | DNS server wrong or unreachable | Set a valid DNS server | [Connectivity Troubleshooting](./project-3-connectivity/) |
+| Same-LAN PC unreachable | Firewall blocking ICMP (other causes possible) | Enabled the inbound ICMP echo rule | [Connectivity Troubleshooting](./project-3-connectivity/) |
+| Internet randomly drops | Weak Wi-Fi, cable or ISP packet loss | Improved Wi-Fi, replaced the cable, contacted the ISP | [Connectivity Troubleshooting](./project-3-connectivity/) |
+| Gateway unreachable, no internet | Incorrect default gateway | Set back to Automatic (DHCP) | [Network Services Troubleshooting](./project-4-network-services/) |
+| Cannot RDP to server | Port 3389 blocked or Remote Desktop disabled | Enabled Remote Desktop and the inbound rule | [Network Services Troubleshooting](./project-4-network-services/) |
+| Shared folder error | Port 445 blocked by the SMB inbound rule | Enabled File and Printer Sharing (SMB-In) | [Network Services Troubleshooting](./project-4-network-services/) |
+| No internet at all | Depends on the first failing test | Fixed the failing layer | [Real-World Scenarios](./project-7-real-world-scenarios/) |
+| Slow internet | Packet loss or delay, local or ISP | Found the cause with `ping -t` and `pathping` | [Real-World Scenarios](./project-7-real-world-scenarios/) |
+| One website fails | Stale DNS cache | `ipconfig /flushdns` (full lab in the [DNS portfolio](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md)) | [Real-World Scenarios](./project-7-real-world-scenarios/) |
+
+---
+
+## 📂 Project Files
+
+| Section | Description | File |
+|---------|-------------|------|
+| Project 1 | TCP/IP fundamentals | [TCP/IP Fundamentals](./project-1-fundamentals/) |
+| Project 2 | APIPA, pool missing, pool exhaustion, IP conflict | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
+| Project 3 | Gateway, DNS, blocked ping, intermittent connectivity | [Connectivity Troubleshooting](./project-3-connectivity/) |
+| Project 4 | Default gateway, blocked ports, firewall | [Network Services Troubleshooting](./project-4-network-services/) |
+| Project 5 | Ping Guide and Tracert Guide | [Ping and Tracert Lab](./project-5-ping-tracert/) |
+| Project 6 | No internet and slow network | [Real-World Scenarios](./project-7-real-world-scenarios/) |
+
+---
+
+## 📚 Skills Demonstrated
+
+- Explaining the TCP/IP model, IPv4 addressing and the default gateway
+- Diagnosing APIPA, DHCP pool and IP conflict faults
+- Testing from the PC outward: configuration, own IP, gateway, internet, DNS
+- Using `ping`, `tracert` and `pathping` to find where delay or loss starts
+- Telling a DNS fault from a network fault
+- Checking firewall rules and ports for blocked services, while recognising that a firewall is one possible cause and not the only one
+- Reading `ipconfig`, `nslookup`, `tracert` and `ping` output
+- Technical documentation for a GitHub portfolio
+
+---
+
+## 🎯 Real-World Help Desk Tickets
+
+| Caller Complaint | Root Cause | Fix Applied |
+|------------------|------------|-------------|
+| "I have no internet" | First failing test in the 5-step method | Fixed the failing layer |
+| "My PC says limited connectivity" (169.254.x.x) | PC could not reach a DHCP server | `ipconfig /release` and `/renew`, DHCP restored |
+| "I can open IPs but not websites" | DNS server wrong or unreachable | Set a valid DNS server |
+| "I can't reach my colleague's PC" | Firewall blocking ICMP | Enabled the inbound echo rule |
+| "My connection keeps dropping" | Packet loss from Wi-Fi, cable or ISP | Improved Wi-Fi, replaced the cable, contacted the ISP |
+| "I can't connect to the server with Remote Desktop" | Port 3389 blocked | Enabled Remote Desktop and the inbound rule |
+| "I can't open the shared folder" | Port 445 blocked | Enabled the SMB inbound rule |
+
+---
+
+## 🎓 Learning Outcome
+
+This portfolio provided hands-on experience diagnosing TCP/IP faults on Windows using built-in command-line tools.
+
+It built practical understanding of how to test from the PC outward, how to separate IP, gateway, DNS and firewall faults, and how to read ping, tracert and nslookup output, which is directly relevant to IT Help Desk Tier 1 and Tier 2 roles.
+
+---
+
+## ✅ Conclusion
+
+Across seven projects, common TCP/IP faults were identified, diagnosed and resolved:
+
+- APIPA and DHCP pool faults
+- IP address conflicts
+- Wrong default gateway
+- DNS name resolution failures
+- Firewall and blocked-port problems
+- Packet loss and slow performance
+
+Together these show a systematic approach to fault isolation: confirm the symptom, test from the PC outward, find the failing layer, fix it and verify.
