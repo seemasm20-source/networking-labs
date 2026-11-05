@@ -1,134 +1,114 @@
 
-## 🔴 Service 4 - Firewall Connectivity Issues (user cannot access shared drive)
 
+# 🔴 Service 4 - Firewall Connectivity Issues (User Cannot Access Shared Drive)
 
- ## 📋 Problem Summary
+[ Back to Project README] → [README.md](./README.md)
 
+---
 
+## 📋 Problem Summary
 
-    User can ping devices but specific applications cannot connect. Issue appears after Windows update or security policy change.
+A user can ping the file server, but cannot open a shared folder on it. The issue appeared after a Windows update or a security policy change.
 
+---
 
+## 💡 What is a Firewall Service Block?
 
-    🔎 Verify
+Ping uses ICMP, while file sharing uses SMB on TCP port 445. A firewall can allow one and block the other, so a server can reply to ping while a specific application cannot connect.
 
-    Step 1: Verify network connectivity ping FILESERVER01 Reply ✅   ← server reachable
+| Symptom | Detail |
+|---------|--------|
+| Ping to the server works | The network path and the server are reachable |
+| The shared folder does not open | The application port is blocked or the service is unavailable |
+| Started after an update or policy change | Updates and policies can reset or change firewall rules |
 
+> **First check:** if ping works but one application fails, suspect a firewall rule or the service itself, not the network.
 
-    Step 2: Attempt to access the shared folder
+---
 
-    :\> net use \\192.168.10.20\share
-    
-     System error 53 - network path not found 
+## 📝 Technical Note
 
-     Port 445 (file sharing) likely blocked
+"System error 53" means the network path was not found. A blocked SMB port is a likely cause here, but it is not the only one. The same error can also come from:
 
+- The file sharing service not running on the server
+- A wrong server name or share name
+- Name resolution problems
+- Other firewall rules, third-party security software or Group Policy
 
+Checking the firewall is a troubleshooting step. It becomes the confirmed cause only when enabling the rule restores access.
 
-     🔧 Fix
+---
 
+## 🔎 Verify the Problem
 
-     Control Panel → Windows Defender Firewall
-     
-     → Advance setting → Inbound Rules→  File and Printer Sharing (SMB-IN)(Private) → Right click the rule → Enable Rule✅
+| Test | Command | Result | Meaning |
+|------|---------|--------|---------|
+| 1. Check network connectivity | `ping FILESERVER01` | Reply ✅ | The server is reachable |
+| 2. Access the shared folder | `net use \\192.168.10.20\share` | System error 53: network path not found | File sharing (SMB, port 445) is likely blocked |
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<img width="1920" height="1080" alt="Screenshot (411)" src="https://github.com/user-attachments/assets/e7d59b2f-42d2-48d7-8a46-87a4e94734fd" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-✅ Verification
-
-
-
+```text
+C:\> ping FILESERVER01
+Reply from 192.168.10.20
 
 C:\> net use \\192.168.10.20\share
+System error 53 has occurred.
+The network path was not found.
+```
 
-Command completed successfully ✅
+The server answers ping, but the shared folder cannot be reached, so the inbound file sharing rule is the likely cause.
 
-Now Open \\192.168.10.20\share in File Explorer
+---
 
-   
+## 🔧 Fix
 
-The shared folder opens successfully. The user confirms access has been restored.
+On the **file server**, enable the inbound SMB rule:
+
+**Control Panel → Windows Defender Firewall → Advanced settings → Inbound Rules**
+
+Right-click **File and Printer Sharing (SMB-In)** for the **Private** profile, then select **Enable Rule** ✅
+
+> Enable the rule only on the profile in use. Do not enable it on the Public profile, and limit its scope to the local subnet where possible.
+
+**Screenshot: SMB inbound rule enabled:**
+
+<img width="1920" height="1080" alt="Windows Defender Firewall inbound rule File and Printer Sharing (SMB-In) enabled" src="https://github.com/user-attachments/assets/e7d59b2f-42d2-48d7-8a46-87a4e94734fd" />
+
+---
+
+## ✅ Verification
+
+```text
+C:\> net use \\192.168.10.20\share
+The command completed successfully.
+```
+
+| Check | Result | Meaning |
+|-------|--------|---------|
+| `net use \\192.168.10.20\share` | Command completed successfully ✅ | The connection to the share works |
+| Open `\\192.168.10.20\share` in File Explorer | Folder opens ✅ | The user can access the shared folder |
+
+Enabling the rule restored access, which confirms the blocked SMB rule was the cause in this lab.
+
+---
+
+## 📋 Issue Summary
+
+| | Detail |
+|---|---|
+| **Issue** | User cannot access a shared folder on the file server |
+| **Cause** | The inbound File and Printer Sharing (SMB-In) rule was disabled, blocking port 445 |
+| **Symptom** | Ping works; `net use` fails with system error 53 |
+| **Diagnose** | Ping succeeded, but `net use \\192.168.10.20\share` failed |
+| **Fix** | Enabled the File and Printer Sharing (SMB-In) inbound rule for the Private profile |
+| **Verified** | `net use` completed successfully and the shared folder opened |
+
+---
+
+## 💡 Next Step
+
+→ [Service 5](./service-5.md)
+
+
+
+
+
