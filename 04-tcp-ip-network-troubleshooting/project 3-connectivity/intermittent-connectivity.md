@@ -1,7 +1,9 @@
 
   ## 📋  Connectivity 4 - Intermittent Connectivity
 
-[ Back to Project README] → [README.md](./README.md)
+[ Back to Project 2 README] → README.md
+
+
 
 ---
 
