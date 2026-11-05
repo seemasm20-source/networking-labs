@@ -10,6 +10,9 @@ A user can ping `8.8.8.8` successfully but cannot open any website by name. Inte
 
 ---
 
+
+
+
 ## 💡 What is a Name Resolution Failure?
 
 Websites are reached by name, and DNS translates each name into an IP address. If the PC's DNS server is wrong or unreachable, the network still works, so ping by IP succeeds, but names fail.
@@ -22,7 +25,11 @@ Websites are reached by name, and DNS translates each name into an IP address. I
 
 > **First check:** ping a public IP, then ping a name. If only the name fails, the fault is DNS.
 
+
+
 ---
+
+
 
 ## 🔎 Verify the Problem
 
@@ -33,7 +40,11 @@ Websites are reached by name, and DNS translates each name into an IP address. I
 | 3. Check the DNS configuration | `ipconfig /all` | Check the DNS server address | Shows which DNS server the adapter is using |
 | 4. Test DNS directly | `nslookup google.com` | Timed out | The configured DNS server is unreachable or incorrect |
 
+
+
 **Screenshot: ping by IP works, ping by name fails:**
+
+
 
 <img width="1920" height="1080" alt="ping 8.8.8.8 succeeding and ping google.com failing" src="https://github.com/user-attachments/assets/57434cd4-770c-4aa2-a914-60a411a28287" />
 
@@ -41,15 +52,24 @@ Websites are reached by name, and DNS translates each name into an IP address. I
 
 
 
+
+
 **Screenshot: `nslookup google.com` timing out:**
+
+
 
 <img width="1920" height="1080" alt="nslookup google.com showing a DNS request timeout" src="https://github.com/user-attachments/assets/1a068f32-bb39-460b-9c5a-8acc27c60bb9" />
 
+
+
 ---
+
+
 
 ## 🔧 Fix
 
 Set a valid DNS server or return the adapter to **Automatic (DHCP)**:
+
 
 **Settings → Network & internet → Wi-Fi → Hardware properties → DNS server assignment → Edit**
 
@@ -60,7 +80,11 @@ Set a valid DNS server or return the adapter to **Automatic (DHCP)**:
 
 For the full DNS troubleshooting guide, see the [DNS Troubleshooting Labs](https://github.com/seemasm20-source/networking-labs/tree/main/03-dns-portfolio/project-2-troubleshooting).
 
+
+
 ---
+
+
 
 ## ✅ Verification
 
@@ -69,11 +93,18 @@ For the full DNS troubleshooting guide, see the [DNS Troubleshooting Labs](https
 | `nslookup google.com` | Resolves to an IP address ✅ | The DNS server responds |
 | `ping google.com` | Reply ✅ | Name resolution and connectivity work |
 
+
+
 **Screenshot: name resolution restored:**
+
+
 
 <img width="1920" height="1080" alt="nslookup and ping google.com succeeding after the DNS fix" src="https://github.com/user-attachments/assets/741125db-9596-4245-ba88-d0f25a159263" />
 
+
+
 ---
+
 
 
 
@@ -90,6 +121,8 @@ For the full DNS troubleshooting guide, see the [DNS Troubleshooting Labs](https
 | **Verified** | `nslookup google.com` resolved; `ping google.com` replied |
 
 ---
+
+
 
 ## 💡 Next Step
 
