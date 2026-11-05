@@ -1,8 +1,7 @@
 
   ## 📋  Connectivity 4 - Intermittent Connectivity
 
-[ Back to Project 2 README] → README.md
-
+[ Back to Project 2 README] → [TCP/IP Network Troubleshooting - README.md](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/README.md)
 
 
 ---
