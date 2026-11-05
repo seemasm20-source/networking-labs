@@ -1,68 +1,90 @@
+# 🛠️ Windows Network Commands Reference
 
+> Run these in **Command Prompt**. Some commands (`ipconfig /release`, `/renew`, `/flushdns`, `/registerdns`) need **Run as administrator**.
 
-## 🛠️ Windows Network Commands Reference
+---
 
+## ipconfig
 
- ## Ipconfig
+| Command | What it does |
+|---------|--------------|
+| `ipconfig` | Shows IP address, subnet mask and default gateway |
+| `ipconfig /all` | Full details: MAC address, DHCP status, DNS servers, lease times |
+| `ipconfig /release` | Releases the current DHCP address |
+| `ipconfig /renew` | Requests a new DHCP address |
+| `ipconfig /flushdns` | Clears the DNS cache |
+| `ipconfig /displaydns` | Shows the DNS cache |
+| `ipconfig /registerdns` | Refreshes DHCP leases and re-registers the PC's name in DNS |
 
+---
 
-| Command               | Displayed Information               |
-| --------------------- | ------------------------------------ |
-| ipconfig              | IP, Mask, Gateway                    |
-| ipconfig /all         | Full details + MAC, DHCP, DNS, Lease |
-| ipconfig /release     | Release DHCP IP                      |
-| ipconfig /renew       | Request new DHCP IP                  |
-| ipconfig /flushdns    | Clear DNS cache                      |
-| ipconfig /displaydns  | Show DNS cache                       |
-| ipconfig /registerdns | Re-register with DNS                 |
+## ping
 
+| Command | What it does |
+|---------|--------------|
+| `ping 8.8.8.8` | Basic connectivity test |
+| `ping -t 192.168.10.1` | Continuous ping (press `Ctrl + C` to stop) |
+| `ping -n 20 8.8.8.8` | Sends 20 packets |
+| `ping -l 1000 8.8.8.8` | Sends 1000-byte packets |
+| `ping 127.0.0.1` | Tests the local TCP/IP stack |
 
+---
 
-## Ping
+## tracert
 
-| Command              | What They Display           |
-| -------------------- | --------------------------- |
-| ping 8.8.8.8         | Basic Test                  |
-| ping -t 192.168.10.1 | Continuous (Ctrl+C to Stop) |
-| ping -n 20 8.8.8.8   | Send 20 Packets             |
-| ping -l 1000 8.8.8.8 | 1000-Byte Packets           |
-| ping 127.0.0.1       | Test Local Stack            |
+| Command | What it does |
+|---------|--------------|
+| `tracert google.com` | Shows every router (hop) between the PC and the destination |
 
+A hop shown as `* * *` means that router did not answer. It does not always mean a fault.
 
+---
 
-## Tracert
+## nslookup
 
-Tracert google.com    ← trace every hop
+| Command | What it does |
+|---------|--------------|
+| `nslookup google.com` | Name to IP address (forward lookup) |
+| `nslookup 8.8.8.8` | IP address to hostname (reverse lookup) |
+| `nslookup google.com 8.8.8.8` | Queries a specific DNS server |
 
+---
 
-## Nslookup
+## arp
 
-| Command                     | What They Display  |
-| --------------------------- | ------------------ |
-| Nslookup Google.com         | Name To IP         |
-| Nslookup 8.8.8.8            | IP To Hostname     |
-| Nslookup Google.com 8.8.8.8 | Query Specific DNS |
+| Command | What it does |
+|---------|--------------|
+| `arp -a` | Shows the IP-to-MAC address table. Useful for spotting duplicate IPs |
 
-
-##  arp
-
-arp -a   ← IP to MAC table — detect duplicate IPs
+---
 
 ## netstat
 
-netstat -an  ← all connections and listening ports
+| Command | What it does |
+|---------|--------------|
+| `netstat -an` | Shows all connections and listening ports, with numeric addresses |
+| `netstat -ano` | Same as above, plus the process ID (PID) that owns each connection |
+
+---
 
 ## route
 
-route print  ← show routing table
+| Command | What it does |
+|---------|--------------|
+| `route print` | Shows the routing table |
 
-Network Destination  Gateway 0.0.0.0            
+In the output, the **default route** has destination `0.0.0.0` and mask `0.0.0.0`. Its gateway should match your router:
 
-192.168.10.1  ← default route
+```text
+Network Destination    Netmask       Gateway        Interface
+0.0.0.0                0.0.0.0       192.168.10.1   192.168.10.50
+```
+
+---
 
 ## Other Commands
 
-hostname              ← display PC name
-
-pathping google.com   ← ping + tracert combined
-                        shows loss % per hop
+| Command | What it does |
+|---------|--------------|
+| `hostname` | Shows the PC name |
+| `pathping google.com` | Combines ping and tracert, and shows packet loss per hop (takes a few minutes) |
