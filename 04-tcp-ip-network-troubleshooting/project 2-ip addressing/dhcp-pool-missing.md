@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 # 🔴 IP Issue 2 - DHCP Pool Missing: Client Cannot Get IP
 
 [ Back to Project 2 README] → [README.md](./README.md)
@@ -535,9 +524,6 @@ DHCP Configuration Portfolio including:-
 ✅ Verification with show ip dhcp binding
 
 ✅ Real-world help desk ticket
-
-
-
 
 
 
