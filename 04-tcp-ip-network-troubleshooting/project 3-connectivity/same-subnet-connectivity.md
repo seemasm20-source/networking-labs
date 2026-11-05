@@ -1,86 +1,84 @@
 
-## 🔴 Connectivity 3 - Same Subnet Cannot Communicate
+# 🔴 Connectivity 3 - Same Subnet Cannot Communicate
+
+[ Back to Project README] → [README.md](./README.md)
+
+---
+
+## 📋 Problem Summary
+
+  Two PCs on the same network cannot reach each other. Ping between them fails, even though both PCs have valid IP addresses and can reach the gateway and the internet individually.
+
+---
 
 
+## 💡 What Blocks Communication Inside a Subnet?
+
+  When both PCs work normally with the gateway, the network, cable and switch are usually fine. The most likely cause is that the receiving PC drops the incoming ping. By default, Windows    Defender Firewall blocks inbound ICMP echo requests on some network profiles.
+
+| Possible cause | Notes |
+|----------------|-------|
+| Windows Firewall blocking ICMP (ping) | Most likely, because the gateway ping works |
+| Wrong subnet mask on one PC | Possible cause in general; not checked in this lab |
+| Switch or cable fault | Unlikely, because both PCs reach the gateway |
+
+> **First check:** if both PCs can ping the gateway but not each other, suspect the firewall on the receiving PC.
+
+---
 
 
+## 🔎 Verify the Problem 
 
+| Test | Command | Result | Meaning |
+|------|---------|--------|---------|
+| 1. Ping PC2 from PC1 | `ping 192.168.10.11` | Request timed out ❌ | PC2 does not answer PC1 |
+| 2. Ping the gateway from PC1 | `ping 192.168.10.1` | Reply ✅ | PC1's network connection works |
 
- ## 📋 Problem Summary
-
-
- Two PCs on same network cannot reach each other. Ping between them fails even though both have valid IPs and can reach internet individually.
-
-
- ## 🔍 Issue
- 
-    Possible Cause:
-    
-1. Windows Firewall blocking ICMP (ping) 
-
-2. Wrong subnet mask on one PC
-  
-3. Switch or cable issue
- 
-
-
-## 🔎 Verify
-
-
-PC1 → PC2
-
+```text
 C:\> ping 192.168.10.11
-
-Request timed out ❌
-
-Both PCs can ping gateway:
-
-PC1 → Gateway
+Request timed out.
 
 C:\> ping 192.168.10.1
+Reply from 192.168.10.1: bytes=32 time<1ms TTL=64
+```
 
-Reply ✅   Reply from 192.168.10.1: bytes=32 time<1ms TTL=64
 
-** Firewall likely blocking peer-to-peer request
 
+The network path works, but PC2 does not answer ping, which points to the firewall on PC2 as a likely cause. This is a lead to test, not a confirmed diagnosis until the fix works.
+
+---
 
 
 
 ## 🔧 Fix
 
+  On **PC2** (the PC that receives the ping), allow inbound ICMP echo requests:
 
+**Control Panel → Windows Defender Firewall → Advanced settings → Inbound Rules**
 
-Control Panel → Windows Defender Firewall
+Enable the rule **File and Printer Sharing (Echo Request - ICMPv4-In)**.
 
-→ Advanced Settings → Inbound Rules
+> Enable the rule on the profile in use (Private, Domain or Public). On a shared or public network, set the rule's scope to the local subnet only.
 
-→ Enable: File and Printer Sharing (Echo Request)
-
-→ Enable ICMPv4
-
-
-
+---
 
 
 
-## ✅ Verification
+## 📝 Technical Note
 
-PC1 → PC2
+A failed ping between two PCs does **not** automatically mean that a firewall is blocking ICMP traffic. Checking the firewall is one **troubleshooting step**, not a guaranteed **solution**.
 
-C:\> ping 192.168.10.11
+The same symptom can result from several other causes:
 
-Reply from 192.168.10.11 ✅
+- **Firewall rules and security policies:** Windows Firewall, third-party firewalls, endpoint security software or Group Policy may block ICMP traffic.
+- **VLAN or switch issues:** The PCs may be connected to different VLANs, or a switch port may be misconfigured or faulty.
+- **IP configuration issues:** Incorrect subnet masks, duplicate IP addresses or incorrect IP configurations can prevent communication.
+- **SMB permissions:** If ping works but file or printer sharing fails, investigate SMB firewall rules, sharing permissions and NTFS permissions rather than ICMP connectivity.
 
+**Recommended troubleshooting approach:** Confirm the connectivity issue using ping, check the receiving PC's firewall rules, verify IP configuration, and investigate VLAN, switch and security policies if necessary.
 
+Change one setting at a time and retest after each change to identify the actual root cause.
 
-
- Resolution: Enabled the File and Printer Sharing (Echo Request - ICMPv4-In) inbound rule in Windows Defender Firewall.
- 
- This allowed inbound ICMP Echo Requests,  restoring successful ping communication between the two PCs.
-
-
-
-
-
+---
 
 
