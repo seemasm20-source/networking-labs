@@ -415,128 +415,16 @@ PC2> ipconfig /all
 | **Fix** | Recreated `LAN_POOL` with network, default gateway and DNS server |
 | **Verified** | PC2 received a `192.168.10.x` address and no longer uses APIPA |
 
+
 ---
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-🔗 Full Lab Documentation
-
-This scenario connects directly to DHCP pool exhaustion and APIPA scenarios documented in the
-
-DHCP Configuration Portfolio including:-
-
-
-✅ Complete Packet Tracer lab setup
-
-✅ DHCP pool configuration and exhaustion simulation
-
-✅ Step-by-step fix with CLI commands
-
-✅ Verification with show ip dhcp binding
-
-✅ Real-world help desk ticket
-
-
-
-
-
----
-
-
-
-→ View full lab here:  [DHCP Pool Exhaustion Troubleshooting Lab](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)
 
 
 
 💡 Next Step
 
-→ Scenario 3 
+→ Scenario 3:- [Duplicate IP](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/duplicate-ip.md)
