@@ -1,6 +1,6 @@
 # 🔴 Connectivity 2 - Ping IP Works, Name Fails
 
-[ Back to Project README] → [README.md](./README.md)
+[ Back to Project README] → [TCP/IP Network Troubleshooting - README.md](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/README.md)
 
 ---
 
