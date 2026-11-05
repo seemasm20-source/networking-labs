@@ -99,4 +99,4 @@ This scenario was fully documented in the DHCP Configuration Portfolio, includin
 
 💡 Next Step
 
-[DHCP Pool Missing](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/dhcp-pool-missing.md)
+→ Scenario 2 :[DHCP Pool Missing](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/dhcp-pool-missing.md)
