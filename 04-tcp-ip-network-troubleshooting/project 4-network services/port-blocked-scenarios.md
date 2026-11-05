@@ -121,7 +121,7 @@ TcpTestSucceeded : True
 
 ## 💡 Next Step
 
-→ [Service 4](./service-4.md)
+→ [Project 5][Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
 
 
 
