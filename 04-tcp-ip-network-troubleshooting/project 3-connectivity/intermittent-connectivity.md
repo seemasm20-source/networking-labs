@@ -147,4 +147,4 @@ All 30 packets reached the gateway with 0% loss, so the connection is stable.
 
 ## 💡 Next Step
 
-→ [Connectivity 5](./connectivity-5.md)
+→ [Ping IP Works, Name Fails](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/ping-ip-works-name-fails.md)
