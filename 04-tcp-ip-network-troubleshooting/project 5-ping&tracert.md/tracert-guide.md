@@ -1,55 +1,49 @@
+# 🗺️ Tracert Guide
 
-
-## 🗺️ Tracert Guide
+---
 
 ## 💡 What is Tracert?
 
-   Shows every router your data passes through. Reveals exactly WHERE in the path a problem occurs.
+`tracert` shows every router (hop) your data passes through on its way to a destination. It helps show **where** along the path a problem occurs.
 
-  C:\> tracert google.com
+```text
+C:\> tracert google.com
 
- * 1     1 ms     1 ms     1 ms   192.168.10.1   → your router(Default Gateway)
+Tracing route to google.com [142.250.180.46]
+over a maximum of 30 hops:
 
- * 2     8 ms     9 ms     8 ms   10.0.0.1       → (Internet Service Provider-ISP)
+  1     1 ms     1 ms     1 ms   192.168.10.1      ← your router (default gateway)
+  2     8 ms     9 ms     8 ms   10.0.0.1          ← ISP (Internet Service Provider)
+  3    12 ms    11 ms    12 ms   172.16.5.1        ← ISP
+  4    25 ms    24 ms    25 ms   142.250.180.46    ← destination
 
- * 3    12 ms    11 ms    12 ms   172.16.5.1    →  (Internet Service Provider)
+Trace complete.
+```
 
- * 4    25 ms    24 ms    25 ms   142.250.180.46  → (Internet)
+> The addresses above are examples. Real traces show different addresses and often more hops.
 
+---
 
+## 📖 Reading the Output
 
+| Column | Meaning |
+|--------|---------|
+| **Hop number** | The router or Layer 3 device in the path from your computer to the destination |
+| **Three times (ms)** | Round-trip time of **three separate probe packets** sent to that hop. Used to spot latency and intermittent delays |
+| **IP address / hostname** | The IP address or resolved hostname of the router that replied at that hop |
 
+---
 
-## 📖 Reading Output
+## ⚠️ Problem Output
 
+```text
+  1     1 ms     1 ms     1 ms   192.168.10.1     ✅
+  2     8 ms     9 ms     8 ms   10.0.0.1         ✅
+  3     *        *        *      Request timed out.   ← problem starts here
+  4     *        *        *      Request timed out.
+```
 
-
-  
-| Column                    | Meaning                                                                                                                    |
-| ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **Hop Number**            | Identifies the router or Layer 3 device in the path from your computer to the destination.                                 |
-| **Three Times (ms)**      | The round-trip time for **three separate probe packets** sent to that hop. Used to detect latency and intermittent delays. |
-| **IP Address / Hostname** | The IP address or resolved hostname of the router that responded at that hop.                                              |
-
-
-  ##  Problem Output
-   
-*  1     1 ms     1 ms     1 ms   192.168.10.1  ✅
-  
-*  2     8 ms     9 ms     8 ms   10.0.0.1      ✅
-  
-*  3     *        *        *      Request timed out  ← PROBLEM
-  
-*  4     *        *        *      Request timed out
-
-→ Problem at hop 3 - ISP or upstream issue
-
-→ Escalate with this tracert output as evidence
-
-
-
-## ⭐ Asterisk (* * *)
-
-Stars with subsequent hops responding → firewall blocking tracert (normal)
-
-Stars where all subsequent hops also * → that hop is down (problem)
+| Observation | Meaning |
+|-------------|---------|
+| Hops 1 and 2 reply | The local network and the first ISP router work |
+| Hop 3 and every hop after it time out | Traffic stops at or after hop 3. The
