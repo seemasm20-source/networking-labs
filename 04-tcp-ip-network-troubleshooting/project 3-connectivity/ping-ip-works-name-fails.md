@@ -126,7 +126,7 @@ For the full DNS troubleshooting guide, see the [DNS Troubleshooting Labs](https
 
 ## 💡 Next Step
 
-→ [Connectivity 3](./connectivity-3.md)
+→ [Same Subnet Connectivity Issues](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/same-subnet-connectivity.md)
 
 
 
