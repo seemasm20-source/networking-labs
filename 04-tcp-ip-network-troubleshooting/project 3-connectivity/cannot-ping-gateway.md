@@ -196,7 +196,8 @@ If the PC uses a static address on purpose, change the default gateway to the co
 
 ## 💡 Next Step
 
-→ [Connectivity 2](./connectivity-2.md)
+→ [Intermittent Connectivity](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/intermittent-connectivity.md)
+
 
 
 
