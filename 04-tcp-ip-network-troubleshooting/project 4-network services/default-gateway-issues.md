@@ -94,7 +94,7 @@ C:\> ping 8.8.8.8
 
 ## 🔗 Related Lab
 
-→ [Cannot Reach Default Gateway](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/cannot-ping-gateway.md)
+→ [Firewall Connectivity Issues](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%204-network%20services/firewall-connectivity.md)
 
 
 
