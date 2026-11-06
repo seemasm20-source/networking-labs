@@ -73,4 +73,4 @@ Work from the PC outward. The first step that fails shows where the problem is.
 
 ## 💡 Next Step
 
-→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
+→ [Tracert Guide](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md/tracert-guide.md)
