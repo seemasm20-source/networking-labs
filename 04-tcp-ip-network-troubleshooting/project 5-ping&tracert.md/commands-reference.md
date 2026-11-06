@@ -94,4 +94,4 @@ Network Destination    Netmask       Gateway        Interface
 
 ## 💡 Next Step
 
-→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
+→ [Ping Guide – IP Address Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md/ping-guide.md)
