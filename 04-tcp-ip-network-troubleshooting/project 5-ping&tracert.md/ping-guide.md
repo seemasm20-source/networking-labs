@@ -68,7 +68,7 @@ Work from the PC outward. The first step that fails shows where the problem is.
 | 4 | `ping 8.8.8.8` | Routing to the internet |
 | 5 | `ping google.com` | DNS name resolution |
 
-> Replace `192.168.10.50` with the PC's own IP address and `192.168.10.1` with its default gateway, both shown by `ipconfig`.
+
 
 
 ## 💡 Next Step
