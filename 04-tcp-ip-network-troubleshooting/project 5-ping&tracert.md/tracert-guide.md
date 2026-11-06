@@ -47,3 +47,10 @@ Trace complete.
 |-------------|---------|
 | Hops 1 and 2 reply | The local network and the first ISP router work |
 | Hop 3 and every hop after it time out | Traffic stops at or after hop 3. The
+
+
+
+
+## 💡 Next Step
+
+→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
