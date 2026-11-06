@@ -129,7 +129,6 @@ If these pass but one application fails, test the application's port, and check 
 - Diagnosing APIPA, DHCP pool and IP conflict faults
 - Testing from the PC outward: configuration, own IP, gateway, internet, DNS
 - Using `ping`, `tracert` and `pathping` to find where delay or loss starts
-- Telling a DNS fault from a network fault
 - Checking firewall rules and ports for blocked services, while recognising that a firewall is one possible cause and not the only one
 - Reading `ipconfig`, `nslookup`, `tracert` and `ping` output
 - Technical documentation for a GitHub portfolio
@@ -146,7 +145,7 @@ If these pass but one application fails, test the application's port, and check 
 | "I can't reach my colleague's PC" | Firewall blocking ICMP | Enabled the inbound echo rule |
 | "My connection keeps dropping" | Packet loss from Wi-Fi, cable or ISP | Improved Wi-Fi, replaced the cable, contacted the ISP |
 | "I can't connect to the server with Remote Desktop" | Port 3389 blocked | Enabled Remote Desktop and the inbound rule |
-| "I can't open the shared folder" | Port 445 blocked | Enabled the SMB inbound rule |
+
 
 ---
 
@@ -154,7 +153,7 @@ If these pass but one application fails, test the application's port, and check 
 
 This portfolio provided hands-on experience diagnosing TCP/IP faults on Windows using built-in command-line tools.
 
-It built practical understanding of how to test from the PC outward, how to separate IP, gateway, DNS and firewall faults, and how to read ping, tracert and nslookup output, which is directly relevant to IT Help Desk Tier 1 and Tier 2 roles.
+It built practical understanding of how to test from the PC outward, how to separate IP, gateway, DNS and firewall faults and how to read ping, tracert and nslookup output, which is directly relevant to IT Help Desk Tier 1 and Tier 2 roles.
 
 ---
 
