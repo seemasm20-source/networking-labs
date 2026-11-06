@@ -6,7 +6,7 @@
 
  ping sends a small test packet (ICMP echo request) to a destination and measures whether a reply came back and how long it took.
 
----
+
 
 ## 📖 Reading the Output
 
