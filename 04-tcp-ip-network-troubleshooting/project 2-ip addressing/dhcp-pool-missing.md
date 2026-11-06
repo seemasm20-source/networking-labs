@@ -427,4 +427,4 @@ PC2> ipconfig /all
 
 💡 Next Step
 
-→ Scenario 3:- [Duplicate IP](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/duplicate-ip.md)
+→ Scenario 3 [Duplicate IP](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/duplicate-ip.md)
