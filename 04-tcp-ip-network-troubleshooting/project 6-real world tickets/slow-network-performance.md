@@ -106,6 +106,4 @@ All 50 packets reached the gateway with 0% loss and steady times, so the connect
 
 ---
 
-## 💡 Next Step
 
-→ [Slow Network Performance – Troubleshooting Ticket](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%206-real%20world%20tickets/slow-network-performance.md)
