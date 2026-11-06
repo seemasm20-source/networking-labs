@@ -1,6 +1,5 @@
 # 🗺️ Tracert Guide
 
----
 
 ## 💡 What is Tracert?
 
