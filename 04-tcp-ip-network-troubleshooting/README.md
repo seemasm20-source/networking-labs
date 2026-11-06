@@ -105,7 +105,7 @@ If these pass but one application fails, test the application's port, and check 
 | Gateway unreachable, no internet | Incorrect default gateway | Set back to Automatic (DHCP) | [Default Gateway Issues – Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%204-network%20services/default-gateway-issues.md)/) |
 | Cannot RDP to server | Port 3389 blocked or Remote Desktop disabled | Enabled Remote Desktop and the inbound rule | [Port Blocked Scenarios](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%204-network%20services/port-blocked-scenarios.md) |
 | No internet at all | Depends on the first failing test | Fixed the failing layer | [No Internet Connectivity – Troubleshooting Flowchart](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%206-real%20world%20tickets/no-internet-flowchart.md)) |
-| Slow internet | Packet loss or delay, local or ISP | Found the cause with `ping -t` and `pathping` | [Real-World Scenarios](./project-7-real-world-scenarios/) |
+| Slow internet | Packet loss or delay, local or ISP | Found the cause with `ping -t` and `pathping` | [Slow Network Performance – Troubleshooting Ticket](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%206-real%20world%20tickets/slow-network-performance.md/) |
 
 
 ---
