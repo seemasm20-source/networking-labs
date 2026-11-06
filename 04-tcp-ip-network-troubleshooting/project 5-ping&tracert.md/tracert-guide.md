@@ -53,4 +53,4 @@ Trace complete.
 
 ## 💡 Next Step
 
-→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
+→ Project 6 [[Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%206-real%20world%20tickets/no-internet-flowchart.md)
