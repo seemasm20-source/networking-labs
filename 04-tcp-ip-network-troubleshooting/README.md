@@ -95,7 +95,7 @@ If these pass but one application fails, test the application's port, and check 
 
 | Scenario | Root Cause | Fix | Topic |
 |----------|------------|-----|-------|
-| PC shows 169.254.x.x | APIPA: the PC could not reach a DHCP server | `ipconfig /release` and `/renew`; DHCP service or pool restored | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
+| PC shows 169.254.x.x | APIPA: the PC could not reach a DHCP server | `ipconfig /release` and `/renew`; DHCP service or pool restored | [APIPA Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/apipa-issues.md) |
 | New PC gets no IP address | DHCP pool missing | Recreated the DHCP pool | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
 | New PC gets no IP address | DHCP pool exhausted | Expanded the pool (full lab in the [DHCP portfolio](https://github.com/seemasm20-source/networking-labs/blob/main/02-dhcp-configuration/troubleshooting/dhcp-pool-exhaustion.md)) | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
 | Connection drops, IP conflict warning | Duplicate IP address | Set one device to DHCP or a unique IP | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
