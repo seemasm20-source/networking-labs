@@ -1,6 +1,6 @@
 # 🏓 Ping Guide
 
----
+
 
 ## 💡 What is Ping?
 
