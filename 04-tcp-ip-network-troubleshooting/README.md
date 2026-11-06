@@ -16,7 +16,7 @@
 
 ## 📌 Objective
 
-This portfolio covers TCP/IP from fundamentals to real-world troubleshooting, using Windows command-line tools and simulated help desk scenarios.
+This portfolio covers TCP/IP from fundamentals to real-world troubleshooting using Windows command-line tools and simulated help desk scenarios.
 
 The objective of this portfolio is to demonstrate:
 
