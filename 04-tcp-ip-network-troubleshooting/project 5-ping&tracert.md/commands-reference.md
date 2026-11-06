@@ -88,3 +88,10 @@ Network Destination    Netmask       Gateway        Interface
 |---------|--------------|
 | `hostname` | Shows the PC name |
 | `pathping google.com` | Combines ping and tracert, and shows packet loss per hop (takes a few minutes) |
+
+
+
+
+## 💡 Next Step
+
+→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
