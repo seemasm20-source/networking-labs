@@ -1,7 +1,7 @@
 
 # 🔴 Scenario 1 - No Internet Investigation
 
-[ Back to Project README] → [README.md](./README.md)
+[ Back to Project 2 README] → [TCP/IP Network Troubleshooting - README.md](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/README.md)
 
 ---
 
