@@ -114,7 +114,7 @@ If these pass but one application fails, test the application's port, and check 
 
 | Section | Description | File |
 |---------|-------------|------|
-| Project 1 | TCP/IP fundamentals | [TCP/IP Fundamentals](./project-1-fundamentals/) |
+| Project 1 | TCP/IP fundamentals | [TCP/IP Fundamentals](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%201-fundamentals/tcp-ip-fundamentals.md) |
 | Project 2 | APIPA, pool missing, pool exhaustion, IP conflict | [IP Addressing Troubleshooting](./project-2-ip-addressing/) |
 | Project 3 | Gateway, DNS, blocked ping, intermittent connectivity | [Connectivity Troubleshooting](./project-3-connectivity/) |
 | Project 4 | Default gateway, blocked ports, firewall | [Network Services Troubleshooting](./project-4-network-services/) |
