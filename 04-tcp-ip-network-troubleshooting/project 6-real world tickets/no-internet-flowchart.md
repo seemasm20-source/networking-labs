@@ -115,7 +115,7 @@ Fix the layer where the first test failed, then repeat the tests from that step.
 
 ## 💡 Next Step
 
-→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
+→ [Slow Network Performance – Troubleshooting Ticket](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%206-real%20world%20tickets/slow-network-performance.md)
 
 
 
