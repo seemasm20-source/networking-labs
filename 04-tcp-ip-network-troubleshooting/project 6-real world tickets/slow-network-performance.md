@@ -106,6 +106,6 @@ All 50 packets reached the gateway with 0% loss and steady times, so the connect
 
 ---
 
-## 🔗 Related Lab
+## 💡 Next Step
 
-→ [Intermittent Connectivity](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/intermittent-connectivity.md): diagnosing packet loss, high latency and unstable network connections.
+→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
