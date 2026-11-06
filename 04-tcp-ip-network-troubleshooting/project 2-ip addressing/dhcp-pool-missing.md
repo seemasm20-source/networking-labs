@@ -1,7 +1,7 @@
 
 # 🔴 IP Issue 2 - DHCP Pool Missing: Client Cannot Get IP
 
-[ Back to Project 2 README] → [README.md](./README.md)
+[ Back to Project 2 README] → [TCP/IP Network Troubleshooting - README.md](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/README.md)
 
 ---
 
