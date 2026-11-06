@@ -118,7 +118,7 @@ If these pass but one application fails, test the application's port, and check 
 | Project 2 | APIPA, pool missing, pool exhaustion, IP conflict | [IP Addressing – Troubleshooting Projects](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%202-ip%20addressing/) |
 | Project 3 | Gateway, DNS, blocked ping, intermittent connectivity | [[Network Connectivity Troubleshooting Projects](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/) |
 | Project 4 | Default gateway, blocked ports, firewall | [[Network Services – Troubleshooting Projects](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%204-network%20services/) |
-| Project 5 | Ping Guide and Tracert Guide | [Ping and Tracert Lab](./project-5-ping-tracert/) |
+| Project 5 | Ping Guide and Tracert Guide | [[Ping & Tracert – Troubleshooting Guides](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md/) |
 | Project 6 | No internet and slow network | [Real-World Scenarios](./project-7-real-world-scenarios/) |
 
 ---
