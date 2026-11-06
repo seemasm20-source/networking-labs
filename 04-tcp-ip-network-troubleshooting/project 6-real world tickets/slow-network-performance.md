@@ -8,13 +8,13 @@
 
 ## 📋 Problem Summary
 
-The internet or network is very slow. Pages take a long time to load and video calls drop. The issue is intermittent, with no clear pattern.
+ The internet or network is very slow. Pages take a long time to load and video calls drop. The issue is intermittent, with no clear pattern.
 
 ---
 
 ## 💡 What is a Slow Network Problem?
 
-A slow network usually means high latency (delay), packet loss or too little bandwidth. The connection is not fully down, so the first job is to find **where** the delay or loss starts: on the PC, on the local network or beyond it.
+ A slow network usually means high latency (delay), packet loss or too little bandwidth. The connection is not fully down, so the first job is to find **where** the delay or loss starts: on the PC, on the local network or beyond it.
 
 | Possible cause | Where it shows up |
 |----------------|-------------------|
