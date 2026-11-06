@@ -73,3 +73,9 @@ Non-authoritative answer:
 Name:    google.com
 Address: 142.250.180.46
 ```
+
+
+
+## 💡 Next Step
+
+→ Project 5 [Ping & Tracert Troubleshooting](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%205-ping%26tracert.md)
