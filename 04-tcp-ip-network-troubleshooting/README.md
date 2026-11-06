@@ -104,10 +104,9 @@ If these pass but one application fails, test the application's port, and check 
 | Internet randomly drops | Weak Wi-Fi, cable or ISP packet loss | Improved Wi-Fi, replaced the cable, contacted the ISP | [Intermittent Connectivity](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%203-connectivity/intermittent-connectivity.md) |
 | Gateway unreachable, no internet | Incorrect default gateway | Set back to Automatic (DHCP) | [Default Gateway Issues – Troubleshooting](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%204-network%20services/default-gateway-issues.md)/) |
 | Cannot RDP to server | Port 3389 blocked or Remote Desktop disabled | Enabled Remote Desktop and the inbound rule | [Port Blocked Scenarios](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%204-network%20services/port-blocked-scenarios.md) |
-| Shared folder error | Port 445 blocked by the SMB inbound rule | Enabled File and Printer Sharing (SMB-In) | [Network Services Troubleshooting](./project-4-network-services/) |
-| No internet at all | Depends on the first failing test | Fixed the failing layer | [Real-World Scenarios](./project-7-real-world-scenarios/) |
+| No internet at all | Depends on the first failing test | Fixed the failing layer | [No Internet Connectivity – Troubleshooting Flowchart](https://github.com/seemasm20-source/networking-labs/blob/main/04-tcp-ip-network-troubleshooting/project%206-real%20world%20tickets/no-internet-flowchart.md)) |
 | Slow internet | Packet loss or delay, local or ISP | Found the cause with `ping -t` and `pathping` | [Real-World Scenarios](./project-7-real-world-scenarios/) |
-| One website fails | Stale DNS cache | `ipconfig /flushdns` (full lab in the [DNS portfolio](https://github.com/seemasm20-source/networking-labs/blob/main/03-dns-portfolio/project-3-cache/flushdns.md)) | [Real-World Scenarios](./project-7-real-world-scenarios/) |
+
 
 ---
 
