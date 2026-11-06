@@ -103,3 +103,9 @@ This scenario was fully documented in the DHCP Configuration Portfolio, includin
 
 ---
 
+
+
+
+## 💡 Next Step
+
+→ Project 3 [Network Services](https://github.com/seemasm20-source/networking-labs/tree/main/04-tcp-ip-network-troubleshooting/project%204-network%20services)
